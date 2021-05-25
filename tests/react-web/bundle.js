@@ -596,7 +596,7 @@
 	 * @param {?*} children Children tree container.
 	 * @param {function(*, int)} func The map function.
 	 * @param {*} context Context for mapFunction.
-	 * @return {object} Object containing the ordered map of results.
+	 * @return  Object containing the ordered map of results.
 	 */
 	function mapChildren(children, func, context) {
 	  if (children == null) {
@@ -618,7 +618,7 @@
 	 * See https://facebook.github.io/react/docs/top-level-api.html#react.children.count
 	 *
 	 * @param {?*} children Children tree container.
-	 * @return {number} The number of children.
+	 * @return  The number of children.
 	 */
 	function countChildren(children, context) {
 	  return traverseAllChildren(children, forEachSingleChildDummy, null);
@@ -1220,7 +1220,7 @@
 	 * Verifies the object is a ReactElement.
 	 * See https://facebook.github.io/react/docs/top-level-api.html#react.isvalidelement
 	 * @param {?object} object
-	 * @return {boolean} True if `object` is a valid component.
+	 * @return  True if `object` is a valid component.
 	 * @final
 	 */
 	ReactElement.isValidElement = function (object) {
@@ -1453,7 +1453,7 @@
 	 *
 	 * @param {*} component A component that could contain a manual key.
 	 * @param {number} index Index that is used if a manual key is not provided.
-	 * @return {string}
+	 * @return
 	 */
 	function getComponentKey(component, index) {
 	  // Do some typechecking here since we call this blindly. We want to ensure
@@ -1472,7 +1472,7 @@
 	 * @param {!function} callback Callback to invoke with each child found.
 	 * @param {?*} traverseContext Used to pass information throughout the traversal
 	 * process.
-	 * @return {!number} The number of children in this subtree.
+	 * @return  The number of children in this subtree.
 	 */
 	function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext) {
 	  var type = typeof children;
@@ -1571,7 +1571,7 @@
 	 * @param {?*} children Children tree object.
 	 * @param {!function} callback To invoke upon traversing each child.
 	 * @param {?*} traverseContext Context for traversal.
-	 * @return {!number} The number of children in this subtree.
+	 * @return  The number of children in this subtree.
 	 */
 	function traverseAllChildren(children, callback, traverseContext) {
 	  if (children == null) {
@@ -1619,7 +1619,7 @@
 	 *     }
 	 *
 	 * @param {?object} maybeIterable
-	 * @return {?function}
+	 * @return
 	 */
 	function getIteratorFn(maybeIterable) {
 	  var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
@@ -1651,8 +1651,8 @@
 	/**
 	 * Escape and wrap key so it is safe to use as a reactid
 	 *
-	 * @param {string} key to be escaped.
-	 * @return {string} the escaped key.
+	 * @param  key to be escaped.
+	 * @return  the escaped key.
 	 */
 
 	function escape(key) {
@@ -1671,8 +1671,8 @@
 	/**
 	 * Unescape and unwrap key for human-readable display
 	 *
-	 * @param {string} key to unescape.
-	 * @return {string} the unescaped key.
+	 * @param  key to unescape.
+	 * @return  the unescaped key.
 	 */
 	function unescape(key) {
 	  var unescapeRegex = /(=0|=2)/g;
@@ -1852,7 +1852,7 @@
 	  /**
 	   * Checks whether or not this composite component is mounted.
 	   * @param {ReactClass} publicInstance The instance we want to test.
-	   * @return {boolean} True if mounted, false otherwise.
+	   * @return  True if mounted, false otherwise.
 	   * @protected
 	   * @final
 	   */
@@ -2127,7 +2127,7 @@
 	   * This method is invoked before `getInitialState` and therefore cannot rely
 	   * on `this.state` or use `this.setState`.
 	   *
-	   * @return {object}
+	   * @return
 	   * @optional
 	   */
 	  getDefaultProps: SpecPolicy.DEFINE_MANY_MERGED,
@@ -2143,13 +2143,13 @@
 	   *     }
 	   *   }
 	   *
-	   * @return {object}
+	   * @return
 	   * @optional
 	   */
 	  getInitialState: SpecPolicy.DEFINE_MANY_MERGED,
 
 	  /**
-	   * @return {object}
+	   * @return
 	   * @optional
 	   */
 	  getChildContext: SpecPolicy.DEFINE_MANY_MERGED,
@@ -2233,7 +2233,7 @@
 	   * @param {object} nextProps
 	   * @param {?object} nextState
 	   * @param {?object} nextContext
-	   * @return {boolean} True if the component should update.
+	   * @return  True if the component should update.
 	   * @optional
 	   */
 	  shouldComponentUpdate: SpecPolicy.DEFINE_ONCE,
@@ -2487,7 +2487,7 @@
 	 *
 	 * @param {object} one The first object, which is mutated.
 	 * @param {object} two The second object
-	 * @return {object} one after it has been mutated to contain everything in two.
+	 * @return  one after it has been mutated to contain everything in two.
 	 */
 	function mergeIntoWithNoDuplicateKeys(one, two) {
 	  !(one && two && typeof one === 'object' && typeof two === 'object') ? process.env.NODE_ENV !== 'production' ? invariant(false, 'mergeIntoWithNoDuplicateKeys(): Cannot merge non-objects.') : _prodInvariant('80') : void 0;
@@ -2506,7 +2506,7 @@
 	 *
 	 * @param {function} one Function to invoke first.
 	 * @param {function} two Function to invoke second.
-	 * @return {function} Function that invokes the two argument functions.
+	 * @return  Function that invokes the two argument functions.
 	 * @private
 	 */
 	function createMergedResultFunction(one, two) {
@@ -2530,7 +2530,7 @@
 	 *
 	 * @param {function} one Function to invoke first.
 	 * @param {function} two Function to invoke second.
-	 * @return {function} Function that invokes the two argument functions.
+	 * @return  Function that invokes the two argument functions.
 	 * @private
 	 */
 	function createChainedFunction(one, two) {
@@ -2545,7 +2545,7 @@
 	 *
 	 * @param {object} component Component whose method is going to be bound.
 	 * @param {function} method Method to be bound.
-	 * @return {function} The bound method.
+	 * @return  The bound method.
 	 */
 	function bindAutoBindMethod(component, method) {
 	  var boundMethod = method.bind(component);
@@ -2612,7 +2612,7 @@
 
 	  /**
 	   * Checks whether or not this composite component is mounted.
-	   * @return {boolean} True if mounted, false otherwise.
+	   * @return  True if mounted, false otherwise.
 	   * @protected
 	   * @final
 	   */
@@ -2636,7 +2636,7 @@
 	   * See https://facebook.github.io/react/docs/top-level-api.html#react.createclass
 	   *
 	   * @param {object} spec Class specification (which must define `render`).
-	   * @return {function} Component constructor function.
+	   * @return  Component constructor function.
 	   * @public
 	   */
 	  createClass: function (spec) {
@@ -2792,7 +2792,7 @@
 	 *   Output: {key1: key1, key2: key2}
 	 *
 	 * @param {object} obj
-	 * @return {object}
+	 * @return
 	 */
 	var keyMirror = function keyMirror(obj) {
 	  var ret = {};
@@ -3681,8 +3681,8 @@
 	 *
 	 * @param {object} typeSpecs Map of name to a ReactPropType
 	 * @param {object} values Runtime values that need to be type-checked
-	 * @param {string} location e.g. "prop", "context", "child context"
-	 * @param {string} componentName Name of the component for error messages.
+	 * @param  location e.g. "prop", "context", "child context"
+	 * @param  componentName Name of the component for error messages.
 	 * @param {?object} element The React element that is being type-checked
 	 * @param {?number} debugID The React component instance that is being type-checked
 	 * @private
@@ -5003,8 +5003,8 @@
 	/**
 	 * Translate native top level events into event types.
 	 *
-	 * @param {string} topLevelType
-	 * @return {object}
+	 * @param  topLevelType
+	 * @return
 	 */
 	function getCompositionEventType(topLevelType) {
 	  switch (topLevelType) {
@@ -5021,9 +5021,9 @@
 	 * Does our fallback best-guess model think this event signifies that
 	 * composition has begun?
 	 *
-	 * @param {string} topLevelType
+	 * @param  topLevelType
 	 * @param {object} nativeEvent
-	 * @return {boolean}
+	 * @return
 	 */
 	function isFallbackCompositionStart(topLevelType, nativeEvent) {
 	  return topLevelType === topLevelTypes.topKeyDown && nativeEvent.keyCode === START_KEYCODE;
@@ -5032,9 +5032,9 @@
 	/**
 	 * Does our fallback mode think that this event is the end of composition?
 	 *
-	 * @param {string} topLevelType
+	 * @param  topLevelType
 	 * @param {object} nativeEvent
-	 * @return {boolean}
+	 * @return
 	 */
 	function isFallbackCompositionEnd(topLevelType, nativeEvent) {
 	  switch (topLevelType) {
@@ -5062,7 +5062,7 @@
 	 * composition event and we have nothing special to extract.
 	 *
 	 * @param {object} nativeEvent
-	 * @return {?string}
+	 * @return
 	 */
 	function getDataFromCustomEvent(nativeEvent) {
 	  var detail = nativeEvent.detail;
@@ -5076,7 +5076,7 @@
 	var currentComposition = null;
 
 	/**
-	 * @return {?object} A SyntheticCompositionEvent.
+	 * @return  A SyntheticCompositionEvent.
 	 */
 	function extractCompositionEvent(topLevelType, targetInst, nativeEvent, nativeEventTarget) {
 	  var eventType;
@@ -5126,9 +5126,9 @@
 	}
 
 	/**
-	 * @param {string} topLevelType Record from `EventConstants`.
+	 * @param  topLevelType Record from `EventConstants`.
 	 * @param {object} nativeEvent Native browser event.
-	 * @return {?string} The string corresponding to this `beforeInput` event.
+	 * @return  The string corresponding to this `beforeInput` event.
 	 */
 	function getNativeBeforeInputChars(topLevelType, nativeEvent) {
 	  switch (topLevelType) {
@@ -5180,9 +5180,9 @@
 	 * For browsers that do not provide the `textInput` event, extract the
 	 * appropriate string to use for SyntheticInputEvent.
 	 *
-	 * @param {string} topLevelType Record from `EventConstants`.
+	 * @param  topLevelType Record from `EventConstants`.
 	 * @param {object} nativeEvent Native browser event.
-	 * @return {?string} The fallback string for this `beforeInput` event.
+	 * @return  The fallback string for this `beforeInput` event.
 	 */
 	function getFallbackBeforeInputChars(topLevelType, nativeEvent) {
 	  // If we are currently composing (IME) and using a fallback to do so,
@@ -5236,7 +5236,7 @@
 	 * Extract a SyntheticInputEvent for `beforeInput`, based on either native
 	 * `textInput` or fallback behavior.
 	 *
-	 * @return {?object} A SyntheticInputEvent.
+	 * @return  A SyntheticInputEvent.
 	 */
 	function extractBeforeInputEvent(topLevelType, targetInst, nativeEvent, nativeEventTarget) {
 	  var chars;
@@ -5647,7 +5647,7 @@
 	   * Stores `listener` at `listenerBank[registrationName][key]`. Is idempotent.
 	   *
 	   * @param {object} inst The instance, which is the source of events.
-	   * @param {string} registrationName Name of listener (e.g. `onClick`).
+	   * @param  registrationName Name of listener (e.g. `onClick`).
 	   * @param {function} listener The callback to store.
 	   */
 	  putListener: function (inst, registrationName, listener) {
@@ -5665,8 +5665,8 @@
 
 	  /**
 	   * @param {object} inst The instance, which is the source of events.
-	   * @param {string} registrationName Name of listener (e.g. `onClick`).
-	   * @return {?function} The stored callback.
+	   * @param  registrationName Name of listener (e.g. `onClick`).
+	   * @return  The stored callback.
 	   */
 	  getListener: function (inst, registrationName) {
 	    var bankForRegistrationName = listenerBank[registrationName];
@@ -5678,7 +5678,7 @@
 	   * Deletes a listener from the registration bank.
 	   *
 	   * @param {object} inst The instance, which is the source of events.
-	   * @param {string} registrationName Name of listener (e.g. `onClick`).
+	   * @param  registrationName Name of listener (e.g. `onClick`).
 	   */
 	  deleteListener: function (inst, registrationName) {
 	    var PluginModule = EventPluginRegistry.registrationNameModules[registrationName];
@@ -5723,7 +5723,7 @@
 	   * Allows registered plugins an opportunity to extract events from top-level
 	   * native browser events.
 	   *
-	   * @return {*} An accumulation of synthetic events.
+	   * @return  An accumulation of synthetic events.
 	   * @internal
 	   */
 	  extractEvents: function (topLevelType, targetInst, nativeEvent, nativeEventTarget) {
@@ -5853,7 +5853,7 @@
 	 *
 	 * @param {object} dispatchConfig Dispatch configuration for the event.
 	 * @param {object} PluginModule Plugin publishing the event.
-	 * @return {boolean} True if the event was successfully published.
+	 * @return  True if the event was successfully published.
 	 * @private
 	 */
 	function publishEventForPlugin(dispatchConfig, PluginModule, eventName) {
@@ -5880,7 +5880,7 @@
 	 * Publishes a registration name that is used to identify dispatched events and
 	 * can be used with `EventPluginHub.putListener` to register listeners.
 	 *
-	 * @param {string} registrationName Registration name to add.
+	 * @param  registrationName Registration name to add.
 	 * @param {object} PluginModule Plugin publishing the event.
 	 * @private
 	 */
@@ -5982,7 +5982,7 @@
 	   * Looks up the plugin for the supplied event.
 	   *
 	   * @param {object} event A synthetic event.
-	   * @return {?object} The plugin that created the supplied event.
+	   * @return  The plugin that created the supplied event.
 	   * @internal
 	   */
 	  getPluginModuleForEvent: function (event) {
@@ -6169,7 +6169,7 @@
 	 * Standard/simple iteration through an event's collected dispatches, but stops
 	 * at the first dispatch execution returning true, and returns that id.
 	 *
-	 * @return {?string} id of the first dispatch execution who's listener returns
+	 * @return  id of the first dispatch execution who's listener returns
 	 * true, or null if no listener returned true.
 	 */
 	function executeDispatchesInOrderStopAtTrueImpl(event) {
@@ -6213,7 +6213,7 @@
 	 * return values at each dispatch execution, but it does tend to make sense when
 	 * dealing with "direct" dispatches.
 	 *
-	 * @return {*} The return value of executing the single dispatch.
+	 * @return  The return value of executing the single dispatch.
 	 */
 	function executeDirectDispatch(event) {
 	  if (process.env.NODE_ENV !== 'production') {
@@ -6232,7 +6232,7 @@
 
 	/**
 	 * @param {SyntheticEvent} event
-	 * @return {boolean} True iff number of dispatches accumulated is greater than 0.
+	 * @return  True iff number of dispatches accumulated is greater than 0.
 	 */
 	function hasDispatches(event) {
 	  return !!event._dispatchListeners;
@@ -6551,7 +6551,7 @@
 	  /**
 	   * Get current text of input.
 	   *
-	   * @return {string}
+	   * @return
 	   */
 	  getText: function () {
 	    if ('value' in this._root) {
@@ -6564,7 +6564,7 @@
 	   * Determine the differing substring between the initially stored
 	   * text content and the current content.
 	   *
-	   * @return {string}
+	   * @return
 	   */
 	  getData: function () {
 	    if (this._fallbackText) {
@@ -6625,7 +6625,7 @@
 	/**
 	 * Gets the key used to access text content on a DOM node.
 	 *
-	 * @return {?string} Key used to access text content.
+	 * @return  Key used to access text content.
 	 * @internal
 	 */
 	function getTextContentAccessor() {
@@ -6668,7 +6668,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
@@ -6839,7 +6839,7 @@
 	  /**
 	   * Checks if this event should be released back into the pool.
 	   *
-	   * @return {boolean} True if this should not be released, false otherwise.
+	   * @return  True if this should not be released, false otherwise.
 	   */
 	  isPersistent: emptyFunction.thatReturnsFalse,
 
@@ -6923,8 +6923,8 @@
 	  * Helper to nullify syntheticEvent instance properties when destructing
 	  *
 	  * @param {object} SyntheticEvent
-	  * @param {String} propName
-	  * @return {object} defineProperty object
+	  * @param  propName
+	  * @return  defineProperty object
 	  */
 	function getPooledWarningPropertyDefinition(propName, getVal) {
 	  var isFunction = typeof getVal === 'function';
@@ -6984,7 +6984,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
@@ -7435,7 +7435,7 @@
 	 *
 	 * @param {ReactComponent} c1 first component you're comparing
 	 * @param {ReactComponent} c2 second component you're comparing
-	 * @return {number} Return value usable by Array.prototype.sort().
+	 * @return  Return value usable by Array.prototype.sort().
 	 */
 	function mountOrderComparator(c1, c2) {
 	  return c1._mountOrder - c2._mountOrder;
@@ -7761,7 +7761,7 @@
 	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
 	   * @param {?object} the containing host component instance
 	   * @param {?object} info about the host container
-	   * @return {?string} Rendered markup to be inserted into the DOM.
+	   * @return  Rendered markup to be inserted into the DOM.
 	   * @final
 	   * @internal
 	   */
@@ -8036,7 +8036,7 @@
 
 	  /**
 	   * @param {?object} object
-	   * @return {boolean} True if `object` is a valid owner.
+	   * @return  True if `object` is a valid owner.
 	   * @final
 	   */
 	  isValidOwner: function (object) {
@@ -8047,7 +8047,7 @@
 	   * Adds a component by ref to an owner component.
 	   *
 	   * @param {ReactComponent} component Component to reference.
-	   * @param {string} ref Name by which to refer to the component.
+	   * @param  ref Name by which to refer to the component.
 	   * @param {ReactOwner} owner Component on which to record the ref.
 	   * @final
 	   * @internal
@@ -8061,7 +8061,7 @@
 	   * Removes a component by ref from an owner component.
 	   *
 	   * @param {ReactComponent} component Component to dereference.
-	   * @param {string} ref Name of the ref to remove.
+	   * @param  ref Name of the ref to remove.
 	   * @param {ReactOwner} owner Component on which the ref is recorded.
 	   * @final
 	   * @internal
@@ -8751,7 +8751,7 @@
 	   * @param {Object?=} e Argument to pass to the method.
 	   * @param {Object?=} f Argument to pass to the method.
 	   *
-	   * @return {*} Return value from `method`.
+	   * @return  Return value from `method`.
 	   */
 	  perform: function (method, scope, a, b, c, d, e, f) {
 	    !!this.isInTransaction() ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Transaction.perform(...): Cannot initialize a transaction when there is already an outstanding transaction.') : _prodInvariant('27') : void 0;
@@ -8938,9 +8938,9 @@
 	 *
 	 * Borrows from Modernizr.
 	 *
-	 * @param {string} eventNameSuffix Event name, e.g. "click".
+	 * @param  eventNameSuffix Event name, e.g. "click".
 	 * @param {?boolean} capture Check if the capture phase is supported.
-	 * @return {boolean} True if the event is supported.
+	 * @return  True if the event is supported.
 	 * @internal
 	 * @license Modernizr 3.0.0pre (Custom Build) | MIT
 	 */
@@ -9231,7 +9231,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
@@ -9295,7 +9295,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticEvent}
 	 */
@@ -10020,7 +10020,7 @@
 	 * even in IE8.
 	 *
 	 * @param {DOMElement} node
-	 * @param {string} html
+	 * @param  html
 	 * @internal
 	 */
 	var setInnerHTML = createMicrosoftUnsafeLocalFunction(function (node, html) {
@@ -10155,7 +10155,7 @@
 	 * as it should.
 	 *
 	 * @param {DOMElement} node
-	 * @param {string} text
+	 * @param  text
 	 * @internal
 	 */
 	var setTextContent = function (node, text) {
@@ -10234,7 +10234,7 @@
 	 * Escape special characters in the given string of html.
 	 *
 	 * @param  {string} string The string to escape for inserting into HTML
-	 * @return {string}
+	 * @return
 	 * @public
 	 */
 
@@ -10294,7 +10294,7 @@
 	 * Escapes text to prevent scripting attacks.
 	 *
 	 * @param {*} text Text value to escape.
-	 * @return {string} An escaped string.
+	 * @return  An escaped string.
 	 */
 	function escapeTextContentForBrowser(text) {
 	  if (typeof text === 'boolean' || typeof text === 'number') {
@@ -10341,7 +10341,7 @@
 	   * parent. The markup must render into a single root node.
 	   *
 	   * @param {DOMElement} oldChild Child node to replace.
-	   * @param {string} markup Markup to render in place of the child node.
+	   * @param  markup Markup to render in place of the child node.
 	   * @internal
 	   */
 	  dangerouslyReplaceNodeWithMarkup: function (oldChild, markup) {
@@ -10400,8 +10400,8 @@
 	/**
 	 * Extracts the `nodeName` of the first element in a string of markup.
 	 *
-	 * @param {string} markup String of markup.
-	 * @return {?string} Node name of the supplied markup.
+	 * @param  markup String of markup.
+	 * @return  Node name of the supplied markup.
 	 */
 	function getNodeName(markup) {
 	  var nodeNameMatch = markup.match(nodeNamePattern);
@@ -10414,7 +10414,7 @@
 	 * <script> element that is rendered. If no `handleScript` function is supplied,
 	 * an exception is thrown if any <script> elements are rendered.
 	 *
-	 * @param {string} markup A string of valid HTML markup.
+	 * @param  markup A string of valid HTML markup.
 	 * @param {?function} handleScript Invoked once for each rendered <script>.
 	 * @return {array<DOMElement|DOMTextNode>} An array of rendered nodes.
 	 */
@@ -10525,7 +10525,7 @@
 	 * It will return false for other array-like objects like Filelist.
 	 *
 	 * @param {*} obj
-	 * @return {boolean}
+	 * @return
 	 */
 	function hasArrayNature(obj) {
 	  return (
@@ -10661,7 +10661,7 @@
 	 *
 	 * NOTE: This lazily detects which wraps are necessary for the current browser.
 	 *
-	 * @param {string} nodeName Lowercase `nodeName`.
+	 * @param  nodeName Lowercase `nodeName`.
 	 * @return {?array} Markup wrap configuration, if applicable.
 	 */
 	function getMarkupWrap(nodeName) {
@@ -11168,7 +11168,7 @@
 	   * @param {?ReactDOMComponent} the parent component instance
 	   * @param {?object} info about the host container
 	   * @param {object} context
-	   * @return {string} The computed markup.
+	   * @return  The computed markup.
 	   */
 	  mountComponent: function (transaction, hostParent, hostContainerInfo, context) {
 	    this._rootNodeID = globalIdCounter++;
@@ -11340,7 +11340,7 @@
 	   * @private
 	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
 	   * @param {object} props
-	   * @return {string} Markup of opening tag.
+	   * @return  Markup of opening tag.
 	   */
 	  _createOpenTagMarkupAndPutListeners: function (transaction, props) {
 	    var ret = '<' + this._currentElement.type;
@@ -11402,7 +11402,7 @@
 	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
 	   * @param {object} props
 	   * @param {object} context
-	   * @return {string} Content markup.
+	   * @return  Content markup.
 	   */
 	  _createContentMarkup: function (transaction, props, context) {
 	    var ret = '';
@@ -11936,7 +11936,7 @@
 	  };
 
 	  /**
-	   * @param {string} name
+	   * @param  name
 	   * @param {*} value
 	   * @param {ReactDOMComponent} component
 	   */
@@ -11975,7 +11975,7 @@
 	   *
 	   * @param {object} styles
 	   * @param {ReactDOMComponent} component
-	   * @return {?string}
+	   * @return
 	   */
 	  createMarkupForStyles: function (styles, component) {
 	    var serialized = '';
@@ -12103,9 +12103,9 @@
 	};
 
 	/**
-	 * @param {string} prefix vendor-specific prefix, eg: Webkit
-	 * @param {string} key style name, eg: transitionDuration
-	 * @return {string} style name prefixed with `prefix`, properly camelCased, eg:
+	 * @param  prefix vendor-specific prefix, eg: Webkit
+	 * @param  key style name, eg: transitionDuration
+	 * @return  style name prefixed with `prefix`, properly camelCased, eg:
 	 * WebkitTransitionDuration
 	 */
 	function prefixKey(prefix, key) {
@@ -12230,8 +12230,8 @@
 	 * (http://www.andismith.com/blog/2012/02/modernizr-prefixed/), an `-ms` prefix
 	 * is converted to lowercase `ms`.
 	 *
-	 * @param {string} string
-	 * @return {string}
+	 * @param  string
+	 * @return
 	 */
 	function camelizeStyleName(string) {
 	  return camelize(string.replace(msPattern, 'ms-'));
@@ -12264,8 +12264,8 @@
 	 *   > camelize('background-color')
 	 *   < "backgroundColor"
 	 *
-	 * @param {string} string
-	 * @return {string}
+	 * @param  string
+	 * @return
 	 */
 	function camelize(string) {
 	  return string.replace(_hyphenPattern, function (_, character) {
@@ -12303,10 +12303,10 @@
 	 * should be logical (no hyphens), as specified
 	 * in `CSSProperty.isUnitlessNumber`.
 	 *
-	 * @param {string} name CSS property name such as `topMargin`.
+	 * @param  name CSS property name such as `topMargin`.
 	 * @param {*} value CSS property value such as `10px`.
 	 * @param {ReactDOMComponent} component
-	 * @return {string} Normalized style value with dimensions applied.
+	 * @return  Normalized style value with dimensions applied.
 	 */
 	function dangerousStyleValue(name, value, component) {
 	  // Note that we've removed escapeTextForBrowser() calls here since the
@@ -12394,8 +12394,8 @@
 	 * As Modernizr suggests (http://modernizr.com/docs/#prefixed), an `ms` prefix
 	 * is converted to `-ms-`.
 	 *
-	 * @param {string} string
-	 * @return {string}
+	 * @param  string
+	 * @return
 	 */
 	function hyphenateStyleName(string) {
 	  return hyphenate(string).replace(msPattern, '-ms-');
@@ -12431,8 +12431,8 @@
 	 * For CSS style names, use `hyphenateStyleName` instead which works properly
 	 * with all vendor prefixes, including `ms`.
 	 *
-	 * @param {string} string
-	 * @return {string}
+	 * @param  string
+	 * @return
 	 */
 	function hyphenate(string) {
 	  return string.replace(_uppercasePattern, '-$1').toLowerCase();
@@ -12530,8 +12530,8 @@
 	  /**
 	   * Creates markup for the ID property.
 	   *
-	   * @param {string} id Unescaped ID.
-	   * @return {string} Markup string.
+	   * @param  id Unescaped ID.
+	   * @return  Markup string.
 	   */
 	  createMarkupForID: function (id) {
 	    return DOMProperty.ID_ATTRIBUTE_NAME + '=' + quoteAttributeValueForBrowser(id);
@@ -12552,9 +12552,9 @@
 	  /**
 	   * Creates markup for a property.
 	   *
-	   * @param {string} name
+	   * @param  name
 	   * @param {*} value
-	   * @return {?string} Markup string, or null if the property was invalid.
+	   * @return  Markup string, or null if the property was invalid.
 	   */
 	  createMarkupForProperty: function (name, value) {
 	    var propertyInfo = DOMProperty.properties.hasOwnProperty(name) ? DOMProperty.properties[name] : null;
@@ -12579,9 +12579,9 @@
 	  /**
 	   * Creates markup for a custom property.
 	   *
-	   * @param {string} name
+	   * @param  name
 	   * @param {*} value
-	   * @return {string} Markup string, or empty string if the property was invalid.
+	   * @return  Markup string, or empty string if the property was invalid.
 	   */
 	  createMarkupForCustomAttribute: function (name, value) {
 	    if (!isAttributeNameSafe(name) || value == null) {
@@ -12594,7 +12594,7 @@
 	   * Sets the value for a property on a node.
 	   *
 	   * @param {DOMElement} node
-	   * @param {string} name
+	   * @param  name
 	   * @param {*} value
 	   */
 	  setValueForProperty: function (node, name, value) {
@@ -12656,7 +12656,7 @@
 	   * Deletes an attributes from a node.
 	   *
 	   * @param {DOMElement} node
-	   * @param {string} name
+	   * @param  name
 	   */
 	  deleteValueForAttribute: function (node, name) {
 	    node.removeAttribute(name);
@@ -12669,7 +12669,7 @@
 	   * Deletes the value for a property on a node.
 	   *
 	   * @param {DOMElement} node
-	   * @param {string} name
+	   * @param  name
 	   */
 	  deleteValueForProperty: function (node, name) {
 	    var propertyInfo = DOMProperty.properties.hasOwnProperty(name) ? DOMProperty.properties[name] : null;
@@ -12724,7 +12724,7 @@
 	 * Escapes attribute value to prevent scripting attacks.
 	 *
 	 * @param {*} value Value to escape.
-	 * @return {string} An escaped string.
+	 * @return  An escaped string.
 	 */
 	function quoteAttributeValueForBrowser(value) {
 	  return '"' + escapeTextContentForBrowser(value) + '"';
@@ -12943,7 +12943,7 @@
 	  },
 
 	  /**
-	   * @return {boolean} True if callbacks are enabled.
+	   * @return  True if callbacks are enabled.
 	   */
 	  isEnabled: function () {
 	    return !!(ReactBrowserEventEmitter.ReactEventListener && ReactBrowserEventEmitter.ReactEventListener.isEnabled());
@@ -12967,7 +12967,7 @@
 	   * Also, `keyup`/`keypress`/`keydown` do not bubble to the window on IE, but
 	   * they bubble to document.
 	   *
-	   * @param {string} registrationName Name of listener (e.g. `onClick`).
+	   * @param  registrationName Name of listener (e.g. `onClick`).
 	   * @param {object} contentDocumentHandle Document which owns the container
 	   */
 	  listenTo: function (registrationName, contentDocumentHandle) {
@@ -13127,8 +13127,8 @@
 	/**
 	 * Generate a mapping of standard vendor prefixes using the defined style property and event name.
 	 *
-	 * @param {string} styleProp
-	 * @param {string} eventName
+	 * @param  styleProp
+	 * @param  eventName
 	 * @returns
 	 */
 	function makePrefixMap(styleProp, eventName) {
@@ -13188,7 +13188,7 @@
 	/**
 	 * Attempts to determine the correct vendor prefixed event name.
 	 *
-	 * @param {string} eventName
+	 * @param  eventName
 	 * @returns {string}
 	 */
 	function getVendorPrefixedEventName(eventName) {
@@ -13669,7 +13669,7 @@
 
 	  /**
 	   * @param {object} inputProps Props for form component
-	   * @return {*} current value of the input either from value prop or link.
+	   * @return  current value of the input either from value prop or link.
 	   */
 	  getValue: function (inputProps) {
 	    if (inputProps.valueLink) {
@@ -13681,7 +13681,7 @@
 
 	  /**
 	   * @param {object} inputProps Props for form component
-	   * @return {*} current checked status of the input either from checked prop
+	   * @return  current checked status of the input either from checked prop
 	   *             or link.
 	   */
 	  getChecked: function (inputProps) {
@@ -14244,7 +14244,7 @@
 	/**
 	 * Make an update for markup to be rendered and inserted at a supplied index.
 	 *
-	 * @param {string} markup Markup that renders into an element.
+	 * @param  markup Markup that renders into an element.
 	 * @param {number} toIndex Destination index.
 	 * @private
 	 */
@@ -14300,7 +14300,7 @@
 	/**
 	 * Make an update for setting the markup of a node.
 	 *
-	 * @param {string} markup Markup that renders into an element.
+	 * @param  markup Markup that renders into an element.
 	 * @private
 	 */
 	function makeSetMarkup(markup) {
@@ -14318,7 +14318,7 @@
 	/**
 	 * Make an update for setting the text content.
 	 *
-	 * @param {string} textContent Text content to set.
+	 * @param  textContent Text content to set.
 	 * @private
 	 */
 	function makeTextContent(textContent) {
@@ -14468,7 +14468,7 @@
 	    /**
 	     * Replaces any rendered children with a text content string.
 	     *
-	     * @param {string} nextContent String of content.
+	     * @param  nextContent String of content.
 	     * @internal
 	     */
 	    updateTextContent: function (nextContent) {
@@ -14488,7 +14488,7 @@
 	    /**
 	     * Replaces any rendered children with a markup string.
 	     *
-	     * @param {string} nextMarkup String of markup.
+	     * @param  nextMarkup String of markup.
 	     * @internal
 	     */
 	    updateMarkup: function (nextMarkup) {
@@ -14612,7 +14612,7 @@
 	     * Creates a child component.
 	     *
 	     * @param {ReactComponent} child Component to create.
-	     * @param {string} mountImage Markup to insert.
+	     * @param  mountImage Markup to insert.
 	     * @protected
 	     */
 	    createChild: function (child, afterNode, mountImage) {
@@ -14635,7 +14635,7 @@
 	     * NOTE: This is part of `updateChildren` and is here for readability.
 	     *
 	     * @param {ReactComponent} child Component to mount.
-	     * @param {string} name Name of the child.
+	     * @param  name Name of the child.
 	     * @param {number} index Index at which to insert the child.
 	     * @param {ReactReconcileTransaction} transaction
 	     * @private
@@ -14833,7 +14833,7 @@
 	   * of `ReactDOMComponent`, a mount image is a string of markup.
 	   *
 	   * @param {?object} nestedChildNodes Nested child maps.
-	   * @return {?object} A set of child instances.
+	   * @return  A set of child instances.
 	   * @internal
 	   */
 	  instantiateChildren: function (nestedChildNodes, transaction, context, selfDebugID // 0 in production and for roots
@@ -14860,7 +14860,7 @@
 	   * @param {?object} nextChildren Flat child element maps.
 	   * @param {ReactReconcileTransaction} transaction
 	   * @param {object} context
-	   * @return {?object} A new set of child instances.
+	   * @return  A new set of child instances.
 	   * @internal
 	   */
 	  updateChildren: function (prevChildren, nextChildren, mountImages, removedNodes, transaction, hostParent, hostContainerInfo, context, selfDebugID // 0 in production and for roots
@@ -14980,7 +14980,7 @@
 	 * provided composite type.
 	 *
 	 * @param {function} type
-	 * @return {boolean} Returns true if this is a valid internal type.
+	 * @return  Returns true if this is a valid internal type.
 	 */
 	function isInternalComponentType(type) {
 	  return typeof type === 'function' && typeof type.prototype !== 'undefined' && typeof type.prototype.mountComponent === 'function' && typeof type.prototype.receiveComponent === 'function';
@@ -14993,7 +14993,7 @@
 	 *
 	 * @param {ReactNode} node
 	 * @param {boolean} shouldHaveDebugID
-	 * @return {object} A new instance of the element's constructor.
+	 * @return  A new instance of the element's constructor.
 	 * @protected
 	 */
 	function instantiateReactComponent(node, shouldHaveDebugID) {
@@ -15224,7 +15224,7 @@
 	   * @param {?object} hostParent
 	   * @param {?object} hostContainerInfo
 	   * @param {?object} context
-	   * @return {?string} Rendered markup to be inserted into the DOM.
+	   * @return  Rendered markup to be inserted into the DOM.
 	   * @final
 	   * @internal
 	   */
@@ -15513,7 +15513,7 @@
 	   * `contextTypes`
 	   *
 	   * @param {object} context
-	   * @return {?object}
+	   * @return
 	   * @private
 	   */
 	  _maskContext: function (context) {
@@ -15534,7 +15534,7 @@
 	   * `contextTypes`, and asserts that they are valid.
 	   *
 	   * @param {object} context
-	   * @return {?object}
+	   * @return
 	   * @private
 	   */
 	  _processContext: function (context) {
@@ -15550,7 +15550,7 @@
 
 	  /**
 	   * @param {object} currentContext
-	   * @return {object}
+	   * @return
 	   * @private
 	   */
 	  _processChildContext: function (currentContext) {
@@ -15589,7 +15589,7 @@
 	   *
 	   * @param {object} typeSpecs Map of context field to a ReactPropType
 	   * @param {object} values Runtime values that need to be type-checked
-	   * @param {string} location e.g. "prop", "context", "child context"
+	   * @param  location e.g. "prop", "context", "child context"
 	   * @private
 	   */
 	  _checkContextTypes: function (typeSpecs, values, location) {
@@ -15894,7 +15894,7 @@
 	  /**
 	   * Lazily allocates the refs object and stores `component` as `ref`.
 	   *
-	   * @param {string} ref Reference name.
+	   * @param  ref Reference name.
 	   * @param {component} component Component to store as `ref`.
 	   * @final
 	   * @private
@@ -15914,7 +15914,7 @@
 	  /**
 	   * Detaches a reference name.
 	   *
-	   * @param {string} ref Name to dereference.
+	   * @param  ref Name to dereference.
 	   * @final
 	   * @private
 	   */
@@ -15926,7 +15926,7 @@
 	  /**
 	   * Get a text description of the component that can be used to identify it
 	   * in error messages.
-	   * @return {string} The name or null.
+	   * @return  The name or null.
 	   * @internal
 	   */
 	  getName: function () {
@@ -16108,7 +16108,7 @@
 	 *
 	 * @param {?object} prevElement
 	 * @param {?object} nextElement
-	 * @return {boolean} True if the existing instance should be updated.
+	 * @return  True if the existing instance should be updated.
 	 * @protected
 	 */
 
@@ -16214,7 +16214,7 @@
 	 * Get a host internal component class for a specific tag.
 	 *
 	 * @param {ReactElement} element The element to create.
-	 * @return {function} The internal class constructor function.
+	 * @return  The internal class constructor function.
 	 */
 	function createInternalComponent(element) {
 	  !genericComponentClass ? process.env.NODE_ENV !== 'production' ? invariant(false, 'There is no registered component for the tag %s', element.type) : _prodInvariant('111', element.type) : void 0;
@@ -16231,7 +16231,7 @@
 
 	/**
 	 * @param {ReactComponent} component
-	 * @return {boolean}
+	 * @return
 	 */
 	function isTextComponent(component) {
 	  return component instanceof textComponentClass;
@@ -16394,14 +16394,14 @@
 	  },
 
 	  /**
-	   * @return {object} The queue to collect `onDOMReady` callbacks with.
+	   * @return  The queue to collect `onDOMReady` callbacks with.
 	   */
 	  getReactMountReady: function () {
 	    return noopCallbackQueue;
 	  },
 
 	  /**
-	   * @return {object} The queue to collect React async events.
+	   * @return  The queue to collect React async events.
 	   */
 	  getUpdateQueue: function () {
 	    return this.updateQueue;
@@ -16476,7 +16476,7 @@
 	  /**
 	   * Checks whether or not this composite component is mounted.
 	   * @param {ReactClass} publicInstance The instance we want to test.
-	   * @return {boolean} True if mounted, false otherwise.
+	   * @return  True if mounted, false otherwise.
 	   * @protected
 	   * @final
 	   */
@@ -16645,7 +16645,7 @@
 	  /**
 	   * Checks whether or not this composite component is mounted.
 	   * @param {ReactClass} publicInstance The instance we want to test.
-	   * @return {boolean} True if mounted, false otherwise.
+	   * @return  True if mounted, false otherwise.
 	   * @protected
 	   * @final
 	   */
@@ -16674,7 +16674,7 @@
 	   *
 	   * @param {ReactClass} publicInstance The instance to use as `this` context.
 	   * @param {?function} callback Called after state is updated.
-	   * @param {string} callerName Name of the calling function in the public API.
+	   * @param  callerName Name of the calling function in the public API.
 	   * @internal
 	   */
 	  enqueueCallback: function (publicInstance, callback, callerName) {
@@ -17464,7 +17464,7 @@
 	   * any features besides containing text content.
 	   *
 	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
-	   * @return {string} Markup for this text node.
+	   * @return  Markup for this text node.
 	   * @internal
 	   */
 	  mountComponent: function (transaction, hostParent, hostContainerInfo, context) {
@@ -17748,10 +17748,10 @@
 	  /**
 	   * Traps top-level events by using event bubbling.
 	   *
-	   * @param {string} topLevelType Record from `EventConstants`.
-	   * @param {string} handlerBaseName Event name (e.g. "click").
+	   * @param  topLevelType Record from `EventConstants`.
+	   * @param  handlerBaseName Event name (e.g. "click").
 	   * @param {object} handle Element on which to attach listener.
-	   * @return {?object} An object with a remove function which will forcefully
+	   * @return  An object with a remove function which will forcefully
 	   *                  remove the listener.
 	   * @internal
 	   */
@@ -17766,10 +17766,10 @@
 	  /**
 	   * Traps a top-level event by using event capturing.
 	   *
-	   * @param {string} topLevelType Record from `EventConstants`.
-	   * @param {string} handlerBaseName Event name (e.g. "click").
+	   * @param  topLevelType Record from `EventConstants`.
+	   * @param  handlerBaseName Event name (e.g. "click").
 	   * @param {object} handle Element on which to attach listener.
-	   * @return {?object} An object with a remove function which will forcefully
+	   * @return  An object with a remove function which will forcefully
 	   *                  remove the listener.
 	   * @internal
 	   */
@@ -17832,9 +17832,9 @@
 	   * Listen to DOM events during the bubble phase.
 	   *
 	   * @param {DOMEventTarget} target DOM element to register listener on.
-	   * @param {string} eventType Event type, e.g. 'click' or 'mouseover'.
+	   * @param  eventType Event type, e.g. 'click' or 'mouseover'.
 	   * @param {function} callback Callback function.
-	   * @return {object} Object with a `remove` method.
+	   * @return  Object with a `remove` method.
 	   */
 	  listen: function listen(target, eventType, callback) {
 	    if (target.addEventListener) {
@@ -17858,9 +17858,9 @@
 	   * Listen to DOM events during the capture phase.
 	   *
 	   * @param {DOMEventTarget} target DOM element to register listener on.
-	   * @param {string} eventType Event type, e.g. 'click' or 'mouseover'.
+	   * @param  eventType Event type, e.g. 'click' or 'mouseover'.
 	   * @param {function} callback Callback function.
-	   * @return {object} Object with a `remove` method.
+	   * @return  Object with a `remove` method.
 	   */
 	  capture: function capture(target, eventType, callback) {
 	    if (target.addEventListener) {
@@ -17911,7 +17911,7 @@
 	 * inertial scrolling).
 	 *
 	 * @param {DOMWindow|DOMElement} scrollable
-	 * @return {object} Map with `x` and `y` keys.
+	 * @return  Map with `x` and `y` keys.
 	 */
 
 	function getUnboundedScrollPosition(scrollable) {
@@ -18019,7 +18019,7 @@
 	 */
 	var EVENT_SUPPRESSION = {
 	  /**
-	   * @return {boolean} The enabled status of `ReactBrowserEventEmitter` before
+	   * @return  The enabled status of `ReactBrowserEventEmitter` before
 	   * the reconciliation.
 	   */
 	  initialize: function () {
@@ -18111,14 +18111,14 @@
 	  },
 
 	  /**
-	   * @return {object} The queue to collect `onDOMReady` callbacks with.
+	   * @return  The queue to collect `onDOMReady` callbacks with.
 	   */
 	  getReactMountReady: function () {
 	    return this.reactMountReady;
 	  },
 
 	  /**
-	   * @return {object} The queue to collect React async events.
+	   * @return  The queue to collect React async events.
 	   */
 	  getUpdateQueue: function () {
 	    return ReactUpdateQueue;
@@ -18326,7 +18326,7 @@
 	 * differ between the two APIs.
 	 *
 	 * @param {DOMElement} node
-	 * @return {object}
+	 * @return
 	 */
 	function getIEOffsets(node) {
 	  var selection = document.selection;
@@ -18349,7 +18349,7 @@
 
 	/**
 	 * @param {DOMElement} node
-	 * @return {?object}
+	 * @return
 	 */
 	function getModernOffsets(node) {
 	  var selection = window.getSelection && window.getSelection();
@@ -18552,7 +18552,7 @@
 	 *
 	 * @param {DOMElement|DOMTextNode} root
 	 * @param {number} offset
-	 * @return {?object}
+	 * @return
 	 */
 	function getNodeForCharacterOffset(root, offset) {
 	  var node = getLeafNode(root);
@@ -18644,7 +18644,7 @@
 
 	/**
 	 * @param {*} object The object to check.
-	 * @return {boolean} Whether or not the object is a DOM text node.
+	 * @return  Whether or not the object is a DOM text node.
 	 */
 	function isTextNode(object) {
 	  return isNode(object) && object.nodeType == 3;
@@ -18671,7 +18671,7 @@
 
 	/**
 	 * @param {*} object The object to check.
-	 * @return {boolean} Whether or not the object is a DOM node.
+	 * @return  Whether or not the object is a DOM node.
 	 */
 	function isNode(object) {
 	  var doc = object ? object.ownerDocument || object : document;
@@ -19091,7 +19091,7 @@
 	 * two identical selections on the same node will return identical objects.
 	 *
 	 * @param {DOMElement} node
-	 * @return {object}
+	 * @return
 	 */
 	function getSelection(node) {
 	  if ('selectionStart' in node && ReactInputSelection.hasSelectionCapabilities(node)) {
@@ -19905,7 +19905,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticEvent}
 	 */
@@ -19948,7 +19948,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
@@ -19989,7 +19989,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
@@ -20078,7 +20078,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
@@ -20115,7 +20115,7 @@
 	 * presumably because it does not produce a tab-character in browsers.
 	 *
 	 * @param {object} nativeEvent Native browser event.
-	 * @return {number} Normalized `charCode` property.
+	 * @return  Normalized `charCode` property.
 	 */
 
 	function getEventCharCode(nativeEvent) {
@@ -20219,7 +20219,7 @@
 
 	/**
 	 * @param {object} nativeEvent Native browser event.
-	 * @return {string} Normalized `key` property.
+	 * @return  Normalized `key` property.
 	 */
 	function getEventKey(nativeEvent) {
 	  if (nativeEvent.key) {
@@ -20281,7 +20281,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
@@ -20331,7 +20331,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
@@ -20375,7 +20375,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticEvent}
 	 */
@@ -20434,7 +20434,7 @@
 
 	/**
 	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {string} dispatchMarker Marker identifying the event target.
+	 * @param  dispatchMarker Marker identifying the event target.
 	 * @param {object} nativeEvent Native browser event.
 	 * @extends {SyntheticMouseEvent}
 	 */
@@ -20501,7 +20501,7 @@
 	 * Finds the index of the first character
 	 * that's not common between the two given strings.
 	 *
-	 * @return {number} the index of the character where the strings diverge
+	 * @return  the index of the character where the strings diverge
 	 */
 	function firstDifferenceIndex(string1, string2) {
 	  var minLen = Math.min(string1.length, string2.length);
@@ -20614,7 +20614,7 @@
 	 * `unmountComponentAtNode`, etc.
 	 *
 	 * @param {?DOMElement} node The candidate DOM node.
-	 * @return {boolean} True if the DOM element contains a direct child that was
+	 * @return  True if the DOM element contains a direct child that was
 	 * rendered by React but is not a root element.
 	 * @internal
 	 */
@@ -20631,7 +20631,7 @@
 	 * it has been rendered by another copy of React.
 	 *
 	 * @param {?DOMElement} node The candidate DOM node.
-	 * @return {boolean} True if the DOM has been rendered by another copy of React
+	 * @return  True if the DOM has been rendered by another copy of React
 	 * @internal
 	 */
 	function nodeIsRenderedByOtherInstance(container) {
@@ -20643,7 +20643,7 @@
 	 * True if the supplied DOM node is a valid node element.
 	 *
 	 * @param {?DOMElement} node The candidate DOM node.
-	 * @return {boolean} True if the DOM is a valid DOM node.
+	 * @return  True if the DOM is a valid DOM node.
 	 * @internal
 	 */
 	function isValidContainer(node) {
@@ -20654,7 +20654,7 @@
 	 * True if the supplied DOM node is a valid React node element.
 	 *
 	 * @param {?DOMElement} node The candidate DOM node.
-	 * @return {boolean} True if the DOM is a valid React DOM node.
+	 * @return  True if the DOM is a valid React DOM node.
 	 * @internal
 	 */
 	function isReactNode(node) {
@@ -20880,7 +20880,7 @@
 	   * See https://facebook.github.io/react/docs/top-level-api.html#reactdom.unmountcomponentatnode
 	   *
 	   * @param {DOMElement} container DOM element containing a React component.
-	   * @return {boolean} True if a component was found in and unmounted from
+	   * @return  True if a component was found in and unmounted from
 	   *                   `container`
 	   */
 	  unmountComponentAtNode: function (container) {
@@ -21074,8 +21074,8 @@
 	  CHECKSUM_ATTR_NAME: 'data-react-checksum',
 
 	  /**
-	   * @param {string} markup Markup string
-	   * @return {string} Markup string with checksum attribute attached
+	   * @param  markup Markup string
+	   * @return  Markup string with checksum attribute attached
 	   */
 	  addChecksumToMarkup: function (markup) {
 	    var checksum = adler32(markup);
@@ -21089,7 +21089,7 @@
 	  },
 
 	  /**
-	   * @param {string} markup to use
+	   * @param  markup to use
 	   * @param {DOMElement} element root React element
 	   * @returns whether or not the markup is the same
 	   */
@@ -23479,7 +23479,7 @@
 		/**
 	  * @method setRememberMe
 	  * @param {boolean} value Flag to remember credentials
-	  * @return {void}
+	  * @return
 	  * @description
 	  * This method will set a flag in order to remember the current credentials
 	  **/
@@ -23496,8 +23496,8 @@
 			}
 			/**
 	   * @method setUser
-	   * @param {any} user Any type of user model
-	   * @return {void}
+	   * @param  user Any type of user model
+	   * @return
 	   * @description
 	   * This method will update the user information and persist it if the
 	   * rememberMe flag is set.
@@ -23512,7 +23512,7 @@
 			/**
 	   * @method setToken
 	   * @param {SDKToken} token SDKToken or casted AccessToken instance
-	   * @return {void}
+	   * @return
 	   * @description
 	   * This method will set a flag in order to remember the current credentials
 	   **/
@@ -23525,7 +23525,7 @@
 			}
 			/**
 	   * @method getToken
-	   * @return {void}
+	   * @return
 	   * @description
 	   * This method will set a flag in order to remember the current credentials.
 	   **/
@@ -23537,7 +23537,7 @@
 			}
 			/**
 	   * @method getAccessTokenId
-	   * @return {string}
+	   * @return
 	   * @description
 	   * This method will return the actual token string, not the object instance.
 	   **/
@@ -23549,7 +23549,7 @@
 			}
 			/**
 	   * @method getCurrentUserId
-	   * @return {any}
+	   * @return
 	   * @description
 	   * This method will return the current user id, it can be number or string.
 	   **/
@@ -23561,7 +23561,7 @@
 			}
 			/**
 	   * @method getCurrentUserData
-	   * @return {any}
+	   * @return
 	   * @description
 	   * This method will return the current user instance.
 	   **/
@@ -23573,7 +23573,7 @@
 			}
 			/**
 	   * @method save
-	   * @return {boolean} Whether or not the information was saved
+	   * @return  Whether or not the information was saved
 	   * @description
 	   * This method will save in either local storage or cookies the current credentials.
 	   * But only if rememberMe is enabled.
@@ -23599,8 +23599,8 @@
 
 			/**
 	   * @method load
-	   * @param {string} prop Property name
-	   * @return {any} Any information persisted in storage
+	   * @param  prop Property name
+	   * @return  Any information persisted in storage
 	   * @description
 	   * This method will load either from local storage or cookies the provided property.
 	   **/
@@ -23609,7 +23609,7 @@
 			}
 			/**
 	   * @method clear
-	   * @return {void}
+	   * @return
 	   * @description
 	   * This method will clear cookies or the local storage.
 	   **/
@@ -23626,7 +23626,7 @@
 			}
 			/**
 	   * @method persist
-	   * @return {void}
+	   * @return
 	   * @description
 	   * This method saves values to storage
 	   **/
@@ -23681,17 +23681,17 @@
 
 	    /**
 	     * @method get
-	     * @param {string} key Storage key name
-	     * @return {any}
+	     * @param  key Storage key name
+	     * @return
 	     * @description
 	     * The getter will return any type of data persisted in storage.
 	     **/
 	    value: function get(key) {}
 	    /**
 	     * @method set
-	     * @param {string} key Storage key name
-	     * @param {any} value Any value
-	     * @return {void}
+	     * @param  key Storage key name
+	     * @param  value Any value
+	     * @return
 	     * @description
 	     * The setter will return any type of data persisted in localStorage.
 	     **/
@@ -23701,8 +23701,8 @@
 	    value: function set(key, value) {}
 	    /**
 	     * @method remove
-	     * @param {string} key Storage key name
-	     * @return {void}
+	     * @param  key Storage key name
+	     * @return
 	     * @description
 	     * This method will remove a localStorage item from the client.
 	     **/
@@ -24205,7 +24205,7 @@
 	     * the Observable, with a value. The Observable may call this method 0 or more
 	     * times.
 	     * @param {T} [value] The `next` value.
-	     * @return {void}
+	     * @return
 	     */
 	    Subscriber.prototype.next = function (value) {
 	        if (!this.isStopped) {
@@ -24216,8 +24216,8 @@
 	     * The {@link Observer} callback to receive notifications of type `error` from
 	     * the Observable, with an attached {@link Error}. Notifies the Observer that
 	     * the Observable has experienced an error condition.
-	     * @param {any} [err] The `error` exception.
-	     * @return {void}
+	     * @param  [err] The `error` exception.
+	     * @return
 	     */
 	    Subscriber.prototype.error = function (err) {
 	        if (!this.isStopped) {
@@ -24229,7 +24229,7 @@
 	     * The {@link Observer} callback to receive a valueless notification of type
 	     * `complete` from the Observable. Notifies the Observer that the Observable
 	     * has finished sending push-based notifications.
-	     * @return {void}
+	     * @return
 	     */
 	    Subscriber.prototype.complete = function () {
 	        if (!this.isStopped) {
@@ -24442,7 +24442,7 @@
 	     * Disposes the resources held by the subscription. May, for instance, cancel
 	     * an ongoing Observable execution or cancel any other type of work that
 	     * started when the Subscription was created.
-	     * @return {void}
+	     * @return
 	     */
 	    Subscription.prototype.unsubscribe = function () {
 	        var hasErrors = false;
@@ -24555,7 +24555,7 @@
 	     * Removes a Subscription from the internal list of subscriptions that will
 	     * unsubscribe during the unsubscribe process of this Subscription.
 	     * @param {Subscription} subscription The subscription to remove.
-	     * @return {void}
+	     * @return
 	     */
 	    Subscription.prototype.remove = function (subscription) {
 	        var subscriptions = this._subscriptions;
@@ -24809,7 +24809,7 @@
 	     * @see {@link never}
 	     * @see {@link of}
 	     *
-	     * @param {any} error The particular Error to pass to the error notification.
+	     * @param  error The particular Error to pass to the error notification.
 	     * @param {Scheduler} [scheduler] A {@link IScheduler} to use for scheduling
 	     * the emission of the error notification.
 	     * @return {Observable} An error Observable: emits only the error notification
@@ -24982,12 +24982,12 @@
 	  }
 	  /**
 	   * @method request
-	   * @param {string}  method      Request method (GET, POST, PUT)
-	   * @param {string}  url         Request url (my-host/my-url/:id)
-	   * @param {any}     routeParams Values of url parameters
-	   * @param {any}     urlParams   Parameters for building url (filter and other)
-	   * @param {any}     postBody    Request postBody
-	   * @return {Observable<any>}
+	   * @param   method      Request method (GET, POST, PUT)
+	   * @param   url         Request url (my-host/my-url/:id)
+	   * @param      routeParams Values of url parameters
+	   * @param      urlParams   Parameters for building url (filter and other)
+	   * @param      postBody    Request postBody
+	   * @return
 	   * @description
 	   * This is a core method, every HTTP Call will be done from here, every API Service will
 	   * extend this class and use this method to get RESTful communication.
@@ -25071,9 +25071,9 @@
 	     * @method authenticate
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @param {string} url Server URL
+	     * @param  url Server URL
 	     * @param {Headers} headers HTTP Headers
-	     * @return {void}
+	     * @return
 	     * @description
 	     * This method will try to authenticate using either an access_token or basic http auth
 	     */
@@ -25129,7 +25129,7 @@
 	     * @method findById
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @param {any} data Generic data type
+	     * @param  data Generic data type
 	     * @return {Observable}
 	     * @description
 	     * Generic findById method
@@ -25190,7 +25190,7 @@
 	     * @method findOne
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable<T>}
+	     * @return
 	     * @description
 	     * Generic findOne method
 	     */
@@ -25395,7 +25395,7 @@
 	     * @method createChangeStream
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable<any>}
+	     * @return
 	     * @description
 	     * Generic createChangeStream method
 	     */
@@ -25420,7 +25420,7 @@
 	     * @method getModelName
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {string}
+	     * @return
 	     * @description
 	     * getModelName method
 	     */
@@ -26293,7 +26293,7 @@
 	 * to each `value` emitted by the source Observable. The `index` parameter is
 	 * the number `i` for the i-th emission that has happened since the
 	 * subscription, starting from the number `0`.
-	 * @param {any} [thisArg] An optional argument to define what `this` is in the
+	 * @param  [thisArg] An optional argument to define what `this` is in the
 	 * `project` function.
 	 * @return {Observable<R>} An Observable that emits the values from the source
 	 * Observable transformed by the given `project` function.
@@ -26576,7 +26576,7 @@
 	/**
 	 * Trim excess whitespace off the beginning and end of a string
 	 *
-	 * @param {String} str The String to trim
+	 * @param  str The String to trim
 	 * @returns {String} The String freed of excess whitespace
 	 */
 	function trim(str) {
@@ -26684,7 +26684,7 @@
 	 * @param {Object} a The object to be extended
 	 * @param {Object} b The object to copy properties from
 	 * @param {Object} thisArg The object to bind function to
-	 * @return {Object} The resulting value of object a
+	 * @return  The resulting value of object a
 	 */
 	function extend(a, b, thisArg) {
 	  forEach(b, function assignValue(val, key) {
@@ -27204,9 +27204,9 @@
 	/**
 	 * Create an Error with the specified message, config, error code, request and response.
 	 *
-	 * @param {string} message The error message.
+	 * @param  message The error message.
 	 * @param {Object} config The config.
-	 * @param {string} [code] The error code (for example, 'ECONNABORTED').
+	 * @param  [code] The error code (for example, 'ECONNABORTED').
 	 * @param {Object} [request] The request.
 	 * @param {Object} [response] The response.
 	 * @returns {Error} The created error.
@@ -27228,7 +27228,7 @@
 	 *
 	 * @param {Error} error The error to update.
 	 * @param {Object} config The config.
-	 * @param {string} [code] The error code (for example, 'ECONNABORTED').
+	 * @param  [code] The error code (for example, 'ECONNABORTED').
 	 * @param {Object} [request] The request.
 	 * @param {Object} [response] The response.
 	 * @returns {Error} The error.
@@ -27266,7 +27266,7 @@
 	/**
 	 * Build a URL by appending params to the end
 	 *
-	 * @param {string} url The base of the url (e.g., http://www.google.com)
+	 * @param  url The base of the url (e.g., http://www.google.com)
 	 * @param {object} [params] The params to be appended
 	 * @returns {string} The formatted url
 	 */
@@ -27336,7 +27336,7 @@
 	 * Transfer-Encoding: chunked
 	 * ```
 	 *
-	 * @param {String} headers Headers needing to be parsed
+	 * @param  headers Headers needing to be parsed
 	 * @returns Headers parsed into an object
 	 */
 	module.exports = function parseHeaders(headers) {
@@ -27382,7 +27382,7 @@
 	    /**
 	    * Parse a URL to discover it's components
 	    *
-	    * @param {String} url The URL to be parsed
+	    * @param  url The URL to be parsed
 	    * @returns
 	    */
 	    function resolveURL(url) {
@@ -27416,7 +27416,7 @@
 	    /**
 	    * Determine if a URL shares the same origin as the current location
 	    *
-	    * @param {String} requestURL The URL to test
+	    * @param  requestURL The URL to test
 	    * @returns True if URL shares the same origin, otherwise false
 	    */
 	    return function isURLSameOrigin(requestURL) {
@@ -27554,7 +27554,7 @@
 	 * @param {Function} fulfilled The function to handle `then` for a `Promise`
 	 * @param {Function} rejected The function to handle `reject` for a `Promise`
 	 *
-	 * @return {Number} An ID used to remove interceptor later
+	 * @return  An ID used to remove interceptor later
 	 */
 	InterceptorManager.prototype.use = function use(fulfilled, rejected) {
 	  this.handlers.push({
@@ -27725,7 +27725,7 @@
 	/**
 	 * Determines whether the specified URL is absolute
 	 *
-	 * @param {string} url The URL to test
+	 * @param  url The URL to test
 	 * @returns True if the specified URL is absolute, otherwise false
 	 */
 	module.exports = function isAbsoluteURL(url) {
@@ -27745,8 +27745,8 @@
 	/**
 	 * Creates a new URL by combining the specified URLs
 	 *
-	 * @param {string} baseURL The base URL
-	 * @param {string} relativeURL The relative URL
+	 * @param  baseURL The base URL
+	 * @param  relativeURL The relative URL
 	 * @returns {string} The combined URL
 	 */
 	module.exports = function combineURLs(baseURL, relativeURL) {
@@ -27941,7 +27941,7 @@
 	     * @param {PromiseLike<T>} promise The promise to be converted.
 	     * @param {Scheduler} [scheduler] An optional IScheduler to use for scheduling
 	     * the delivery of the resolved value (or the rejection).
-	     * @return {Observable<T>} An Observable which wraps the Promise.
+	     * @return  An Observable which wraps the Promise.
 	     * @static true
 	     * @name fromPromise
 	     * @owner Observable
@@ -28266,9 +28266,9 @@
 	  /**
 	   * Find a related item by id for accessTokens.
 	   *
-	   * @param {any} id User id
+	   * @param  id User id
 	   *
-	   * @param {any} fk Foreign key for accessTokens
+	   * @param  fk Foreign key for accessTokens
 	   *
 	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
@@ -28301,9 +28301,9 @@
 	    /**
 	     * Delete a related item by id for accessTokens.
 	     *
-	     * @param {any} id User id
+	     * @param  id User id
 	     *
-	     * @param {any} fk Foreign key for accessTokens
+	     * @param  fk Foreign key for accessTokens
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -28332,9 +28332,9 @@
 	    /**
 	     * Update a related item by id for accessTokens.
 	     *
-	     * @param {any} id User id
+	     * @param  id User id
 	     *
-	     * @param {any} fk Foreign key for accessTokens
+	     * @param  fk Foreign key for accessTokens
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -28372,7 +28372,7 @@
 	    /**
 	     * Queries accessTokens of User.
 	     *
-	     * @param {any} id User id
+	     * @param  id User id
 	     *
 	     * @param {object} filter
 	     *
@@ -28406,7 +28406,7 @@
 	    /**
 	     * Creates a new instance in accessTokens of this model.
 	     *
-	     * @param {any} id User id
+	     * @param  id User id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -28443,7 +28443,7 @@
 	    /**
 	     * Deletes all accessTokens of this model.
 	     *
-	     * @param {any} id User id
+	     * @param  id User id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -28471,7 +28471,7 @@
 	    /**
 	     * Counts accessTokens of User.
 	     *
-	     * @param {any} id User id
+	     * @param  id User id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -28537,7 +28537,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id User id
+	     * @param  id User id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -28574,7 +28574,7 @@
 	    /**
 	     * Login a user with username/email and password.
 	     *
-	     * @param {string} include Related objects to include in the response. See the description of return value for more details.
+	     * @param  include Related objects to include in the response. See the description of return value for more details.
 	     *   Default value: `user`.
 	     *
 	     *  - `rememberMe` - `boolean` - Whether the authentication credentials
@@ -28657,7 +28657,7 @@
 	    /**
 	     * Trigger user's identity verification with configured verifyOptions
 	     *
-	     * @param {any} id User id
+	     * @param  id User id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -28689,11 +28689,11 @@
 	    /**
 	     * Confirm a user registration with identity verification token.
 	     *
-	     * @param {string} uid
+	     * @param  uid
 	     *
-	     * @param {string} token
+	     * @param  token
 	     *
-	     * @param {string} redirect
+	     * @param  redirect
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -28819,7 +28819,7 @@
 	    /**
 	     * Creates a new instance in accessTokens of this model.
 	     *
-	     * @param {any} id User id
+	     * @param  id User id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -30046,7 +30046,7 @@
 	     * @param {...T} values Arguments that represent `next` values to be emitted.
 	     * @param {Scheduler} [scheduler] A {@link IScheduler} to use for scheduling
 	     * the emissions of the `next` notifications.
-	     * @return {Observable<T>} An Observable that emits each given input value.
+	     * @return  An Observable that emits each given input value.
 	     * @static true
 	     * @name of
 	     * @owner Observable
@@ -30920,7 +30920,7 @@
 	    /* tslint:enable:max-line-length */
 	    /**
 	     * @param sources
-	     * @return {any}
+	     * @return
 	     * @static true
 	     * @name forkJoin
 	     * @owner Observable
@@ -31109,7 +31109,7 @@
 	     * converted.
 	     * @param {Scheduler} [scheduler] The scheduler on which to schedule the
 	     * emissions of values.
-	     * @return {Observable<T>} The Observable whose values are originally from the
+	     * @return  The Observable whose values are originally from the
 	     * input object that was converted.
 	     * @static true
 	     * @name from
@@ -31448,7 +31448,7 @@
 	 *
 	 * @param {IScheduler} scheduler Scheduler that will be used to reschedule notifications from source Observable.
 	 * @param {number} [delay] Number of milliseconds that states with what delay every notification should be rescheduled.
-	 * @return {Observable<T>} Observable that emits the same notifications as the source Observable,
+	 * @return  Observable that emits the same notifications as the source Observable,
 	 * but with provided scheduler.
 	 *
 	 * @method observeOn
@@ -31562,7 +31562,7 @@
 	     * @param {function(value: T): void} next An Observer `next` callback.
 	     * @param {function(err: any): void} [error] An Observer `error` callback.
 	     * @param {function(): void} [complete] An Observer `complete` callback.
-	     * @return {any}
+	     * @return
 	     */
 	    Notification.prototype.do = function (next, error, complete) {
 	        var kind = this.kind;
@@ -31582,7 +31582,7 @@
 	     * the `next` callback.
 	     * @param {function(err: any): void} [error] An Observer `error` callback.
 	     * @param {function(): void} [complete] An Observer `complete` callback.
-	     * @return {any}
+	     * @return
 	     */
 	    Notification.prototype.accept = function (nextOrObserver, error, complete) {
 	        if (nextOrObserver && typeof nextOrObserver.next === 'function') {
@@ -31595,7 +31595,7 @@
 	    /**
 	     * Returns a simple Observable that just delivers the notification represented
 	     * by this Notification instance.
-	     * @return {any}
+	     * @return
 	     */
 	    Notification.prototype.toObservable = function () {
 	        var kind = this.kind;
@@ -31625,7 +31625,7 @@
 	    /**
 	     * A shortcut to create a Notification instance of the type `error` from a
 	     * given error.
-	     * @param {any} [err] The `error` error.
+	     * @param  [err] The `error` error.
 	     * @return {Notification<T>} The "error" Notification representing the
 	     * argument.
 	     */
@@ -31740,13 +31740,13 @@
 	     *
 	     * @param {EventTargetLike} target The DOMElement, event target, Node.js
 	     * EventEmitter, NodeList or HTMLCollection to attach the event handler to.
-	     * @param {string} eventName The event name of interest, being emitted by the
+	     * @param  eventName The event name of interest, being emitted by the
 	     * `target`.
 	     * @param {EventListenerOptions} [options] Options to pass through to addEventListener
 	     * @param {SelectorMethodSignature<T>} [selector] An optional function to
 	     * post-process results. It takes the arguments from the event handler and
 	     * should return a single value.
-	     * @return {Observable<T>}
+	     * @return
 	     * @static true
 	     * @name fromEvent
 	     * @owner Observable
@@ -31898,7 +31898,7 @@
 	     * @param {function(...args: any): T} [selector] An optional function to
 	     * post-process results. It takes the arguments from the event handler and
 	     * should return a single value.
-	     * @return {Observable<T>}
+	     * @return
 	     * @static true
 	     * @name fromEventPattern
 	     * @owner Observable
@@ -32454,7 +32454,7 @@
 	    };
 	    /**
 	     * Immediately executes this action and the `work` it contains.
-	     * @return {any}
+	     * @return
 	     */
 	    AsyncAction.prototype.execute = function (state, delay) {
 	        if (this.closed) {
@@ -32557,7 +32557,7 @@
 	     * called by the Scheduler.
 	     * @param {number} [delay] Time to wait before executing the work, where the
 	     * time unit is implicit and defined by the Scheduler.
-	     * @return {void}
+	     * @return
 	     */
 	    Action.prototype.schedule = function (state, delay) {
 	        if (delay === void 0) { delay = 0; }
@@ -36958,7 +36958,7 @@
 	 * @see {@link empty}
 	 * @see {@link last}
 	 *
-	 * @param {any} [defaultValue=null] The default value used if the source
+	 * @param  [defaultValue=null] The default value used if the source
 	 * Observable is empty.
 	 * @return {Observable} An Observable that emits either the specified
 	 * `defaultValue` if the source Observable emits no items, or the values emitted
@@ -37727,7 +37727,7 @@
 	 * @see {@link distinct}
 	 * @see {@link distinctUntilChanged}
 	 *
-	 * @param {string} key String key for object property lookup on each item.
+	 * @param  key String key for object property lookup on each item.
 	 * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
 	 * @return {Observable} An Observable that emits items from the source Observable with distinct values based on the key specified.
 	 * @method distinctUntilKeyChanged
@@ -38498,7 +38498,7 @@
 	 * Observable. The `index` parameter is the number `i` for the i-th source
 	 * emission that has happened since the subscription, starting from the number
 	 * `0`.
-	 * @param {any} [thisArg] An optional argument to determine the value of `this`
+	 * @param  [thisArg] An optional argument to determine the value of `this`
 	 * in the `predicate` function.
 	 * @return {Observable} An Observable of values from the source that were
 	 * allowed by the `predicate` function.
@@ -38658,9 +38658,9 @@
 	 *
 	 * @param {function(value: T, index: number, source: Observable<T>): boolean} predicate
 	 * A function called with each item to test for condition matching.
-	 * @param {any} [thisArg] An optional argument to determine the value of `this`
+	 * @param  [thisArg] An optional argument to determine the value of `this`
 	 * in the `predicate` function.
-	 * @return {Observable<T>} An Observable of the first item that matches the
+	 * @return  An Observable of the first item that matches the
 	 * condition.
 	 * @method find
 	 * @owner Observable
@@ -38769,7 +38769,7 @@
 	 *
 	 * @param {function(value: T, index: number, source: Observable<T>): boolean} predicate
 	 * A function called with each item to test for condition matching.
-	 * @param {any} [thisArg] An optional argument to determine the value of `this`
+	 * @param  [thisArg] An optional argument to determine the value of `this`
 	 * in the `predicate` function.
 	 * @return {Observable} An Observable of the index of the first item that
 	 * matches the condition.
@@ -39557,7 +39557,7 @@
 	 * @param {function(value: T): SubscribableOrPromise} durationSelector A function
 	 * that receives a value from the source Observable, for computing the silencing
 	 * duration, returned as an Observable or a Promise.
-	 * @return {Observable<T>} An Observable that performs rate-limiting of
+	 * @return  An Observable that performs rate-limiting of
 	 * emissions from the source Observable.
 	 * @method audit
 	 * @owner Observable
@@ -39688,7 +39688,7 @@
 	 * by the optional `scheduler`.
 	 * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
 	 * managing the timers that handle the rate-limiting behavior.
-	 * @return {Observable<T>} An Observable that performs rate-limiting of
+	 * @return  An Observable that performs rate-limiting of
 	 * emissions from the source Observable.
 	 * @method auditTime
 	 * @owner Observable
@@ -39940,7 +39940,7 @@
 	 *     .subscribe(x => console.log(x)); // -> false
 	 *
 	 * @param {function} predicate A function for determining if an item meets a specified condition.
-	 * @param {any} [thisArg] Optional object to use for `this` in the callback.
+	 * @param  [thisArg] Optional object to use for `this` in the callback.
 	 * @return {Observable} An Observable of booleans that determines if all items of the source Observable meet the condition specified.
 	 * @method every
 	 * @owner Observable
@@ -40040,7 +40040,7 @@
 	 *
 	 * @see {@link map}
 	 *
-	 * @param {any} value The value to map each source value to.
+	 * @param  value The value to map each source value to.
 	 * @return {Observable} An Observable that emits the given `value` every time
 	 * the source Observable emits something.
 	 * @method mapTo
@@ -41019,7 +41019,7 @@
 	 * `false` the value is emitted on the second Observable in the array. The
 	 * `index` parameter is the number `i` for the i-th source emission that has
 	 * happened since the subscription, starting from the number `0`.
-	 * @param {any} [thisArg] An optional argument to determine the value of `this`
+	 * @param  [thisArg] An optional argument to determine the value of `this`
 	 * in the `predicate` function.
 	 * @return {[Observable<T>, Observable<T>]} An array with two Observables: one
 	 * with values that passed the predicate, and another with values that did not
@@ -41780,7 +41780,7 @@
 	 *
 	 * @param {Observable<any>} notifier The Observable to use for sampling the
 	 * source Observable.
-	 * @return {Observable<T>} An Observable that emits the results of sampling the
+	 * @return  An Observable that emits the results of sampling the
 	 * values emitted by the source Observable whenever the notifier Observable
 	 * emits value or completes.
 	 * @method sample
@@ -41886,7 +41886,7 @@
 	 * time unit determined internally by the optional `scheduler`.
 	 * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
 	 * managing the timers that handle the sampling.
-	 * @return {Observable<T>} An Observable that emits the results of sampling the
+	 * @return  An Observable that emits the results of sampling the
 	 * values emitted by the source Observable at the specified time interval.
 	 * @method sampleTime
 	 * @owner Observable
@@ -42280,7 +42280,7 @@
 	 *
 	 * <img src="./img/share.png" width="100%">
 	 *
-	 * @return {Observable<T>} An Observable that upon connection causes the source Observable to emit items to its Observers.
+	 * @return  An Observable that upon connection causes the source Observable to emit items to its Observers.
 	 * @method share
 	 * @owner Observable
 	 */
@@ -42360,7 +42360,7 @@
 	 * @throws {EmptyError} Delivers an EmptyError to the Observer's `error`
 	 * callback if the Observable completes before any `next` notification was sent.
 	 * @param {Function} predicate - A predicate function to evaluate items emitted by the source Observable.
-	 * @return {Observable<T>} An Observable that emits the single item emitted by the source Observable that matches
+	 * @return  An Observable that emits the single item emitted by the source Observable that matches
 	 * the predicate.
 	 .
 	 * @method single
@@ -42639,7 +42639,7 @@
 	 *
 	 * @param {Observable} notifier - The second Observable that has to emit an item before the source Observable's elements begin to
 	 * be mirrored by the resulting Observable.
-	 * @return {Observable<T>} An Observable that skips items from the source Observable until the second Observable emits
+	 * @return  An Observable that skips items from the source Observable until the second Observable emits
 	 * an item, then emits the remaining items.
 	 * @method skipUntil
 	 * @owner Observable
@@ -42724,7 +42724,7 @@
 	 * <img src="./img/skipWhile.png" width="100%">
 	 *
 	 * @param {Function} predicate - A function to test each item emitted from the source Observable.
-	 * @return {Observable<T>} An Observable that begins emitting items emitted by the source Observable when the
+	 * @return  An Observable that begins emitting items emitted by the source Observable when the
 	 * specified predicate becomes false.
 	 * @method skipWhile
 	 * @owner Observable
@@ -42860,7 +42860,7 @@
 	 * <img src="./img/subscribeOn.png" width="100%">
 	 *
 	 * @param {Scheduler} scheduler - The IScheduler to perform subscription actions on.
-	 * @return {Observable<T>} The source Observable modified so that its subscriptions happen on the specified IScheduler.
+	 * @return  The source Observable modified so that its subscriptions happen on the specified IScheduler.
 	 .
 	 * @method subscribeOn
 	 * @owner Observable
@@ -43440,7 +43440,7 @@
 	 * @see {@link switchMapTo}
 	 * @see {@link zipAll}
 	 *
-	 * @return {Observable<T>} An Observable that emits the items emitted by the
+	 * @return  An Observable that emits the items emitted by the
 	 * Observable most recently emitted by the source Observable.
 	 * @method switch
 	 * @name switch
@@ -43850,7 +43850,7 @@
 	 * ArgumentOutOrRangeError to the Observer's `error` callback if `i < 0`.
 	 *
 	 * @param {number} count The maximum number of `next` values to emit.
-	 * @return {Observable<T>} An Observable that emits only the first `count`
+	 * @return  An Observable that emits only the first `count`
 	 * values emitted by the source Observable, or all of the values from the source
 	 * if the source emits fewer than `count` values.
 	 * @method take
@@ -43958,7 +43958,7 @@
 	 *
 	 * @param {number} count The maximum number of values to emit from the end of
 	 * the sequence of values emitted by the source Observable.
-	 * @return {Observable<T>} An Observable that emits at most the last count
+	 * @return  An Observable that emits at most the last count
 	 * values emitted by the source Observable.
 	 * @method takeLast
 	 * @owner Observable
@@ -44076,7 +44076,7 @@
 	 * @param {Observable} notifier The Observable whose first emitted value will
 	 * cause the output Observable of `takeUntil` to stop emitting values from the
 	 * source Observable.
-	 * @return {Observable<T>} An Observable that emits the values from the source
+	 * @return  An Observable that emits the values from the source
 	 * Observable until such time as `notifier` emits its first value.
 	 * @method takeUntil
 	 * @owner Observable
@@ -44167,7 +44167,7 @@
 	 * @param {function(value: T, index: number): boolean} predicate A function that
 	 * evaluates a value emitted by the source Observable and returns a boolean.
 	 * Also takes the (zero-based) index as the second argument.
-	 * @return {Observable<T>} An Observable that emits the values from the source
+	 * @return  An Observable that emits the values from the source
 	 * Observable so long as each value satisfies the condition defined by the
 	 * `predicate`, then completes.
 	 * @method takeWhile
@@ -44284,7 +44284,7 @@
 	 * duration for each source value, returned as an Observable or a Promise.
 	 * @param {Object} config a configuration object to define `leading` and `trailing` behavior. Defaults
 	 * to `{ leading: true, trailing: false }`.
-	 * @return {Observable<T>} An Observable that performs the throttle operation to
+	 * @return  An Observable that performs the throttle operation to
 	 * limit the rate of emissions from the source.
 	 * @method throttle
 	 * @owner Observable
@@ -44437,7 +44437,7 @@
 	 * internally by the optional `scheduler`.
 	 * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
 	 * managing the timers that handle the throttling.
-	 * @return {Observable<T>} An Observable that performs the throttle operation to
+	 * @return  An Observable that performs the throttle operation to
 	 * limit the rate of emissions from the source.
 	 * @method throttleTime
 	 * @owner Observable
@@ -44670,7 +44670,7 @@
 	 * @param {number|Date} due Number specifying period within which Observable must emit values
 	 *                          or Date specifying before when Observable should complete
 	 * @param {Scheduler} [scheduler] Scheduler controlling when timeout checks occur.
-	 * @return {Observable<T>} Observable that mirrors behaviour of source, unless timeout checks fail.
+	 * @return  Observable that mirrors behaviour of source, unless timeout checks fail.
 	 * @method timeout
 	 * @owner Observable
 	 */
@@ -46468,7 +46468,7 @@
 	    /**
 	     * Prompt the Scheduler to execute all of its queued actions, therefore
 	     * clearing its queue.
-	     * @return {void}
+	     * @return
 	     */
 	    VirtualTimeScheduler.prototype.flush = function () {
 	        var _a = this, actions = _a.actions, maxFrames = _a.maxFrames;
@@ -46801,9 +46801,9 @@
 	  /**
 	   * Find a related item by id for accessTokens.
 	   *
-	   * @param {any} id Account id
+	   * @param  id Account id
 	   *
-	   * @param {any} fk Foreign key for accessTokens
+	   * @param  fk Foreign key for accessTokens
 	   *
 	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
@@ -46836,9 +46836,9 @@
 	    /**
 	     * Delete a related item by id for accessTokens.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for accessTokens
+	     * @param  fk Foreign key for accessTokens
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -46867,9 +46867,9 @@
 	    /**
 	     * Update a related item by id for accessTokens.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for accessTokens
+	     * @param  fk Foreign key for accessTokens
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -46907,9 +46907,9 @@
 	    /**
 	     * Find a related item by id for rooms.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -46941,9 +46941,9 @@
 	    /**
 	     * Delete a related item by id for rooms.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -46972,9 +46972,9 @@
 	    /**
 	     * Update a related item by id for rooms.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -47012,9 +47012,9 @@
 	    /**
 	     * Add a related item by id for rooms.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -47052,9 +47052,9 @@
 	    /**
 	     * Remove the rooms relation to an item by id.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47083,9 +47083,9 @@
 	    /**
 	     * Check the existence of rooms relation to an item by id.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47117,9 +47117,9 @@
 	    /**
 	     * Find a related item by id for administrations.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for administrations
+	     * @param  fk Foreign key for administrations
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47151,9 +47151,9 @@
 	    /**
 	     * Delete a related item by id for administrations.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for administrations
+	     * @param  fk Foreign key for administrations
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47182,9 +47182,9 @@
 	    /**
 	     * Update a related item by id for administrations.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for administrations
+	     * @param  fk Foreign key for administrations
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -47222,9 +47222,9 @@
 	    /**
 	     * Add a related item by id for administrations.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for administrations
+	     * @param  fk Foreign key for administrations
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -47262,9 +47262,9 @@
 	    /**
 	     * Remove the administrations relation to an item by id.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for administrations
+	     * @param  fk Foreign key for administrations
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47293,9 +47293,9 @@
 	    /**
 	     * Check the existence of administrations relation to an item by id.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
-	     * @param {any} fk Foreign key for administrations
+	     * @param  fk Foreign key for administrations
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47327,7 +47327,7 @@
 	    /**
 	     * Queries accessTokens of Account.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} filter
 	     *
@@ -47361,7 +47361,7 @@
 	    /**
 	     * Creates a new instance in accessTokens of this model.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -47398,7 +47398,7 @@
 	    /**
 	     * Deletes all accessTokens of this model.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47426,7 +47426,7 @@
 	    /**
 	     * Counts accessTokens of Account.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -47459,7 +47459,7 @@
 	    /**
 	     * Queries rooms of Account.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} filter
 	     *
@@ -47493,7 +47493,7 @@
 	    /**
 	     * Creates a new instance in rooms of this model.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -47530,7 +47530,7 @@
 	    /**
 	     * Deletes all rooms of this model.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47558,7 +47558,7 @@
 	    /**
 	     * Counts rooms of Account.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -47591,7 +47591,7 @@
 	    /**
 	     * Queries administrations of Account.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} filter
 	     *
@@ -47625,7 +47625,7 @@
 	    /**
 	     * Creates a new instance in administrations of this model.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -47662,7 +47662,7 @@
 	    /**
 	     * Deletes all administrations of this model.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47690,7 +47690,7 @@
 	    /**
 	     * Counts administrations of Account.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -47756,7 +47756,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -47793,7 +47793,7 @@
 	    /**
 	     * Login a user with username/email and password.
 	     *
-	     * @param {string} include Related objects to include in the response. See the description of return value for more details.
+	     * @param  include Related objects to include in the response. See the description of return value for more details.
 	     *   Default value: `user`.
 	     *
 	     *  - `rememberMe` - `boolean` - Whether the authentication credentials
@@ -47876,7 +47876,7 @@
 	    /**
 	     * Trigger user's identity verification with configured verifyOptions
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -47908,11 +47908,11 @@
 	    /**
 	     * Confirm a user registration with identity verification token.
 	     *
-	     * @param {string} uid
+	     * @param  uid
 	     *
-	     * @param {string} token
+	     * @param  token
 	     *
-	     * @param {string} redirect
+	     * @param  redirect
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48066,13 +48066,13 @@
 	    /**
 	     * Statistical information for Account registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48105,7 +48105,7 @@
 	    /**
 	     * Creates a new instance in accessTokens of this model.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -48142,7 +48142,7 @@
 	    /**
 	     * Creates a new instance in rooms of this model.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -48179,7 +48179,7 @@
 	    /**
 	     * Creates a new instance in administrations of this model.
 	     *
-	     * @param {any} id Account id
+	     * @param  id Account id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -48397,7 +48397,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id ApplicationCredential id
+	     * @param  id ApplicationCredential id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -48462,13 +48462,13 @@
 	    /**
 	     * Statistical information for ApplicationCredential registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48569,9 +48569,9 @@
 	  /**
 	   * Find a related item by id for rooms.
 	   *
-	   * @param {any} id Category id
+	   * @param  id Category id
 	   *
-	   * @param {any} fk Foreign key for rooms
+	   * @param  fk Foreign key for rooms
 	   *
 	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
@@ -48604,9 +48604,9 @@
 	    /**
 	     * Delete a related item by id for rooms.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48635,9 +48635,9 @@
 	    /**
 	     * Update a related item by id for rooms.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -48675,9 +48675,9 @@
 	    /**
 	     * Add a related item by id for rooms.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -48715,9 +48715,9 @@
 	    /**
 	     * Remove the rooms relation to an item by id.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48746,9 +48746,9 @@
 	    /**
 	     * Check the existence of rooms relation to an item by id.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
-	     * @param {any} fk Foreign key for rooms
+	     * @param  fk Foreign key for rooms
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48780,7 +48780,7 @@
 	    /**
 	     * Queries rooms of Category.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
 	     * @param {object} filter
 	     *
@@ -48814,7 +48814,7 @@
 	    /**
 	     * Creates a new instance in rooms of this model.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -48851,7 +48851,7 @@
 	    /**
 	     * Deletes all rooms of this model.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48879,7 +48879,7 @@
 	    /**
 	     * Counts rooms of Category.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -48945,7 +48945,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -49010,13 +49010,13 @@
 	    /**
 	     * Statistical information for Category registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49049,7 +49049,7 @@
 	    /**
 	     * Creates a new instance in rooms of this model.
 	     *
-	     * @param {any} id Category id
+	     * @param  id Category id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -49181,13 +49181,13 @@
 	    /**
 	     * Statistical information for Core registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49290,7 +49290,7 @@
 	  /**
 	   * Fetches belongsTo relation message.
 	   *
-	   * @param {any} id like id
+	   * @param  id like id
 	   *
 	   * @param {boolean} refresh
 	   *
@@ -49325,7 +49325,7 @@
 	    /**
 	     * Fetches belongsTo relation room.
 	     *
-	     * @param {any} id like id
+	     * @param  id like id
 	     *
 	     * @param {boolean} refresh
 	     *
@@ -49392,7 +49392,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id like id
+	     * @param  id like id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -49457,13 +49457,13 @@
 	    /**
 	     * Statistical information for Like registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49566,9 +49566,9 @@
 	  /**
 	   * Find a related item by id for likes.
 	   *
-	   * @param {any} id Message id
+	   * @param  id Message id
 	   *
-	   * @param {any} fk Foreign key for likes
+	   * @param  fk Foreign key for likes
 	   *
 	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
@@ -49601,9 +49601,9 @@
 	    /**
 	     * Delete a related item by id for likes.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
-	     * @param {any} fk Foreign key for likes
+	     * @param  fk Foreign key for likes
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49632,9 +49632,9 @@
 	    /**
 	     * Update a related item by id for likes.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
-	     * @param {any} fk Foreign key for likes
+	     * @param  fk Foreign key for likes
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -49672,9 +49672,9 @@
 	    /**
 	     * Find a related item by id for replies.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
-	     * @param {any} fk Foreign key for replies
+	     * @param  fk Foreign key for replies
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49706,9 +49706,9 @@
 	    /**
 	     * Delete a related item by id for replies.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
-	     * @param {any} fk Foreign key for replies
+	     * @param  fk Foreign key for replies
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49737,9 +49737,9 @@
 	    /**
 	     * Update a related item by id for replies.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
-	     * @param {any} fk Foreign key for replies
+	     * @param  fk Foreign key for replies
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -49777,7 +49777,7 @@
 	    /**
 	     * Fetches belongsTo relation parent.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {boolean} refresh
 	     *
@@ -49811,7 +49811,7 @@
 	    /**
 	     * Fetches belongsTo relation room.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {boolean} refresh
 	     *
@@ -49845,7 +49845,7 @@
 	    /**
 	     * Queries likes of Message.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {object} filter
 	     *
@@ -49879,7 +49879,7 @@
 	    /**
 	     * Creates a new instance in likes of this model.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -49916,7 +49916,7 @@
 	    /**
 	     * Deletes all likes of this model.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49944,7 +49944,7 @@
 	    /**
 	     * Counts likes of Message.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -49977,7 +49977,7 @@
 	    /**
 	     * Queries replies of Message.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {object} filter
 	     *
@@ -50011,7 +50011,7 @@
 	    /**
 	     * Creates a new instance in replies of this model.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50048,7 +50048,7 @@
 	    /**
 	     * Deletes all replies of this model.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50076,7 +50076,7 @@
 	    /**
 	     * Counts replies of Message.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -50142,7 +50142,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50207,13 +50207,13 @@
 	    /**
 	     * Statistical information for Message registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50246,7 +50246,7 @@
 	    /**
 	     * Creates a new instance in likes of this model.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50283,7 +50283,7 @@
 	    /**
 	     * Creates a new instance in replies of this model.
 	     *
-	     * @param {any} id Message id
+	     * @param  id Message id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50398,9 +50398,9 @@
 	  /**
 	   * Find a related item by id for messages.
 	   *
-	   * @param {any} id Room id
+	   * @param  id Room id
 	   *
-	   * @param {any} fk Foreign key for messages
+	   * @param  fk Foreign key for messages
 	   *
 	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
@@ -50433,9 +50433,9 @@
 	    /**
 	     * Delete a related item by id for messages.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for messages
+	     * @param  fk Foreign key for messages
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50464,9 +50464,9 @@
 	    /**
 	     * Update a related item by id for messages.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for messages
+	     * @param  fk Foreign key for messages
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50504,9 +50504,9 @@
 	    /**
 	     * Find a related item by id for likes.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for likes
+	     * @param  fk Foreign key for likes
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50538,9 +50538,9 @@
 	    /**
 	     * Delete a related item by id for likes.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for likes
+	     * @param  fk Foreign key for likes
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50569,9 +50569,9 @@
 	    /**
 	     * Update a related item by id for likes.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for likes
+	     * @param  fk Foreign key for likes
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50609,9 +50609,9 @@
 	    /**
 	     * Find a related item by id for categories.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for categories
+	     * @param  fk Foreign key for categories
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50643,9 +50643,9 @@
 	    /**
 	     * Delete a related item by id for categories.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for categories
+	     * @param  fk Foreign key for categories
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50674,9 +50674,9 @@
 	    /**
 	     * Update a related item by id for categories.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for categories
+	     * @param  fk Foreign key for categories
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50714,9 +50714,9 @@
 	    /**
 	     * Add a related item by id for categories.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for categories
+	     * @param  fk Foreign key for categories
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50754,9 +50754,9 @@
 	    /**
 	     * Remove the categories relation to an item by id.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for categories
+	     * @param  fk Foreign key for categories
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50785,9 +50785,9 @@
 	    /**
 	     * Check the existence of categories relation to an item by id.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for categories
+	     * @param  fk Foreign key for categories
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50819,9 +50819,9 @@
 	    /**
 	     * Find a related item by id for accounts.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for accounts
+	     * @param  fk Foreign key for accounts
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50853,9 +50853,9 @@
 	    /**
 	     * Delete a related item by id for accounts.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for accounts
+	     * @param  fk Foreign key for accounts
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50884,9 +50884,9 @@
 	    /**
 	     * Update a related item by id for accounts.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for accounts
+	     * @param  fk Foreign key for accounts
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50924,9 +50924,9 @@
 	    /**
 	     * Add a related item by id for accounts.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for accounts
+	     * @param  fk Foreign key for accounts
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -50964,9 +50964,9 @@
 	    /**
 	     * Remove the accounts relation to an item by id.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for accounts
+	     * @param  fk Foreign key for accounts
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50995,9 +50995,9 @@
 	    /**
 	     * Check the existence of accounts relation to an item by id.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for accounts
+	     * @param  fk Foreign key for accounts
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51029,9 +51029,9 @@
 	    /**
 	     * Find a related item by id for admins.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for admins
+	     * @param  fk Foreign key for admins
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51063,9 +51063,9 @@
 	    /**
 	     * Delete a related item by id for admins.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for admins
+	     * @param  fk Foreign key for admins
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51094,9 +51094,9 @@
 	    /**
 	     * Update a related item by id for admins.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for admins
+	     * @param  fk Foreign key for admins
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -51134,9 +51134,9 @@
 	    /**
 	     * Add a related item by id for admins.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for admins
+	     * @param  fk Foreign key for admins
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -51174,9 +51174,9 @@
 	    /**
 	     * Remove the admins relation to an item by id.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for admins
+	     * @param  fk Foreign key for admins
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51205,9 +51205,9 @@
 	    /**
 	     * Check the existence of admins relation to an item by id.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
-	     * @param {any} fk Foreign key for admins
+	     * @param  fk Foreign key for admins
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51239,7 +51239,7 @@
 	    /**
 	     * Queries messages of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} filter
 	     *
@@ -51273,7 +51273,7 @@
 	    /**
 	     * Creates a new instance in messages of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -51310,7 +51310,7 @@
 	    /**
 	     * Deletes all messages of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51338,7 +51338,7 @@
 	    /**
 	     * Counts messages of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -51371,7 +51371,7 @@
 	    /**
 	     * Queries likes of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} filter
 	     *
@@ -51405,7 +51405,7 @@
 	    /**
 	     * Creates a new instance in likes of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -51442,7 +51442,7 @@
 	    /**
 	     * Deletes all likes of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51470,7 +51470,7 @@
 	    /**
 	     * Counts likes of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -51503,7 +51503,7 @@
 	    /**
 	     * Queries categories of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} filter
 	     *
@@ -51537,7 +51537,7 @@
 	    /**
 	     * Creates a new instance in categories of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -51574,7 +51574,7 @@
 	    /**
 	     * Deletes all categories of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51602,7 +51602,7 @@
 	    /**
 	     * Counts categories of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -51635,7 +51635,7 @@
 	    /**
 	     * Queries accounts of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} filter
 	     *
@@ -51669,7 +51669,7 @@
 	    /**
 	     * Creates a new instance in accounts of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -51706,7 +51706,7 @@
 	    /**
 	     * Deletes all accounts of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51734,7 +51734,7 @@
 	    /**
 	     * Counts accounts of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -51767,7 +51767,7 @@
 	    /**
 	     * Queries admins of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} filter
 	     *
@@ -51801,7 +51801,7 @@
 	    /**
 	     * Creates a new instance in admins of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -51838,7 +51838,7 @@
 	    /**
 	     * Deletes all admins of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51866,7 +51866,7 @@
 	    /**
 	     * Counts admins of Room.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
@@ -51932,7 +51932,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -51971,11 +51971,11 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} a
+	     * @param  a
 	     *
-	     * @param {string} b
+	     * @param  b
 	     *
-	     * @param {string} c
+	     * @param  c
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -52009,11 +52009,11 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} a
+	     * @param  a
 	     *
-	     * @param {string} b
+	     * @param  b
 	     *
-	     * @param {string} c
+	     * @param  c
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -52192,7 +52192,7 @@
 	    /**
 	     * Gets list of all unique values used for a given property.
 	     *
-	     * @param {string} property Property name to lookup values for.
+	     * @param  property Property name to lookup values for.
 	     *
 	     * @param {object} filter Filter defining fields, where, include, order, offset, and limit
 	     *
@@ -52225,13 +52225,13 @@
 	    /**
 	     * Statistical information for Room registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -52264,7 +52264,7 @@
 	    /**
 	     * Creates a new instance in messages of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -52301,7 +52301,7 @@
 	    /**
 	     * Creates a new instance in likes of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -52338,7 +52338,7 @@
 	    /**
 	     * Creates a new instance in categories of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -52375,7 +52375,7 @@
 	    /**
 	     * Creates a new instance in accounts of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -52412,7 +52412,7 @@
 	    /**
 	     * Creates a new instance in admins of this model.
 	     *
-	     * @param {any} id Room id
+	     * @param  id Room id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -52519,7 +52519,7 @@
 	  /**
 	   * Fetches belongsTo relation account.
 	   *
-	   * @param {any} id RoomAccount id
+	   * @param  id RoomAccount id
 	   *
 	   * @param {boolean} refresh
 	   *
@@ -52554,7 +52554,7 @@
 	    /**
 	     * Fetches belongsTo relation room.
 	     *
-	     * @param {any} id RoomAccount id
+	     * @param  id RoomAccount id
 	     *
 	     * @param {boolean} refresh
 	     *
@@ -52621,7 +52621,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id RoomAccount id
+	     * @param  id RoomAccount id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -52686,13 +52686,13 @@
 	    /**
 	     * Statistical information for RoomAccount registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -52795,7 +52795,7 @@
 	  /**
 	   * Fetches belongsTo relation account.
 	   *
-	   * @param {any} id RoomAdmin id
+	   * @param  id RoomAdmin id
 	   *
 	   * @param {boolean} refresh
 	   *
@@ -52830,7 +52830,7 @@
 	    /**
 	     * Fetches belongsTo relation room.
 	     *
-	     * @param {any} id RoomAdmin id
+	     * @param  id RoomAdmin id
 	     *
 	     * @param {boolean} refresh
 	     *
@@ -52897,7 +52897,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id RoomAdmin id
+	     * @param  id RoomAdmin id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -52962,13 +52962,13 @@
 	    /**
 	     * Statistical information for RoomAdmin registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53134,7 +53134,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container
+	     * @param  container
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53166,7 +53166,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container
+	     * @param  container
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53199,7 +53199,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container
+	     * @param  container
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53232,9 +53232,9 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container
+	     * @param  container
 	     *
-	     * @param {string} file
+	     * @param  file
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53268,9 +53268,9 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container
+	     * @param  container
 	     *
-	     * @param {string} file
+	     * @param  file
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53303,7 +53303,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container
+	     * @param  container
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -53341,9 +53341,9 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container
+	     * @param  container
 	     *
-	     * @param {string} file
+	     * @param  file
 	     *
 	     * @param {object} req
 	     *
@@ -53404,13 +53404,13 @@
 	    /**
 	     * Statistical information for Storage registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53543,7 +53543,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id UserCredential id
+	     * @param  id UserCredential id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -53608,13 +53608,13 @@
 	    /**
 	     * Statistical information for UserCredential registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53715,7 +53715,7 @@
 	  /**
 	   * Fetches belongsTo relation user.
 	   *
-	   * @param {any} id UserIdentity id
+	   * @param  id UserIdentity id
 	   *
 	   * @param {boolean} refresh
 	   *
@@ -53783,7 +53783,7 @@
 	    /**
 	     * Patch attributes for a model instance and persist it into the data source.
 	     *
-	     * @param {any} id UserIdentity id
+	     * @param  id UserIdentity id
 	     *
 	     * @param {object} data Request data.
 	     *
@@ -53848,13 +53848,13 @@
 	    /**
 	     * Statistical information for UserIdentity registers.
 	     *
-	     * @param {string} range hourly, daily, weekly, monthly, yearly, custom
+	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
 	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter
+	     * @param  groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -54036,8 +54036,8 @@
 
 	    /**
 	     * @method get
-	     * @param {string} key Cookie key name
-	     * @return {any}
+	     * @param  key Cookie key name
+	     * @return
 	     * @description
 	     * The getter will return any type of data persisted in cookies.
 	     **/
@@ -54057,10 +54057,10 @@
 	    }
 	    /**
 	     * @method set
-	     * @param {string} key Cookie key name
-	     * @param {any} value Any value
+	     * @param  key Cookie key name
+	     * @param  value Any value
 	     * @param {Date=} expires The date of expiration (Optional)
-	     * @return {void}
+	     * @return
 	     * @description
 	     * The setter will return any type of data persisted in cookies.
 	     **/
@@ -54074,8 +54074,8 @@
 	    }
 	    /**
 	     * @method remove
-	     * @param {string} key Cookie key name
-	     * @return {void}
+	     * @param  key Cookie key name
+	     * @return
 	     * @description
 	     * This method will remove a cookie from the client.
 	     **/
@@ -54088,8 +54088,8 @@
 	    }
 	    /**
 	     * @method parse
-	     * @param {any} value Input data expected to be JSON
-	     * @return {void}
+	     * @param  value Input data expected to be JSON
+	     * @return
 	     * @description
 	     * This method will parse the string as JSON if possible, otherwise will
 	     * return the value itself.
@@ -54145,8 +54145,8 @@
 
 	    /**
 	    * @method get
-	    * @param {string} key Storage key name
-	    * @return {any}
+	    * @param  key Storage key name
+	    * @return
 	    * @description
 	    * The getter will return any type of data persisted in localStorage.
 	    **/
@@ -54156,9 +54156,9 @@
 	    }
 	    /**
 	     * @method set
-	     * @param {string} key Storage key name
-	     * @param {any} value Any value
-	     * @return {void}
+	     * @param  key Storage key name
+	     * @param  value Any value
+	     * @return
 	     * @description
 	     * The setter will return any type of data persisted in localStorage.
 	     **/
@@ -54170,8 +54170,8 @@
 	    }
 	    /**
 	     * @method remove
-	     * @param {string} key Storage key name
-	     * @return {void}
+	     * @param  key Storage key name
+	     * @return
 	     * @description
 	     * This method will remove a localStorage item from the client.
 	     **/
@@ -54187,8 +54187,8 @@
 	    }
 	    /**
 	     * @method parse
-	     * @param {any} value Input data expected to be JSON
-	     * @return {void}
+	     * @param  value Input data expected to be JSON
+	     * @return
 	     * @description
 	     * This method will parse the string as JSON if possible, otherwise will
 	     * return the value itself.
