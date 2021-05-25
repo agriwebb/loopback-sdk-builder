@@ -14,7 +14,7 @@ export interface CookieInterface {
 @Injectable()
 export class CookieBrowser {
   /**
-   * @type
+   *
    **/
   private cookies: CookieInterface = {};
   /**
