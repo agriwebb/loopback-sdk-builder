@@ -26,7 +26,7 @@ export class CookieNode {
    * @method set
    * @param  key Cookie key name
    * @param  value Any value
-   * @param {Date=} expires The date of expiration (Optional)
+   * @param  expires The date of expiration (Optional)
    * @return
    * @description
    * The setter will return any type of data persisted in cookies.

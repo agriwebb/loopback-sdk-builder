@@ -26,9 +26,9 @@ export class RealTime {
     .pipe(share());
   /**
    * @method constructor
-   * @param {SocketConnection} connection WebSocket connection service
-   * @param {SDKModels} models Model provider service
-   * @param {LoopBackAuth} auth LoopBack authentication service
+   * @param  connection WebSocket connection service
+   * @param  models Model provider service
+   * @param  auth LoopBack authentication service
    * @description
    * It will intialize the shared on ready communication channel.
    **/

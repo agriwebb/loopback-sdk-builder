@@ -14,7 +14,7 @@ export class SocketNative {
    * @method connect
    * @param  url URL path to connect with the server.
    * @param  options Any socket.io v1 =< valid options
-   * @return {SocketIO.Socket}
+   * @return
    * @description
    * This method will return a valid socket connection.
    **/

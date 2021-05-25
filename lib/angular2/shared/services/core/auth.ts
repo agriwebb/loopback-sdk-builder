@@ -24,7 +24,7 @@ export class LoopBackAuth {
   protected prefix: string = '$LoopBackSDK$';
   /**
    * @method constructor
-   * @param {InternalStorage} storage Internal Storage Driver
+   * @param  storage Internal Storage Driver
    * @description
    * The constructor will initialize the token loading data from storage
    **/
@@ -38,7 +38,7 @@ export class LoopBackAuth {
   }
   /**
    * @method setRememberMe
-   * @param {boolean} value Flag to remember credentials
+   * @param  value Flag to remember credentials
    * @return
    * @description
    * This method will set a flag in order to remember the current credentials
@@ -60,7 +60,7 @@ export class LoopBackAuth {
   }
   /**
    * @method setToken
-   * @param {SDKToken} token SDKToken or casted AccessToken instance
+   * @param  token SDKToken or casted AccessToken instance
    * @return
    * @description
    * This method will set a flag in order to remember the current credentials

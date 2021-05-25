@@ -37,8 +37,8 @@ export class SocketConnection {
   public authenticated: boolean = false;
   /**
    * @method constructor
-   * @param {SocketDriver} driver Socket IO Driver
-   * @param {NgZone} zone Angular 2 Zone
+   * @param  driver Socket IO Driver
+   * @param  zone Angular 2 Zone
    * @description
    * The constructor will set references for the shared hot observables from
    * the class subjects. Then it will subscribe each of these observables
@@ -69,7 +69,7 @@ export class SocketConnection {
   }
   /**
    * @method connect
-   * @param {AccessToken} token AccesToken instance
+   * @param  token AccesToken instance
    * @return
    * @description
    * This method will create a new socket connection when not previously established.
@@ -133,7 +133,7 @@ export class SocketConnection {
   /**
    * @method on
    * @param  event Event name
-   * @param {Function} handler Event listener handler
+   * @param  handler Event listener handler
    * @return
    * @description
    * This method listen for server events from the current WebSocket connection.
@@ -146,7 +146,7 @@ export class SocketConnection {
   /**
    * @method emit
    * @param  event Event name
-   * @param {any=} data Any type of data
+   * @param  data Any type of data
    * @return
    * @description
    * This method will send any type of data to the server according the event set.
@@ -161,7 +161,7 @@ export class SocketConnection {
   /**
    * @method removeListener
    * @param  event Event name
-   * @param {Function} handler Event listener handler
+   * @param  handler Event listener handler
    * @return
    * @description
    * This method will wrap the original "on" method and run it within the Angular Zone
@@ -176,7 +176,7 @@ export class SocketConnection {
   /**
    * @method removeAllListeners
    * @param  event Event name
-   * @param {Function} handler Event listener handler
+   * @param  handler Event listener handler
    * @return
    * @description
    * This method will wrap the original "on" method and run it within the Angular Zone

@@ -23,8 +23,8 @@ export class FireLoopRef<T> {
   /**
    * @method constructor
    * @param  model The model we want to create a reference
-   * @param {SocketConnection} socket Socket connection to handle events
-   * @param {FireLoopRef<any>} parent Parent FireLoop model reference
+   * @param  socket Socket connection to handle events
+   * @param  parent Parent FireLoop model reference
    * @param  relationship The defined model relationship
    * @description
    * The constructor will receive the required parameters and then will register this reference
@@ -68,7 +68,7 @@ export class FireLoopRef<T> {
   }
   /**
    * @method upsert
-   * @param {T} data Persisted model instance
+   * @param  data Persisted model instance
    * @return
    * @description
    * Operation wrapper for upsert function.
@@ -78,7 +78,7 @@ export class FireLoopRef<T> {
   }
   /**
    * @method create
-   * @param {T} data Persisted model instance
+   * @param  data Persisted model instance
    * @return
    * @description
    * Operation wrapper for create function.
@@ -88,7 +88,7 @@ export class FireLoopRef<T> {
   }
   /**
    * @method remove
-   * @param {T} data Persisted model instance
+   * @param  data Persisted model instance
    * @return
    * @description
    * Operation wrapper for remove function.
@@ -99,8 +99,8 @@ export class FireLoopRef<T> {
   /**
    * @method remote
    * @param  method Remote method name
-   * @param {any[]=} params Parameters to be applied into the remote method
-   * @param {boolean} broadcast Flag to define if the method results should be broadcasted
+   * @param  params Parameters to be applied into the remote method
+   * @param  broadcast Flag to define if the method results should be broadcasted
    * @return
    * @description
    * This method calls for any remote method. It is flexible enough to
@@ -139,7 +139,7 @@ export class FireLoopRef<T> {
   /**
    * @method on
    * @param  event Event name
-   * @param {LoopBackFilter} filter LoopBack query filter
+   * @param  filter LoopBack query filter
    * @return
    * @description
    * Listener for different type of events. Valid events are:
@@ -179,7 +179,7 @@ export class FireLoopRef<T> {
   }
   /**
    * @method stats
-   * @param {LoopBackFilter=} filter LoopBack query filter
+   * @param  filter LoopBack query filter
    * @return
    * @description
    * Listener for real-time statistics, will trigger on every

@@ -486,8 +486,8 @@
 	 * traversal. Allows avoiding binding callbacks.
 	 *
 	 * @constructor ForEachBookKeeping
-	 * @param {!function} forEachFunction Function to perform traversal with.
-	 * @param {?*} forEachContext Context to perform context with.
+	 * @param  forEachFunction Function to perform traversal with.
+	 * @param  forEachContext Context to perform context with.
 	 */
 	function ForEachBookKeeping(forEachFunction, forEachContext) {
 	  this.func = forEachFunction;
@@ -516,9 +516,9 @@
 	 * The provided forEachFunc(child, index) will be called for each
 	 * leaf child.
 	 *
-	 * @param {?*} children Children tree container.
-	 * @param {function(*, int)} forEachFunc
-	 * @param {*} forEachContext Context for forEachContext.
+	 * @param  children Children tree container.
+	 * @param  forEachFunc
+	 * @param  forEachContext Context for forEachContext.
 	 */
 	function forEachChildren(children, forEachFunc, forEachContext) {
 	  if (children == null) {
@@ -534,9 +534,9 @@
 	 * mapping. Allows avoiding binding callbacks.
 	 *
 	 * @constructor MapBookKeeping
-	 * @param {!*} mapResult Object containing the ordered map of results.
-	 * @param {!function} mapFunction Function to perform mapping with.
-	 * @param {?*} mapContext Context to perform mapping with.
+	 * @param  mapResult Object containing the ordered map of results.
+	 * @param  mapFunction Function to perform mapping with.
+	 * @param  mapContext Context to perform mapping with.
 	 */
 	function MapBookKeeping(mapResult, keyPrefix, mapFunction, mapContext) {
 	  this.result = mapResult;
@@ -593,9 +593,9 @@
 	 * The provided mapFunction(child, key, index) will be called for each
 	 * leaf child.
 	 *
-	 * @param {?*} children Children tree container.
-	 * @param {function(*, int)} func The map function.
-	 * @param {*} context Context for mapFunction.
+	 * @param  children Children tree container.
+	 * @param  func The map function.
+	 * @param  context Context for mapFunction.
 	 * @return  Object containing the ordered map of results.
 	 */
 	function mapChildren(children, func, context) {
@@ -617,7 +617,7 @@
 	 *
 	 * See https://facebook.github.io/react/docs/top-level-api.html#react.children.count
 	 *
-	 * @param {?*} children Children tree container.
+	 * @param  children Children tree container.
 	 * @return  The number of children.
 	 */
 	function countChildren(children, context) {
@@ -747,8 +747,8 @@
 	 * you give this may have a `poolSize` property, and will look for a
 	 * prototypical `destructor` on instances.
 	 *
-	 * @param {Function} CopyConstructor Constructor that can be used to reset.
-	 * @param {Function} pooler Customizable pooler.
+	 * @param  CopyConstructor Constructor that can be used to reset.
+	 * @param  pooler Customizable pooler.
 	 */
 	var addPoolingTo = function (CopyConstructor, pooler) {
 	  var NewKlass = CopyConstructor;
@@ -974,18 +974,18 @@
 	 * will work. Instead test $$typeof field against Symbol.for('react.element') to check
 	 * if something is a React Element.
 	 *
-	 * @param {*} type
-	 * @param {*} key
-	 * @param {string|object} ref
-	 * @param {*} self A *temporary* helper to detect places where `this` is
+	 * @param  type
+	 * @param  key
+	 * @param  ref
+	 * @param  self A *temporary* helper to detect places where `this` is
 	 * different from the `owner` when React.createElement is called, so that we
 	 * can warn. We want to get rid of owner and replace string `ref`s with arrow
 	 * functions, and as long as `this` and owner are the same, there will be no
 	 * change in behavior.
-	 * @param {*} source An annotation object (added by a transpiler or otherwise)
+	 * @param  source An annotation object (added by a transpiler or otherwise)
 	 * indicating filename, line number, and/or other information.
-	 * @param {*} owner
-	 * @param {*} props
+	 * @param  owner
+	 * @param  props
 	 * @internal
 	 */
 	var ReactElement = function (type, key, ref, self, source, owner, props) {
@@ -1219,7 +1219,7 @@
 	/**
 	 * Verifies the object is a ReactElement.
 	 * See https://facebook.github.io/react/docs/top-level-api.html#react.isvalidelement
-	 * @param {?object} object
+	 * @param  object
 	 * @return  True if `object` is a valid component.
 	 * @final
 	 */
@@ -1451,8 +1451,8 @@
 	/**
 	 * Generate a key string that identifies a component within a set.
 	 *
-	 * @param {*} component A component that could contain a manual key.
-	 * @param {number} index Index that is used if a manual key is not provided.
+	 * @param  component A component that could contain a manual key.
+	 * @param  index Index that is used if a manual key is not provided.
 	 * @return
 	 */
 	function getComponentKey(component, index) {
@@ -1467,10 +1467,10 @@
 	}
 
 	/**
-	 * @param {?*} children Children tree container.
-	 * @param {!string} nameSoFar Name of the key path so far.
-	 * @param {!function} callback Callback to invoke with each child found.
-	 * @param {?*} traverseContext Used to pass information throughout the traversal
+	 * @param  children Children tree container.
+	 * @param  nameSoFar Name of the key path so far.
+	 * @param  callback Callback to invoke with each child found.
+	 * @param  traverseContext Used to pass information throughout the traversal
 	 * process.
 	 * @return  The number of children in this subtree.
 	 */
@@ -1568,9 +1568,9 @@
 	 * entire traversal. It can be used to store accumulations or anything else that
 	 * the callback might find relevant.
 	 *
-	 * @param {?*} children Children tree object.
-	 * @param {!function} callback To invoke upon traversing each child.
-	 * @param {?*} traverseContext Context for traversal.
+	 * @param  children Children tree object.
+	 * @param  callback To invoke upon traversing each child.
+	 * @param  traverseContext Context for traversal.
 	 * @return  The number of children in this subtree.
 	 */
 	function traverseAllChildren(children, callback, traverseContext) {
@@ -1618,7 +1618,7 @@
 	 *       ...
 	 *     }
 	 *
-	 * @param {?object} maybeIterable
+	 * @param  maybeIterable
 	 * @return
 	 */
 	function getIteratorFn(maybeIterable) {
@@ -1753,9 +1753,9 @@
 	 * shouldComponentUpdate, and this new state, props, and context will not yet be
 	 * assigned to this.
 	 *
-	 * @param {object|function} partialState Next partial state or function to
+	 * @param  partialState Next partial state or function to
 	 *        produce next partial state to be merged with current state.
-	 * @param {?function} callback Called after state is updated.
+	 * @param  callback Called after state is updated.
 	 * @final
 	 * @protected
 	 */
@@ -1777,7 +1777,7 @@
 	 * This will not invoke `shouldComponentUpdate`, but it will invoke
 	 * `componentWillUpdate` and `componentDidUpdate`.
 	 *
-	 * @param {?function} callback Called after update is complete.
+	 * @param  callback Called after update is complete.
 	 * @final
 	 * @protected
 	 */
@@ -1851,7 +1851,7 @@
 
 	  /**
 	   * Checks whether or not this composite component is mounted.
-	   * @param {ReactClass} publicInstance The instance we want to test.
+	   * @param  publicInstance The instance we want to test.
 	   * @return  True if mounted, false otherwise.
 	   * @protected
 	   * @final
@@ -1864,8 +1864,8 @@
 	   * Enqueue a callback that will be executed after all the pending updates
 	   * have processed.
 	   *
-	   * @param {ReactClass} publicInstance The instance to use as `this` context.
-	   * @param {?function} callback Called after state is updated.
+	   * @param  publicInstance The instance to use as `this` context.
+	   * @param  callback Called after state is updated.
 	   * @internal
 	   */
 	  enqueueCallback: function (publicInstance, callback) {},
@@ -1880,7 +1880,7 @@
 	   * This will not invoke `shouldComponentUpdate`, but it will invoke
 	   * `componentWillUpdate` and `componentDidUpdate`.
 	   *
-	   * @param {ReactClass} publicInstance The instance that should rerender.
+	   * @param  publicInstance The instance that should rerender.
 	   * @internal
 	   */
 	  enqueueForceUpdate: function (publicInstance) {
@@ -1894,8 +1894,8 @@
 	   * There is no guarantee that `this.state` will be immediately updated, so
 	   * accessing `this.state` after calling this method may return the old value.
 	   *
-	   * @param {ReactClass} publicInstance The instance that should rerender.
-	   * @param {object} completeState Next state.
+	   * @param  publicInstance The instance that should rerender.
+	   * @param  completeState Next state.
 	   * @internal
 	   */
 	  enqueueReplaceState: function (publicInstance, completeState) {
@@ -1908,8 +1908,8 @@
 	   * properties which is confusing. TODO: Expose pendingState or don't use it
 	   * during the merge.
 	   *
-	   * @param {ReactClass} publicInstance The instance that should rerender.
-	   * @param {object} partialState Next partial state to be merged with state.
+	   * @param  publicInstance The instance that should rerender.
+	   * @param  partialState Next partial state to be merged with state.
 	   * @internal
 	   */
 	  enqueueSetState: function (publicInstance, partialState) {
@@ -2166,7 +2166,7 @@
 	   *     return <div>Hello, {name}!</div>;
 	   *   }
 	   *
-	   * @return {ReactComponent}
+	   * @return
 	   * @nosideeffects
 	   * @required
 	   */
@@ -2190,7 +2190,7 @@
 	   * Use this as an opportunity to operate on the DOM when the component has
 	   * been mounted (initialized and rendered) for the first time.
 	   *
-	   * @param {DOMElement} rootNode DOM element representing the component.
+	   * @param  rootNode DOM element representing the component.
 	   * @optional
 	   */
 	  componentDidMount: SpecPolicy.DEFINE_MANY,
@@ -2211,7 +2211,7 @@
 	   * transition may cause a state change, but the opposite is not true. If you
 	   * need it, you are probably looking for `componentWillUpdate`.
 	   *
-	   * @param {object} nextProps
+	   * @param  nextProps
 	   * @optional
 	   */
 	  componentWillReceiveProps: SpecPolicy.DEFINE_MANY,
@@ -2230,9 +2230,9 @@
 	   *       !equal(nextContext, this.context);
 	   *   }
 	   *
-	   * @param {object} nextProps
-	   * @param {?object} nextState
-	   * @param {?object} nextContext
+	   * @param  nextProps
+	   * @param  nextState
+	   * @param  nextContext
 	   * @return  True if the component should update.
 	   * @optional
 	   */
@@ -2247,10 +2247,10 @@
 	   *
 	   * NOTE: You **cannot** use `this.setState()` in this method.
 	   *
-	   * @param {object} nextProps
-	   * @param {?object} nextState
-	   * @param {?object} nextContext
-	   * @param {ReactReconcileTransaction} transaction
+	   * @param  nextProps
+	   * @param  nextState
+	   * @param  nextContext
+	   * @param  transaction
 	   * @optional
 	   */
 	  componentWillUpdate: SpecPolicy.DEFINE_MANY,
@@ -2261,10 +2261,10 @@
 	   * Use this as an opportunity to operate on the DOM when the component has
 	   * been updated.
 	   *
-	   * @param {object} prevProps
-	   * @param {?object} prevState
-	   * @param {?object} prevContext
-	   * @param {DOMElement} rootNode DOM element representing the component.
+	   * @param  prevProps
+	   * @param  prevState
+	   * @param  prevContext
+	   * @param  rootNode DOM element representing the component.
 	   * @optional
 	   */
 	  componentDidUpdate: SpecPolicy.DEFINE_MANY,
@@ -2290,7 +2290,7 @@
 	   * By default, this implements React's rendering and reconciliation algorithm.
 	   * Sophisticated clients may wish to override this.
 	   *
-	   * @param {ReactReconcileTransaction} transaction
+	   * @param  transaction
 	   * @internal
 	   * @overridable
 	   */
@@ -2485,8 +2485,8 @@
 	/**
 	 * Merge two objects, but throw if both contain the same key.
 	 *
-	 * @param {object} one The first object, which is mutated.
-	 * @param {object} two The second object
+	 * @param  one The first object, which is mutated.
+	 * @param  two The second object
 	 * @return  one after it has been mutated to contain everything in two.
 	 */
 	function mergeIntoWithNoDuplicateKeys(one, two) {
@@ -2504,8 +2504,8 @@
 	/**
 	 * Creates a function that invokes two functions and merges their return values.
 	 *
-	 * @param {function} one Function to invoke first.
-	 * @param {function} two Function to invoke second.
+	 * @param  one Function to invoke first.
+	 * @param  two Function to invoke second.
 	 * @return  Function that invokes the two argument functions.
 	 * @private
 	 */
@@ -2528,8 +2528,8 @@
 	/**
 	 * Creates a function that invokes two functions and ignores their return vales.
 	 *
-	 * @param {function} one Function to invoke first.
-	 * @param {function} two Function to invoke second.
+	 * @param  one Function to invoke first.
+	 * @param  two Function to invoke second.
 	 * @return  Function that invokes the two argument functions.
 	 * @private
 	 */
@@ -2543,8 +2543,8 @@
 	/**
 	 * Binds a method to the component.
 	 *
-	 * @param {object} component Component whose method is going to be bound.
-	 * @param {function} method Method to be bound.
+	 * @param  component Component whose method is going to be bound.
+	 * @param  method Method to be bound.
 	 * @return  The bound method.
 	 */
 	function bindAutoBindMethod(component, method) {
@@ -2582,7 +2582,7 @@
 	/**
 	 * Binds all auto-bound methods in a component.
 	 *
-	 * @param {object} component Component whose method is going to be bound.
+	 * @param  component Component whose method is going to be bound.
 	 */
 	function bindAutoBindMethods(component) {
 	  var pairs = component.__reactAutoBindPairs;
@@ -2635,7 +2635,7 @@
 	   * Creates a composite component class given a class specification.
 	   * See https://facebook.github.io/react/docs/top-level-api.html#react.createclass
 	   *
-	   * @param {object} spec Class specification (which must define `render`).
+	   * @param  spec Class specification (which must define `render`).
 	   * @return  Component constructor function.
 	   * @public
 	   */
@@ -2791,7 +2791,7 @@
 	 *   Input:  {key1: val1, key2: val2}
 	 *   Output: {key1: key1, key2: key2}
 	 *
-	 * @param {object} obj
+	 * @param  obj
 	 * @return
 	 */
 	var keyMirror = function keyMirror(obj) {
@@ -3127,8 +3127,8 @@
 	 * will only be shown once.
 	 *
 	 * @internal
-	 * @param {ReactElement} element Element that requires a key.
-	 * @param {*} parentType element's parent's type.
+	 * @param  element Element that requires a key.
+	 * @param  parentType element's parent's type.
 	 */
 	function validateExplicitKey(element, parentType) {
 	  if (!element._store || element._store.validated || element.key != null) {
@@ -3162,8 +3162,8 @@
 	 * with valid key property.
 	 *
 	 * @internal
-	 * @param {ReactNode} node Statically passed child of any type.
-	 * @param {*} parentType node's parent's type.
+	 * @param  node Statically passed child of any type.
+	 * @param  parentType node's parent's type.
 	 */
 	function validateChildKeys(node, parentType) {
 	  if (typeof node !== 'object') {
@@ -3202,7 +3202,7 @@
 	 * Given an element, validate that its props follow the propTypes definition,
 	 * provided by the type.
 	 *
-	 * @param {ReactElement} element
+	 * @param  element
 	 */
 	function validatePropTypes(element) {
 	  var componentClass = element.type;
@@ -3679,12 +3679,12 @@
 	 * Assert that the values match with the type specs.
 	 * Error messages are memorized and will only be shown once.
 	 *
-	 * @param {object} typeSpecs Map of name to a ReactPropType
-	 * @param {object} values Runtime values that need to be type-checked
+	 * @param  typeSpecs Map of name to a ReactPropType
+	 * @param  values Runtime values that need to be type-checked
 	 * @param  location e.g. "prop", "context", "child context"
 	 * @param  componentName Name of the component for error messages.
-	 * @param {?object} element The React element that is being type-checked
-	 * @param {?number} debugID The React component instance that is being type-checked
+	 * @param  element The React element that is being type-checked
+	 * @param  debugID The React component instance that is being type-checked
 	 * @private
 	 */
 	function checkReactTypeSpec(typeSpecs, values, location, componentName, element, debugID) {
@@ -4239,8 +4239,8 @@
 	 * passed without a wrapper, but the purpose of this helper function is to
 	 * abstract away the particular structure of children.
 	 *
-	 * @param {?object} children Child collection structure.
-	 * @return {ReactElement} The first and only `ReactElement` contained in the
+	 * @param  children Child collection structure.
+	 * @return  The first and only `ReactElement` contained in the
 	 * structure.
 	 */
 	function onlyChild(children) {
@@ -4632,7 +4632,7 @@
 	   * DOMMutationMethods: Properties that require special mutation methods. If
 	   * `value` is undefined, the mutation method should unset the property.
 	   *
-	   * @param {object} domPropertyConfig the config as described above.
+	   * @param  domPropertyConfig the config as described above.
 	   */
 	  injectDOMPropertyConfig: function (domPropertyConfig) {
 	    var Injection = DOMPropertyInjection;
@@ -5022,7 +5022,7 @@
 	 * composition has begun?
 	 *
 	 * @param  topLevelType
-	 * @param {object} nativeEvent
+	 * @param  nativeEvent
 	 * @return
 	 */
 	function isFallbackCompositionStart(topLevelType, nativeEvent) {
@@ -5033,7 +5033,7 @@
 	 * Does our fallback mode think that this event is the end of composition?
 	 *
 	 * @param  topLevelType
-	 * @param {object} nativeEvent
+	 * @param  nativeEvent
 	 * @return
 	 */
 	function isFallbackCompositionEnd(topLevelType, nativeEvent) {
@@ -5061,7 +5061,7 @@
 	 * is available on the event object, use it. If not, this is a plain
 	 * composition event and we have nothing special to extract.
 	 *
-	 * @param {object} nativeEvent
+	 * @param  nativeEvent
 	 * @return
 	 */
 	function getDataFromCustomEvent(nativeEvent) {
@@ -5127,7 +5127,7 @@
 
 	/**
 	 * @param  topLevelType Record from `EventConstants`.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @return  The string corresponding to this `beforeInput` event.
 	 */
 	function getNativeBeforeInputChars(topLevelType, nativeEvent) {
@@ -5181,7 +5181,7 @@
 	 * appropriate string to use for SyntheticInputEvent.
 	 *
 	 * @param  topLevelType Record from `EventConstants`.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @return  The fallback string for this `beforeInput` event.
 	 */
 	function getFallbackBeforeInputChars(topLevelType, nativeEvent) {
@@ -5489,7 +5489,7 @@
 	/**
 	 * Accumulates dispatches on an `SyntheticEvent`, but only for the
 	 * `dispatchMarker`.
-	 * @param {SyntheticEvent} event
+	 * @param  event
 	 */
 	function accumulateDirectDispatchesSingle(event) {
 	  if (event && event.dispatchConfig.registrationName) {
@@ -5575,8 +5575,8 @@
 	/**
 	 * Dispatches an event and releases it back into the pool, unless persistent.
 	 *
-	 * @param {?object} event Synthetic event to be dispatched.
-	 * @param {boolean} simulated If the event is simulated (changes exn behavior)
+	 * @param  event Synthetic event to be dispatched.
+	 * @param  simulated If the event is simulated (changes exn behavior)
 	 * @private
 	 */
 	var executeDispatchesAndRelease = function (event, simulated) {
@@ -5631,13 +5631,13 @@
 	  injection: {
 
 	    /**
-	     * @param {array} InjectedEventPluginOrder
+	     * @param  InjectedEventPluginOrder
 	     * @public
 	     */
 	    injectEventPluginOrder: EventPluginRegistry.injectEventPluginOrder,
 
 	    /**
-	     * @param {object} injectedNamesToPlugins Map from names to plugin modules.
+	     * @param  injectedNamesToPlugins Map from names to plugin modules.
 	     */
 	    injectEventPluginsByName: EventPluginRegistry.injectEventPluginsByName
 
@@ -5646,9 +5646,9 @@
 	  /**
 	   * Stores `listener` at `listenerBank[registrationName][key]`. Is idempotent.
 	   *
-	   * @param {object} inst The instance, which is the source of events.
+	   * @param  inst The instance, which is the source of events.
 	   * @param  registrationName Name of listener (e.g. `onClick`).
-	   * @param {function} listener The callback to store.
+	   * @param  listener The callback to store.
 	   */
 	  putListener: function (inst, registrationName, listener) {
 	    !(typeof listener === 'function') ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Expected %s listener to be a function, instead got type %s', registrationName, typeof listener) : _prodInvariant('94', registrationName, typeof listener) : void 0;
@@ -5664,7 +5664,7 @@
 	  },
 
 	  /**
-	   * @param {object} inst The instance, which is the source of events.
+	   * @param  inst The instance, which is the source of events.
 	   * @param  registrationName Name of listener (e.g. `onClick`).
 	   * @return  The stored callback.
 	   */
@@ -5677,7 +5677,7 @@
 	  /**
 	   * Deletes a listener from the registration bank.
 	   *
-	   * @param {object} inst The instance, which is the source of events.
+	   * @param  inst The instance, which is the source of events.
 	   * @param  registrationName Name of listener (e.g. `onClick`).
 	   */
 	  deleteListener: function (inst, registrationName) {
@@ -5697,7 +5697,7 @@
 	  /**
 	   * Deletes all listeners for the DOM element with the supplied ID.
 	   *
-	   * @param {object} inst The instance, which is the source of events.
+	   * @param  inst The instance, which is the source of events.
 	   */
 	  deleteAllListeners: function (inst) {
 	    var key = getDictionaryKey(inst);
@@ -5746,7 +5746,7 @@
 	   * Enqueues a synthetic event that should be dispatched when
 	   * `processEventQueue` is invoked.
 	   *
-	   * @param {*} events An accumulation of synthetic events.
+	   * @param  events An accumulation of synthetic events.
 	   * @internal
 	   */
 	  enqueueEvents: function (events) {
@@ -5851,8 +5851,8 @@
 	/**
 	 * Publishes an event so that it can be dispatched by the supplied plugin.
 	 *
-	 * @param {object} dispatchConfig Dispatch configuration for the event.
-	 * @param {object} PluginModule Plugin publishing the event.
+	 * @param  dispatchConfig Dispatch configuration for the event.
+	 * @param  PluginModule Plugin publishing the event.
 	 * @return  True if the event was successfully published.
 	 * @private
 	 */
@@ -5881,7 +5881,7 @@
 	 * can be used with `EventPluginHub.putListener` to register listeners.
 	 *
 	 * @param  registrationName Registration name to add.
-	 * @param {object} PluginModule Plugin publishing the event.
+	 * @param  PluginModule Plugin publishing the event.
 	 * @private
 	 */
 	function publishRegistrationName(registrationName, PluginModule, eventName) {
@@ -5939,7 +5939,7 @@
 	   * to be decoupled from injection of the actual plugins so that ordering is
 	   * always deterministic regardless of packaging, on-the-fly injection, etc.
 	   *
-	   * @param {array} InjectedEventPluginOrder
+	   * @param  InjectedEventPluginOrder
 	   * @internal
 	   * @see {EventPluginHub.injection.injectEventPluginOrder}
 	   */
@@ -5956,7 +5956,7 @@
 	   *
 	   * Plugins can be injected as part of page initialization or on-the-fly.
 	   *
-	   * @param {object} injectedNamesToPlugins Map from names to plugin modules.
+	   * @param  injectedNamesToPlugins Map from names to plugin modules.
 	   * @internal
 	   * @see {EventPluginHub.injection.injectEventPluginsByName}
 	   */
@@ -5981,7 +5981,7 @@
 	  /**
 	   * Looks up the plugin for the supplied event.
 	   *
-	   * @param {object} event A synthetic event.
+	   * @param  event A synthetic event.
 	   * @return  The plugin that created the supplied event.
 	   * @internal
 	   */
@@ -6125,10 +6125,10 @@
 
 	/**
 	 * Dispatch the event to the listener.
-	 * @param {SyntheticEvent} event SyntheticEvent to handle
-	 * @param {boolean} simulated If the event is simulated (changes exn behavior)
-	 * @param {function} listener Application-level callback
-	 * @param {*} inst Internal component instance
+	 * @param  event SyntheticEvent to handle
+	 * @param  simulated If the event is simulated (changes exn behavior)
+	 * @param  listener Application-level callback
+	 * @param  inst Internal component instance
 	 */
 	function executeDispatch(event, simulated, listener, inst) {
 	  var type = event.type || 'unknown-event';
@@ -6231,7 +6231,7 @@
 	}
 
 	/**
-	 * @param {SyntheticEvent} event
+	 * @param  event
 	 * @return  True iff number of dispatches accumulated is greater than 0.
 	 */
 	function hasDispatches(event) {
@@ -6301,10 +6301,10 @@
 	/**
 	 * Call a function while guarding against errors that happens within it.
 	 *
-	 * @param {?String} name of the guard to use for logging or debugging
-	 * @param {Function} func The function to invoke
-	 * @param {*} a First argument
-	 * @param {*} b Second argument
+	 * @param  name of the guard to use for logging or debugging
+	 * @param  func The function to invoke
+	 * @param  a First argument
+	 * @param  b Second argument
 	 */
 	function invokeGuardedCallback(name, func, a, b) {
 	  try {
@@ -6393,7 +6393,7 @@
 	 *
 	 * This API should be sparingly used. Try `accumulate` for something cleaner.
 	 *
-	 * @return {*|array<*>} An accumulation of items.
+	 * @return  An accumulation of items.
 	 */
 
 	function accumulateInto(current, next) {
@@ -6444,7 +6444,7 @@
 	'use strict';
 
 	/**
-	 * @param {array} arr an "accumulation" of items which is either an Array or
+	 * @param  arr an "accumulation" of items which is either an Array or
 	 * a single item. Useful when paired with the `accumulate` module. This is a
 	 * simple utility that allows us to reason about a collection of items, but
 	 * handling the case when there is exactly one item (and we do not need to
@@ -6533,7 +6533,7 @@
 	 * browser may natively replace the target node during composition, we can
 	 * use its position to find its replacement.
 	 *
-	 * @param {DOMEventTarget} root
+	 * @param  root
 	 */
 	function FallbackCompositionState(root) {
 	  this._root = root;
@@ -6667,9 +6667,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
 	function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -6741,10 +6741,10 @@
 	 * normalizing browser quirks. Subclasses do not necessarily have to implement a
 	 * DOM interface; custom application-specific events can also subclass this.
 	 *
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
-	 * @param {*} targetInst Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
-	 * @param {DOMEventTarget} nativeEventTarget Target node.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
+	 * @param  targetInst Marker identifying the event target.
+	 * @param  nativeEvent Native browser event.
+	 * @param  nativeEventTarget Target node.
 	 */
 	function SyntheticEvent(dispatchConfig, targetInst, nativeEvent, nativeEventTarget) {
 	  if (process.env.NODE_ENV !== 'production') {
@@ -6895,8 +6895,8 @@
 	/**
 	 * Helper to reduce boilerplate when creating subclasses.
 	 *
-	 * @param {function} Class
-	 * @param {?object} Interface
+	 * @param  Class
+	 * @param  Interface
 	 */
 	SyntheticEvent.augmentClass = function (Class, Interface) {
 	  var Super = this;
@@ -6922,7 +6922,7 @@
 	/**
 	  * Helper to nullify syntheticEvent instance properties when destructing
 	  *
-	  * @param {object} SyntheticEvent
+	  * @param  SyntheticEvent
 	  * @param  propName
 	  * @return  defineProperty object
 	  */
@@ -6983,9 +6983,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
 	function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -7433,8 +7433,8 @@
 	/**
 	 * Array comparator for ReactComponents by mount ordering.
 	 *
-	 * @param {ReactComponent} c1 first component you're comparing
-	 * @param {ReactComponent} c2 second component you're comparing
+	 * @param  c1 first component you're comparing
+	 * @param  c2 second component you're comparing
 	 * @return  Return value usable by Array.prototype.sort().
 	 */
 	function mountOrderComparator(c1, c2) {
@@ -7628,8 +7628,8 @@
 	  /**
 	   * Enqueues a callback to be invoked when `notifyAll` is invoked.
 	   *
-	   * @param {function} callback Invoked when `notifyAll` is invoked.
-	   * @param {?object} context Context to call `callback` with.
+	   * @param  callback Invoked when `notifyAll` is invoked.
+	   * @param  context Context to call `callback` with.
 	   * @internal
 	   */
 	  enqueue: function (callback, context) {
@@ -7757,10 +7757,10 @@
 	  /**
 	   * Initializes the component, renders markup, and registers event listeners.
 	   *
-	   * @param {ReactComponent} internalInstance
-	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
-	   * @param {?object} the containing host component instance
-	   * @param {?object} info about the host container
+	   * @param  internalInstance
+	   * @param  transaction
+	   * @param  the containing host component instance
+	   * @param  info about the host container
 	   * @return  Rendered markup to be inserted into the DOM.
 	   * @final
 	   * @internal
@@ -7816,10 +7816,10 @@
 	  /**
 	   * Update a component using a new element.
 	   *
-	   * @param {ReactComponent} internalInstance
-	   * @param {ReactElement} nextElement
-	   * @param {ReactReconcileTransaction} transaction
-	   * @param {object} context
+	   * @param  internalInstance
+	   * @param  nextElement
+	   * @param  transaction
+	   * @param  context
 	   * @internal
 	   */
 	  receiveComponent: function (internalInstance, nextElement, transaction, context) {
@@ -7867,8 +7867,8 @@
 	  /**
 	   * Flush any dirty changes in a component.
 	   *
-	   * @param {ReactComponent} internalInstance
-	   * @param {ReactReconcileTransaction} transaction
+	   * @param  internalInstance
+	   * @param  transaction
 	   * @internal
 	   */
 	  performUpdateIfNecessary: function (internalInstance, transaction, updateBatchNumber) {
@@ -8035,7 +8035,7 @@
 	var ReactOwner = {
 
 	  /**
-	   * @param {?object} object
+	   * @param  object
 	   * @return  True if `object` is a valid owner.
 	   * @final
 	   */
@@ -8046,9 +8046,9 @@
 	  /**
 	   * Adds a component by ref to an owner component.
 	   *
-	   * @param {ReactComponent} component Component to reference.
+	   * @param  component Component to reference.
 	   * @param  ref Name by which to refer to the component.
-	   * @param {ReactOwner} owner Component on which to record the ref.
+	   * @param  owner Component on which to record the ref.
 	   * @final
 	   * @internal
 	   */
@@ -8060,9 +8060,9 @@
 	  /**
 	   * Removes a component by ref from an owner component.
 	   *
-	   * @param {ReactComponent} component Component to dereference.
+	   * @param  component Component to dereference.
 	   * @param  ref Name of the ref to remove.
-	   * @param {ReactOwner} owner Component on which the ref is recorded.
+	   * @param  owner Component on which the ref is recorded.
 	   * @final
 	   * @internal
 	   */
@@ -8700,9 +8700,9 @@
 	 * - and a `close` method that accepts the precomputation. `close` is invoked
 	 *   when the wrapped process is completed, or has failed.
 	 *
-	 * @param {Array<TransactionalWrapper>} transactionWrapper Wrapper modules
+	 * @param  transactionWrapper Wrapper modules
 	 * that implement `initialize` and `close`.
-	 * @return {Transaction} Single transaction for reuse in thread.
+	 * @return  Single transaction for reuse in thread.
 	 *
 	 * @class Transaction
 	 */
@@ -8728,7 +8728,7 @@
 
 	  /**
 	   * @abstract
-	   * @return {Array<TransactionWrapper>} Array of transaction wrappers.
+	   * @return  Array of transaction wrappers.
 	   */
 	  getTransactionWrappers: null,
 
@@ -8742,14 +8742,14 @@
 	   * need to be safety checked. The optional arguments helps prevent the need
 	   * to bind in many cases.
 	   *
-	   * @param {function} method Member of scope to call.
-	   * @param {Object} scope Scope to invoke from.
-	   * @param {Object?=} a Argument to pass to the method.
-	   * @param {Object?=} b Argument to pass to the method.
-	   * @param {Object?=} c Argument to pass to the method.
-	   * @param {Object?=} d Argument to pass to the method.
-	   * @param {Object?=} e Argument to pass to the method.
-	   * @param {Object?=} f Argument to pass to the method.
+	   * @param  method Member of scope to call.
+	   * @param  scope Scope to invoke from.
+	   * @param  a Argument to pass to the method.
+	   * @param  b Argument to pass to the method.
+	   * @param  c Argument to pass to the method.
+	   * @param  d Argument to pass to the method.
+	   * @param  e Argument to pass to the method.
+	   * @param  f Argument to pass to the method.
 	   *
 	   * @return  Return value from `method`.
 	   */
@@ -8884,8 +8884,8 @@
 	 * Gets the target node from a native browser event by accounting for
 	 * inconsistencies in browser DOM APIs.
 	 *
-	 * @param {object} nativeEvent Native browser event.
-	 * @return {DOMEventTarget} Target node.
+	 * @param  nativeEvent Native browser event.
+	 * @return  Target node.
 	 */
 
 	function getEventTarget(nativeEvent) {
@@ -8939,7 +8939,7 @@
 	 * Borrows from Modernizr.
 	 *
 	 * @param  eventNameSuffix Event name, e.g. "click".
-	 * @param {?boolean} capture Check if the capture phase is supported.
+	 * @param  capture Check if the capture phase is supported.
 	 * @return  True if the event is supported.
 	 * @internal
 	 * @license Modernizr 3.0.0pre (Custom Build) | MIT
@@ -9230,9 +9230,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
 	function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -9294,9 +9294,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticEvent}
 	 */
 	function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -9678,9 +9678,9 @@
 	/**
 	 * Inserts `childNode` as a child of `parentNode` at the `index`.
 	 *
-	 * @param {DOMElement} parentNode Parent node in which to insert.
-	 * @param {DOMElement} childNode Child node to insert.
-	 * @param {number} index Index at which to insert the child.
+	 * @param  parentNode Parent node in which to insert.
+	 * @param  childNode Child node to insert.
+	 * @param  index Index at which to insert the child.
 	 * @internal
 	 */
 	var insertChildAt = createMicrosoftUnsafeLocalFunction(function (parentNode, childNode, referenceNode) {
@@ -9789,7 +9789,7 @@
 	   * Updates a component's children by processing a series of updates. The
 	   * update configurations are each expected to have a `parentNode` property.
 	   *
-	   * @param {array<object>} updates List of update configurations.
+	   * @param  updates List of update configurations.
 	   * @internal
 	   */
 	  processUpdates: function (parentNode, updates) {
@@ -10019,7 +10019,7 @@
 	 * Set the innerHTML property of a node, ensuring that whitespace is preserved
 	 * even in IE8.
 	 *
-	 * @param {DOMElement} node
+	 * @param  node
 	 * @param  html
 	 * @internal
 	 */
@@ -10154,7 +10154,7 @@
 	 * issues, inserts <br> instead of the literal newline chars. innerHTML behaves
 	 * as it should.
 	 *
-	 * @param {DOMElement} node
+	 * @param  node
 	 * @param  text
 	 * @internal
 	 */
@@ -10293,7 +10293,7 @@
 	/**
 	 * Escapes text to prevent scripting attacks.
 	 *
-	 * @param {*} text Text value to escape.
+	 * @param  text Text value to escape.
 	 * @return  An escaped string.
 	 */
 	function escapeTextContentForBrowser(text) {
@@ -10340,7 +10340,7 @@
 	   * Replaces a node with a string of markup at its current position within its
 	   * parent. The markup must render into a single root node.
 	   *
-	   * @param {DOMElement} oldChild Child node to replace.
+	   * @param  oldChild Child node to replace.
 	   * @param  markup Markup to render in place of the child node.
 	   * @internal
 	   */
@@ -10415,8 +10415,8 @@
 	 * an exception is thrown if any <script> elements are rendered.
 	 *
 	 * @param  markup A string of valid HTML markup.
-	 * @param {?function} handleScript Invoked once for each rendered <script>.
-	 * @return {array<DOMElement|DOMTextNode>} An array of rendered nodes.
+	 * @param  handleScript Invoked once for each rendered <script>.
+	 * @return  An array of rendered nodes.
 	 */
 	function createNodesFromMarkup(markup, handleScript) {
 	  var node = dummyNode;
@@ -10476,8 +10476,8 @@
 	 * This API assumes the caller knows the contents of the data type. For less
 	 * well defined inputs use createArrayFromMixed.
 	 *
-	 * @param {object|function|filelist} obj
-	 * @return {array}
+	 * @param  obj
+	 * @return
 	 */
 	function toArray(obj) {
 	  var length = obj.length;
@@ -10524,7 +10524,7 @@
 	 *
 	 * It will return false for other array-like objects like Filelist.
 	 *
-	 * @param {*} obj
+	 * @param  obj
 	 * @return
 	 */
 	function hasArrayNature(obj) {
@@ -10567,8 +10567,8 @@
 	 * If you need to convert an array-like object, like `arguments`, into an array
 	 * use toArray instead.
 	 *
-	 * @param {*} obj
-	 * @return {array}
+	 * @param  obj
+	 * @return
 	 */
 	function createArrayFromMixed(obj) {
 	  if (!hasArrayNature(obj)) {
@@ -10662,7 +10662,7 @@
 	 * NOTE: This lazily detects which wraps are necessary for the current browser.
 	 *
 	 * @param  nodeName Lowercase `nodeName`.
-	 * @return {?array} Markup wrap configuration, if applicable.
+	 * @return  Markup wrap configuration, if applicable.
 	 */
 	function getMarkupWrap(nodeName) {
 	  !!!dummyNode ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Markup wrapping node not initialized') : invariant(false) : void 0;
@@ -10748,7 +10748,7 @@
 	  /**
 	   * Updates a component's children by processing a series of updates.
 	   *
-	   * @param {array<object>} updates List of update configurations.
+	   * @param  updates List of update configurations.
 	   * @internal
 	   */
 	  dangerouslyProcessChildrenUpdates: function (parentInst, updates) {
@@ -10897,8 +10897,8 @@
 	}
 
 	/**
-	 * @param {object} component
-	 * @param {?object} props
+	 * @param  component
+	 * @param  props
 	 */
 	function assertValidProps(component, props) {
 	  if (!props) {
@@ -11164,10 +11164,10 @@
 	   * is not idempotent.
 	   *
 	   * @internal
-	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
-	   * @param {?ReactDOMComponent} the parent component instance
-	   * @param {?object} info about the host container
-	   * @param {object} context
+	   * @param  transaction
+	   * @param  the parent component instance
+	   * @param  info about the host container
+	   * @param  context
 	   * @return  The computed markup.
 	   */
 	  mountComponent: function (transaction, hostParent, hostContainerInfo, context) {
@@ -11338,8 +11338,8 @@
 	   * @see http://jsperf.com/obj-vs-arr-iteration
 	   *
 	   * @private
-	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
-	   * @param {object} props
+	   * @param  transaction
+	   * @param  props
 	   * @return  Markup of opening tag.
 	   */
 	  _createOpenTagMarkupAndPutListeners: function (transaction, props) {
@@ -11399,9 +11399,9 @@
 	   * Creates markup for the content between the tags.
 	   *
 	   * @private
-	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
-	   * @param {object} props
-	   * @param {object} context
+	   * @param  transaction
+	   * @param  props
+	   * @param  context
 	   * @return  Content markup.
 	   */
 	  _createContentMarkup: function (transaction, props, context) {
@@ -11473,9 +11473,9 @@
 	   * Receives a next element and updates the component.
 	   *
 	   * @internal
-	   * @param {ReactElement} nextElement
-	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
-	   * @param {object} context
+	   * @param  nextElement
+	   * @param  transaction
+	   * @param  context
 	   */
 	  receiveComponent: function (nextElement, transaction, context) {
 	    var prevElement = this._currentElement;
@@ -11487,9 +11487,9 @@
 	   * Updates a DOM component after it has already been allocated and
 	   * attached to the DOM. Reconciles the root DOM node, then recurses.
 	   *
-	   * @param {ReactReconcileTransaction} transaction
-	   * @param {ReactElement} prevElement
-	   * @param {ReactElement} nextElement
+	   * @param  transaction
+	   * @param  prevElement
+	   * @param  nextElement
 	   * @internal
 	   * @overridable
 	   */
@@ -11554,9 +11554,9 @@
 	   * TODO: Benchmark areas that can be improved with caching.
 	   *
 	   * @private
-	   * @param {object} lastProps
-	   * @param {object} nextProps
-	   * @param {?DOMElement} node
+	   * @param  lastProps
+	   * @param  nextProps
+	   * @param  node
 	   */
 	  _updateDOMProperties: function (lastProps, nextProps, transaction) {
 	    var propKey;
@@ -11656,10 +11656,10 @@
 	   * Reconciles the children with the various properties that affect the
 	   * children content.
 	   *
-	   * @param {object} lastProps
-	   * @param {object} nextProps
-	   * @param {ReactReconcileTransaction} transaction
-	   * @param {object} context
+	   * @param  lastProps
+	   * @param  nextProps
+	   * @param  transaction
+	   * @param  context
 	   */
 	  _updateDOMChildren: function (lastProps, nextProps, transaction, context) {
 	    var lastContent = CONTENT_TYPES[typeof lastProps.children] ? lastProps.children : null;
@@ -11817,7 +11817,7 @@
 	'use strict';
 
 	/**
-	 * @param {DOMElement} node input/textarea to focus
+	 * @param  node input/textarea to focus
 	 */
 
 	function focusNode(node) {
@@ -11937,8 +11937,8 @@
 
 	  /**
 	   * @param  name
-	   * @param {*} value
-	   * @param {ReactDOMComponent} component
+	   * @param  value
+	   * @param  component
 	   */
 	  var warnValidStyle = function (name, value, component) {
 	    var owner;
@@ -11973,8 +11973,8 @@
 	   * Undefined values are ignored so that declarative programming is easier.
 	   * The result should be HTML-escaped before insertion into the DOM.
 	   *
-	   * @param {object} styles
-	   * @param {ReactDOMComponent} component
+	   * @param  styles
+	   * @param  component
 	   * @return
 	   */
 	  createMarkupForStyles: function (styles, component) {
@@ -11999,9 +11999,9 @@
 	   * Sets the value for multiple styles on a node.  If a value is specified as
 	   * '' (empty string), the corresponding style property will be unset.
 	   *
-	   * @param {DOMElement} node
-	   * @param {object} styles
-	   * @param {ReactDOMComponent} component
+	   * @param  node
+	   * @param  styles
+	   * @param  component
 	   */
 	  setValueForStyles: function (node, styles, component) {
 	    if (process.env.NODE_ENV !== 'production') {
@@ -12304,8 +12304,8 @@
 	 * in `CSSProperty.isUnitlessNumber`.
 	 *
 	 * @param  name CSS property name such as `topMargin`.
-	 * @param {*} value CSS property value such as `10px`.
-	 * @param {ReactDOMComponent} component
+	 * @param  value CSS property value such as `10px`.
+	 * @param  component
 	 * @return  Normalized style value with dimensions applied.
 	 */
 	function dangerousStyleValue(name, value, component) {
@@ -12553,7 +12553,7 @@
 	   * Creates markup for a property.
 	   *
 	   * @param  name
-	   * @param {*} value
+	   * @param  value
 	   * @return  Markup string, or null if the property was invalid.
 	   */
 	  createMarkupForProperty: function (name, value) {
@@ -12580,7 +12580,7 @@
 	   * Creates markup for a custom property.
 	   *
 	   * @param  name
-	   * @param {*} value
+	   * @param  value
 	   * @return  Markup string, or empty string if the property was invalid.
 	   */
 	  createMarkupForCustomAttribute: function (name, value) {
@@ -12593,9 +12593,9 @@
 	  /**
 	   * Sets the value for a property on a node.
 	   *
-	   * @param {DOMElement} node
+	   * @param  node
 	   * @param  name
-	   * @param {*} value
+	   * @param  value
 	   */
 	  setValueForProperty: function (node, name, value) {
 	    var propertyInfo = DOMProperty.properties.hasOwnProperty(name) ? DOMProperty.properties[name] : null;
@@ -12655,7 +12655,7 @@
 	  /**
 	   * Deletes an attributes from a node.
 	   *
-	   * @param {DOMElement} node
+	   * @param  node
 	   * @param  name
 	   */
 	  deleteValueForAttribute: function (node, name) {
@@ -12668,7 +12668,7 @@
 	  /**
 	   * Deletes the value for a property on a node.
 	   *
-	   * @param {DOMElement} node
+	   * @param  node
 	   * @param  name
 	   */
 	  deleteValueForProperty: function (node, name) {
@@ -12723,7 +12723,7 @@
 	/**
 	 * Escapes attribute value to prevent scripting attacks.
 	 *
-	 * @param {*} value Value to escape.
+	 * @param  value Value to escape.
 	 * @return  An escaped string.
 	 */
 	function quoteAttributeValueForBrowser(value) {
@@ -12923,7 +12923,7 @@
 
 	  injection: {
 	    /**
-	     * @param {object} ReactEventListener
+	     * @param  ReactEventListener
 	     */
 	    injectReactEventListener: function (ReactEventListener) {
 	      ReactEventListener.setHandleTopLevel(ReactBrowserEventEmitter.handleTopLevel);
@@ -12934,7 +12934,7 @@
 	  /**
 	   * Sets whether or not any created callbacks should be enabled.
 	   *
-	   * @param {boolean} enabled True if callbacks should be enabled.
+	   * @param  enabled True if callbacks should be enabled.
 	   */
 	  setEnabled: function (enabled) {
 	    if (ReactBrowserEventEmitter.ReactEventListener) {
@@ -12968,7 +12968,7 @@
 	   * they bubble to document.
 	   *
 	   * @param  registrationName Name of listener (e.g. `onClick`).
-	   * @param {object} contentDocumentHandle Document which owns the container
+	   * @param  contentDocumentHandle Document which owns the container
 	   */
 	  listenTo: function (registrationName, contentDocumentHandle) {
 	    var mountAt = contentDocumentHandle;
@@ -13668,7 +13668,7 @@
 	  },
 
 	  /**
-	   * @param {object} inputProps Props for form component
+	   * @param  inputProps Props for form component
 	   * @return  current value of the input either from value prop or link.
 	   */
 	  getValue: function (inputProps) {
@@ -13680,7 +13680,7 @@
 	  },
 
 	  /**
-	   * @param {object} inputProps Props for form component
+	   * @param  inputProps Props for form component
 	   * @return  current checked status of the input either from checked prop
 	   *             or link.
 	   */
@@ -13693,8 +13693,8 @@
 	  },
 
 	  /**
-	   * @param {object} inputProps Props for form component
-	   * @param {SyntheticEvent} event change event to handle
+	   * @param  inputProps Props for form component
+	   * @param  event change event to handle
 	   */
 	  executeOnChange: function (inputProps, event) {
 	    if (inputProps.valueLink) {
@@ -13923,9 +13923,9 @@
 	}
 
 	/**
-	 * @param {ReactDOMComponent} inst
-	 * @param {boolean} multiple
-	 * @param {*} propValue A stringable (with `multiple`, a list of stringables).
+	 * @param  inst
+	 * @param  multiple
+	 * @param  propValue A stringable (with `multiple`, a list of stringables).
 	 * @private
 	 */
 	function updateOptions(inst, multiple, propValue) {
@@ -14245,7 +14245,7 @@
 	 * Make an update for markup to be rendered and inserted at a supplied index.
 	 *
 	 * @param  markup Markup that renders into an element.
-	 * @param {number} toIndex Destination index.
+	 * @param  toIndex Destination index.
 	 * @private
 	 */
 	function makeInsertMarkup(markup, afterNode, toIndex) {
@@ -14263,8 +14263,8 @@
 	/**
 	 * Make an update for moving an existing element to another index.
 	 *
-	 * @param {number} fromIndex Source index of the existing element.
-	 * @param {number} toIndex Destination index of the element.
+	 * @param  fromIndex Source index of the existing element.
+	 * @param  toIndex Destination index of the element.
 	 * @private
 	 */
 	function makeMove(child, afterNode, toIndex) {
@@ -14282,7 +14282,7 @@
 	/**
 	 * Make an update for removing an element at an index.
 	 *
-	 * @param {number} fromIndex Index of the element to remove.
+	 * @param  fromIndex Index of the element to remove.
 	 * @private
 	 */
 	function makeRemove(child, node) {
@@ -14435,8 +14435,8 @@
 	     * Generates a "mount image" for each of the supplied children. In the case
 	     * of `ReactDOMComponent`, a mount image is a string of markup.
 	     *
-	     * @param {?object} nestedChildren Nested child maps.
-	     * @return {array} An array of mounted representations.
+	     * @param  nestedChildren Nested child maps.
+	     * @return  An array of mounted representations.
 	     * @internal
 	     */
 	    mountChildren: function (nestedChildren, transaction, context) {
@@ -14507,8 +14507,8 @@
 	    /**
 	     * Updates the rendered children with new children.
 	     *
-	     * @param {?object} nextNestedChildrenElements Nested child element maps.
-	     * @param {ReactReconcileTransaction} transaction
+	     * @param  nextNestedChildrenElements Nested child element maps.
+	     * @param  transaction
 	     * @internal
 	     */
 	    updateChildren: function (nextNestedChildrenElements, transaction, context) {
@@ -14517,8 +14517,8 @@
 	    },
 
 	    /**
-	     * @param {?object} nextNestedChildrenElements Nested child element maps.
-	     * @param {ReactReconcileTransaction} transaction
+	     * @param  nextNestedChildrenElements Nested child element maps.
+	     * @param  transaction
 	     * @final
 	     * @protected
 	     */
@@ -14594,9 +14594,9 @@
 	    /**
 	     * Moves a child component to the supplied index.
 	     *
-	     * @param {ReactComponent} child Component to move.
-	     * @param {number} toIndex Destination index of the element.
-	     * @param {number} lastIndex Last index visited of the siblings of `child`.
+	     * @param  child Component to move.
+	     * @param  toIndex Destination index of the element.
+	     * @param  lastIndex Last index visited of the siblings of `child`.
 	     * @protected
 	     */
 	    moveChild: function (child, afterNode, toIndex, lastIndex) {
@@ -14611,7 +14611,7 @@
 	    /**
 	     * Creates a child component.
 	     *
-	     * @param {ReactComponent} child Component to create.
+	     * @param  child Component to create.
 	     * @param  mountImage Markup to insert.
 	     * @protected
 	     */
@@ -14622,7 +14622,7 @@
 	    /**
 	     * Removes a child component.
 	     *
-	     * @param {ReactComponent} child Child to remove.
+	     * @param  child Child to remove.
 	     * @protected
 	     */
 	    removeChild: function (child, node) {
@@ -14634,10 +14634,10 @@
 	     *
 	     * NOTE: This is part of `updateChildren` and is here for readability.
 	     *
-	     * @param {ReactComponent} child Component to mount.
+	     * @param  child Component to mount.
 	     * @param  name Name of the child.
-	     * @param {number} index Index at which to insert the child.
-	     * @param {ReactReconcileTransaction} transaction
+	     * @param  index Index at which to insert the child.
+	     * @param  transaction
 	     * @private
 	     */
 	    _mountChildAtIndex: function (child, mountImage, afterNode, index, transaction, context) {
@@ -14650,7 +14650,7 @@
 	     *
 	     * NOTE: This is part of `updateChildren` and is here for readability.
 	     *
-	     * @param {ReactComponent} child Component to unmount.
+	     * @param  child Component to unmount.
 	     * @private
 	     */
 	    _unmountChild: function (child, node) {
@@ -14832,7 +14832,7 @@
 	   * Generates a "mount image" for each of the supplied children. In the case
 	   * of `ReactDOMComponent`, a mount image is a string of markup.
 	   *
-	   * @param {?object} nestedChildNodes Nested child maps.
+	   * @param  nestedChildNodes Nested child maps.
 	   * @return  A set of child instances.
 	   * @internal
 	   */
@@ -14856,10 +14856,10 @@
 	  /**
 	   * Updates the rendered children and returns a new set of children.
 	   *
-	   * @param {?object} prevChildren Previously initialized set of children.
-	   * @param {?object} nextChildren Flat child element maps.
-	   * @param {ReactReconcileTransaction} transaction
-	   * @param {object} context
+	   * @param  prevChildren Previously initialized set of children.
+	   * @param  nextChildren Flat child element maps.
+	   * @param  transaction
+	   * @param  context
 	   * @return  A new set of child instances.
 	   * @internal
 	   */
@@ -14913,7 +14913,7 @@
 	   * Unmounts all rendered children. This should be used to clean up children
 	   * when this component is unmounted.
 	   *
-	   * @param {?object} renderedChildren Previously initialized set of children.
+	   * @param  renderedChildren Previously initialized set of children.
 	   * @internal
 	   */
 	  unmountChildren: function (renderedChildren, safely) {
@@ -14979,7 +14979,7 @@
 	 * Check if the type reference is a known internal type. I.e. not a user
 	 * provided composite type.
 	 *
-	 * @param {function} type
+	 * @param  type
 	 * @return  Returns true if this is a valid internal type.
 	 */
 	function isInternalComponentType(type) {
@@ -14991,8 +14991,8 @@
 	/**
 	 * Given a ReactNode, create an instance that will actually be mounted.
 	 *
-	 * @param {ReactNode} node
-	 * @param {boolean} shouldHaveDebugID
+	 * @param  node
+	 * @param  shouldHaveDebugID
 	 * @return  A new instance of the element's constructor.
 	 * @protected
 	 */
@@ -15181,7 +15181,7 @@
 	  /**
 	   * Base constructor for all composite component.
 	   *
-	   * @param {ReactElement} element
+	   * @param  element
 	   * @final
 	   * @internal
 	   */
@@ -15220,10 +15220,10 @@
 	  /**
 	   * Initializes the component, renders markup, and registers event listeners.
 	   *
-	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
-	   * @param {?object} hostParent
-	   * @param {?object} hostContainerInfo
-	   * @param {?object} context
+	   * @param  transaction
+	   * @param  hostParent
+	   * @param  hostContainerInfo
+	   * @param  context
 	   * @return  Rendered markup to be inserted into the DOM.
 	   * @final
 	   * @internal
@@ -15512,7 +15512,7 @@
 	   * Filters the context object to only contain keys specified in
 	   * `contextTypes`
 	   *
-	   * @param {object} context
+	   * @param  context
 	   * @return
 	   * @private
 	   */
@@ -15533,7 +15533,7 @@
 	   * Filters the context object to only contain keys specified in
 	   * `contextTypes`, and asserts that they are valid.
 	   *
-	   * @param {object} context
+	   * @param  context
 	   * @return
 	   * @private
 	   */
@@ -15549,7 +15549,7 @@
 	  },
 
 	  /**
-	   * @param {object} currentContext
+	   * @param  currentContext
 	   * @return
 	   * @private
 	   */
@@ -15587,8 +15587,8 @@
 	  /**
 	   * Assert that the context types are valid
 	   *
-	   * @param {object} typeSpecs Map of context field to a ReactPropType
-	   * @param {object} values Runtime values that need to be type-checked
+	   * @param  typeSpecs Map of context field to a ReactPropType
+	   * @param  values Runtime values that need to be type-checked
 	   * @param  location e.g. "prop", "context", "child context"
 	   * @private
 	   */
@@ -15609,7 +15609,7 @@
 	   * If any of `_pendingElement`, `_pendingStateQueue`, or `_pendingForceUpdate`
 	   * is set, update the component.
 	   *
-	   * @param {ReactReconcileTransaction} transaction
+	   * @param  transaction
 	   * @internal
 	   */
 	  performUpdateIfNecessary: function (transaction) {
@@ -15631,9 +15631,9 @@
 	   * By default, this implements React's rendering and reconciliation algorithm.
 	   * Sophisticated clients may wish to override this.
 	   *
-	   * @param {ReactReconcileTransaction} transaction
-	   * @param {ReactElement} prevParentElement
-	   * @param {ReactElement} nextParentElement
+	   * @param  transaction
+	   * @param  prevParentElement
+	   * @param  nextParentElement
 	   * @internal
 	   * @overridable
 	   */
@@ -15740,12 +15740,12 @@
 	   * Merges new props and state, notifies delegate methods of update and
 	   * performs update.
 	   *
-	   * @param {ReactElement} nextElement Next element
-	   * @param {object} nextProps Next public object to set as properties.
-	   * @param {?object} nextState Next object to set as state.
-	   * @param {?object} nextContext Next public object to set as context.
-	   * @param {ReactReconcileTransaction} transaction
-	   * @param {?object} unmaskedContext
+	   * @param  nextElement Next element
+	   * @param  nextProps Next public object to set as properties.
+	   * @param  nextState Next object to set as state.
+	   * @param  nextContext Next public object to set as context.
+	   * @param  transaction
+	   * @param  unmaskedContext
 	   * @private
 	   */
 	  _performComponentUpdate: function (nextElement, nextProps, nextState, nextContext, transaction, unmaskedContext) {
@@ -15795,7 +15795,7 @@
 	  /**
 	   * Call the component's `render` method and update the DOM accordingly.
 	   *
-	   * @param {ReactReconcileTransaction} transaction
+	   * @param  transaction
 	   * @internal
 	   */
 	  _updateRenderedComponent: function (transaction, context) {
@@ -15895,7 +15895,7 @@
 	   * Lazily allocates the refs object and stores `component` as `ref`.
 	   *
 	   * @param  ref Reference name.
-	   * @param {component} component Component to store as `ref`.
+	   * @param  component Component to store as `ref`.
 	   * @final
 	   * @private
 	   */
@@ -15940,7 +15940,7 @@
 	   * is exposed by refs and returned by render. Can be null for stateless
 	   * components.
 	   *
-	   * @return {ReactComponent} the public component instance.
+	   * @return  the public component instance.
 	   * @internal
 	   */
 	  getPublicInstance: function () {
@@ -16106,8 +16106,8 @@
 	 * instance. Both arguments are elements. This ensures that this logic can
 	 * operate on stateless trees without any backing instance.
 	 *
-	 * @param {?object} prevElement
-	 * @param {?object} nextElement
+	 * @param  prevElement
+	 * @param  nextElement
 	 * @return  True if the existing instance should be updated.
 	 * @protected
 	 */
@@ -16213,7 +16213,7 @@
 	/**
 	 * Get a host internal component class for a specific tag.
 	 *
-	 * @param {ReactElement} element The element to create.
+	 * @param  element The element to create.
 	 * @return  The internal class constructor function.
 	 */
 	function createInternalComponent(element) {
@@ -16222,15 +16222,15 @@
 	}
 
 	/**
-	 * @param {ReactText} text
-	 * @return {ReactComponent}
+	 * @param  text
+	 * @return
 	 */
 	function createInstanceForText(text) {
 	  return new textComponentClass(text);
 	}
 
 	/**
-	 * @param {ReactComponent} component
+	 * @param  component
 	 * @return
 	 */
 	function isTextComponent(component) {
@@ -16281,10 +16281,10 @@
 	}
 
 	/**
-	 * @param {function} traverseContext Context passed through traversal.
-	 * @param {?ReactComponent} child React child component.
-	 * @param {!string} name String name of key path to child.
-	 * @param {number=} selfDebugID Optional debugID of the current internal instance.
+	 * @param  traverseContext Context passed through traversal.
+	 * @param  child React child component.
+	 * @param  name String name of key path to child.
+	 * @param  selfDebugID Optional debugID of the current internal instance.
 	 */
 	function flattenSingleChildIntoContext(traverseContext, child, name, selfDebugID) {
 	  // We found a component instance.
@@ -16308,7 +16308,7 @@
 	/**
 	 * Flattens children that are typically specified as `props.children`. Any null
 	 * children will not be included in the resulting object.
-	 * @return {!object} flattened children keyed by name.
+	 * @return  flattened children keyed by name.
 	 */
 	function flattenChildren(children, selfDebugID) {
 	  if (children == null) {
@@ -16373,7 +16373,7 @@
 
 	/**
 	 * @class ReactServerRenderingTransaction
-	 * @param {boolean} renderToStaticMarkup
+	 * @param  renderToStaticMarkup
 	 */
 	function ReactServerRenderingTransaction(renderToStaticMarkup) {
 	  this.reinitializeTransaction();
@@ -16387,7 +16387,7 @@
 	   * @see Transaction
 	   * @abstract
 	   * @final
-	   * @return {array} Empty list of operation wrap procedures.
+	   * @return  Empty list of operation wrap procedures.
 	   */
 	  getTransactionWrappers: function () {
 	    return TRANSACTION_WRAPPERS;
@@ -16461,7 +16461,7 @@
 	 * It delegates to ReactUpdateQueue while server rendering is in progress and
 	 * switches to ReactNoopUpdateQueue after the transaction has completed.
 	 * @class ReactServerUpdateQueue
-	 * @param {Transaction} transaction
+	 * @param  transaction
 	 */
 
 	var ReactServerUpdateQueue = function () {
@@ -16475,7 +16475,7 @@
 
 	  /**
 	   * Checks whether or not this composite component is mounted.
-	   * @param {ReactClass} publicInstance The instance we want to test.
+	   * @param  publicInstance The instance we want to test.
 	   * @return  True if mounted, false otherwise.
 	   * @protected
 	   * @final
@@ -16490,8 +16490,8 @@
 	   * Enqueue a callback that will be executed after all the pending updates
 	   * have processed.
 	   *
-	   * @param {ReactClass} publicInstance The instance to use as `this` context.
-	   * @param {?function} callback Called after state is updated.
+	   * @param  publicInstance The instance to use as `this` context.
+	   * @param  callback Called after state is updated.
 	   * @internal
 	   */
 
@@ -16512,7 +16512,7 @@
 	   * This will not invoke `shouldComponentUpdate`, but it will invoke
 	   * `componentWillUpdate` and `componentDidUpdate`.
 	   *
-	   * @param {ReactClass} publicInstance The instance that should rerender.
+	   * @param  publicInstance The instance that should rerender.
 	   * @internal
 	   */
 
@@ -16532,8 +16532,8 @@
 	   * There is no guarantee that `this.state` will be immediately updated, so
 	   * accessing `this.state` after calling this method may return the old value.
 	   *
-	   * @param {ReactClass} publicInstance The instance that should rerender.
-	   * @param {object|function} completeState Next state.
+	   * @param  publicInstance The instance that should rerender.
+	   * @param  completeState Next state.
 	   * @internal
 	   */
 
@@ -16552,8 +16552,8 @@
 	   * properties which is confusing. TODO: Expose pendingState or don't use it
 	   * during the merge.
 	   *
-	   * @param {ReactClass} publicInstance The instance that should rerender.
-	   * @param {object|function} partialState Next partial state to be merged with state.
+	   * @param  publicInstance The instance that should rerender.
+	   * @param  partialState Next partial state to be merged with state.
 	   * @internal
 	   */
 
@@ -16644,7 +16644,7 @@
 
 	  /**
 	   * Checks whether or not this composite component is mounted.
-	   * @param {ReactClass} publicInstance The instance we want to test.
+	   * @param  publicInstance The instance we want to test.
 	   * @return  True if mounted, false otherwise.
 	   * @protected
 	   * @final
@@ -16672,8 +16672,8 @@
 	   * Enqueue a callback that will be executed after all the pending updates
 	   * have processed.
 	   *
-	   * @param {ReactClass} publicInstance The instance to use as `this` context.
-	   * @param {?function} callback Called after state is updated.
+	   * @param  publicInstance The instance to use as `this` context.
+	   * @param  callback Called after state is updated.
 	   * @param  callerName Name of the calling function in the public API.
 	   * @internal
 	   */
@@ -16721,7 +16721,7 @@
 	   * This will not invoke `shouldComponentUpdate`, but it will invoke
 	   * `componentWillUpdate` and `componentDidUpdate`.
 	   *
-	   * @param {ReactClass} publicInstance The instance that should rerender.
+	   * @param  publicInstance The instance that should rerender.
 	   * @internal
 	   */
 	  enqueueForceUpdate: function (publicInstance) {
@@ -16743,8 +16743,8 @@
 	   * There is no guarantee that `this.state` will be immediately updated, so
 	   * accessing `this.state` after calling this method may return the old value.
 	   *
-	   * @param {ReactClass} publicInstance The instance that should rerender.
-	   * @param {object} completeState Next state.
+	   * @param  publicInstance The instance that should rerender.
+	   * @param  completeState Next state.
 	   * @internal
 	   */
 	  enqueueReplaceState: function (publicInstance, completeState) {
@@ -16766,8 +16766,8 @@
 	   * properties which is confusing. TODO: Expose pendingState or don't use it
 	   * during the merge.
 	   *
-	   * @param {ReactClass} publicInstance The instance that should rerender.
-	   * @param {object} partialState Next partial state to be merged with state.
+	   * @param  publicInstance The instance that should rerender.
+	   * @param  partialState Next partial state to be merged with state.
 	   * @internal
 	   */
 	  enqueueSetState: function (publicInstance, partialState) {
@@ -17463,7 +17463,7 @@
 	   * Creates the markup for this text node. This node is not intended to have
 	   * any features besides containing text content.
 	   *
-	   * @param {ReactReconcileTransaction|ReactServerRenderingTransaction} transaction
+	   * @param  transaction
 	   * @return  Markup for this text node.
 	   * @internal
 	   */
@@ -17517,8 +17517,8 @@
 	  /**
 	   * Updates this component by updating the text content.
 	   *
-	   * @param {ReactText} nextText The next text content
-	   * @param {ReactReconcileTransaction} transaction
+	   * @param  nextText The next text content
+	   * @param  transaction
 	   * @internal
 	   */
 	  receiveComponent: function (nextText, transaction) {
@@ -17750,7 +17750,7 @@
 	   *
 	   * @param  topLevelType Record from `EventConstants`.
 	   * @param  handlerBaseName Event name (e.g. "click").
-	   * @param {object} handle Element on which to attach listener.
+	   * @param  handle Element on which to attach listener.
 	   * @return  An object with a remove function which will forcefully
 	   *                  remove the listener.
 	   * @internal
@@ -17768,7 +17768,7 @@
 	   *
 	   * @param  topLevelType Record from `EventConstants`.
 	   * @param  handlerBaseName Event name (e.g. "click").
-	   * @param {object} handle Element on which to attach listener.
+	   * @param  handle Element on which to attach listener.
 	   * @return  An object with a remove function which will forcefully
 	   *                  remove the listener.
 	   * @internal
@@ -17831,9 +17831,9 @@
 	  /**
 	   * Listen to DOM events during the bubble phase.
 	   *
-	   * @param {DOMEventTarget} target DOM element to register listener on.
+	   * @param  target DOM element to register listener on.
 	   * @param  eventType Event type, e.g. 'click' or 'mouseover'.
-	   * @param {function} callback Callback function.
+	   * @param  callback Callback function.
 	   * @return  Object with a `remove` method.
 	   */
 	  listen: function listen(target, eventType, callback) {
@@ -17857,9 +17857,9 @@
 	  /**
 	   * Listen to DOM events during the capture phase.
 	   *
-	   * @param {DOMEventTarget} target DOM element to register listener on.
+	   * @param  target DOM element to register listener on.
 	   * @param  eventType Event type, e.g. 'click' or 'mouseover'.
-	   * @param {function} callback Callback function.
+	   * @param  callback Callback function.
 	   * @return  Object with a `remove` method.
 	   */
 	  capture: function capture(target, eventType, callback) {
@@ -17910,7 +17910,7 @@
 	 * may be negative or exceed the element boundaries (which is possible using
 	 * inertial scrolling).
 	 *
-	 * @param {DOMWindow|DOMElement} scrollable
+	 * @param  scrollable
 	 * @return  Map with `x` and `y` keys.
 	 */
 
@@ -18003,11 +18003,11 @@
 	 */
 	var SELECTION_RESTORATION = {
 	  /**
-	   * @return {Selection} Selection information.
+	   * @return  Selection information.
 	   */
 	  initialize: ReactInputSelection.getSelectionInformation,
 	  /**
-	   * @param {Selection} sel Selection information returned from `initialize`.
+	   * @param  sel Selection information returned from `initialize`.
 	   */
 	  close: ReactInputSelection.restoreSelection
 	};
@@ -18029,7 +18029,7 @@
 	  },
 
 	  /**
-	   * @param {boolean} previouslyEnabled Enabled status of
+	   * @param  previouslyEnabled Enabled status of
 	   *   `ReactBrowserEventEmitter` before the reconciliation occurred. `close`
 	   *   restores the previous value.
 	   */
@@ -18103,7 +18103,7 @@
 	   * @see Transaction
 	   * @abstract
 	   * @final
-	   * @return {array<object>} List of operation wrap procedures.
+	   * @return  List of operation wrap procedures.
 	   *   TODO: convert to array<TransactionWrapper>
 	   */
 	  getTransactionWrappers: function () {
@@ -18223,7 +18223,7 @@
 	   * @getSelection: Gets the selection bounds of a focused textarea, input or
 	   * contentEditable node.
 	   * -@input: Look up selection bounds of this input
-	   * -@return {start: selectionStart, end: selectionEnd}
+	   * -@return
 	   */
 	  getSelection: function (input) {
 	    var selection;
@@ -18325,7 +18325,7 @@
 	 * block elements end with a new line. This means character offsets will
 	 * differ between the two APIs.
 	 *
-	 * @param {DOMElement} node
+	 * @param  node
 	 * @return
 	 */
 	function getIEOffsets(node) {
@@ -18348,7 +18348,7 @@
 	}
 
 	/**
-	 * @param {DOMElement} node
+	 * @param  node
 	 * @return
 	 */
 	function getModernOffsets(node) {
@@ -18410,8 +18410,8 @@
 	}
 
 	/**
-	 * @param {DOMElement|DOMTextNode} node
-	 * @param {object} offsets
+	 * @param  node
+	 * @param  offsets
 	 */
 	function setIEOffsets(node, offsets) {
 	  var range = document.selection.createRange().duplicate();
@@ -18444,8 +18444,8 @@
 	 * to programmatically create a backward selection. Thus, for all IE
 	 * versions, we use the old IE API to create our selections.
 	 *
-	 * @param {DOMElement|DOMTextNode} node
-	 * @param {object} offsets
+	 * @param  node
+	 * @param  offsets
 	 */
 	function setModernOffsets(node, offsets) {
 	  if (!window.getSelection) {
@@ -18487,13 +18487,13 @@
 
 	var ReactDOMSelection = {
 	  /**
-	   * @param {DOMElement} node
+	   * @param  node
 	   */
 	  getOffsets: useIEOffsets ? getIEOffsets : getModernOffsets,
 
 	  /**
-	   * @param {DOMElement|DOMTextNode} node
-	   * @param {object} offsets
+	   * @param  node
+	   * @param  offsets
 	   */
 	  setOffsets: useIEOffsets ? setIEOffsets : setModernOffsets
 	};
@@ -18520,8 +18520,8 @@
 	/**
 	 * Given any node return the first leaf node without children.
 	 *
-	 * @param {DOMElement|DOMTextNode} node
-	 * @return {DOMElement|DOMTextNode}
+	 * @param  node
+	 * @return
 	 */
 
 	function getLeafNode(node) {
@@ -18535,8 +18535,8 @@
 	 * Get the next sibling within a container. This will walk up the
 	 * DOM if a node's siblings have been exhausted.
 	 *
-	 * @param {DOMElement|DOMTextNode} node
-	 * @return {?DOMElement|DOMTextNode}
+	 * @param  node
+	 * @return
 	 */
 	function getSiblingNode(node) {
 	  while (node) {
@@ -18550,8 +18550,8 @@
 	/**
 	 * Get object describing the nodes which contain characters at offset.
 	 *
-	 * @param {DOMElement|DOMTextNode} root
-	 * @param {number} offset
+	 * @param  root
+	 * @param  offset
 	 * @return
 	 */
 	function getNodeForCharacterOffset(root, offset) {
@@ -18643,7 +18643,7 @@
 	var isNode = __webpack_require__(147);
 
 	/**
-	 * @param {*} object The object to check.
+	 * @param  object The object to check.
 	 * @return  Whether or not the object is a DOM text node.
 	 */
 	function isTextNode(object) {
@@ -18670,7 +18670,7 @@
 	 */
 
 	/**
-	 * @param {*} object The object to check.
+	 * @param  object The object to check.
 	 * @return  Whether or not the object is a DOM node.
 	 */
 	function isNode(object) {
@@ -18707,8 +18707,8 @@
 	 * The activeElement will be null only if the document or document body is not
 	 * yet defined.
 	 *
-	 * @param {?DOMDocument} doc Defaults to current document.
-	 * @return {?DOMElement}
+	 * @param  doc Defaults to current document.
+	 * @return
 	 */
 	function getActiveElement(doc) /*?DOMElement*/{
 	  doc = doc || (typeof document !== 'undefined' ? document : undefined);
@@ -19090,7 +19090,7 @@
 	 * The return value will not be consistent across nodes or browsers, but
 	 * two identical selections on the same node will return identical objects.
 	 *
-	 * @param {DOMElement} node
+	 * @param  node
 	 * @return
 	 */
 	function getSelection(node) {
@@ -19121,8 +19121,8 @@
 	/**
 	 * Poll selection to see whether it's changed.
 	 *
-	 * @param {object} nativeEvent
-	 * @return {?SyntheticEvent}
+	 * @param  nativeEvent
+	 * @return
 	 */
 	function constructSelectEvent(nativeEvent, nativeEventTarget) {
 	  // Ensure we have the right element, and that the user is not dragging a
@@ -19904,9 +19904,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticEvent}
 	 */
 	function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -19947,9 +19947,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
 	function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -19988,9 +19988,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
 	function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -20077,9 +20077,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
 	function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -20114,7 +20114,7 @@
 	 * The Tab-key is considered non-printable and does not have a `charCode`,
 	 * presumably because it does not produce a tab-character in browsers.
 	 *
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @return  Normalized `charCode` property.
 	 */
 
@@ -20218,7 +20218,7 @@
 	};
 
 	/**
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @return  Normalized `key` property.
 	 */
 	function getEventKey(nativeEvent) {
@@ -20280,9 +20280,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
 	function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -20330,9 +20330,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticUIEvent}
 	 */
 	function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -20374,9 +20374,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticEvent}
 	 */
 	function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -20433,9 +20433,9 @@
 	};
 
 	/**
-	 * @param {object} dispatchConfig Configuration used to dispatch this event.
+	 * @param  dispatchConfig Configuration used to dispatch this event.
 	 * @param  dispatchMarker Marker identifying the event target.
-	 * @param {object} nativeEvent Native browser event.
+	 * @param  nativeEvent Native browser event.
 	 * @extends {SyntheticMouseEvent}
 	 */
 	function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
@@ -20514,9 +20514,9 @@
 	}
 
 	/**
-	 * @param {DOMElement|DOMDocument} container DOM element that may contain
+	 * @param  container DOM element that may contain
 	 * a React component
-	 * @return {?*} DOM element that may have the reactRoot ID, or null.
+	 * @return  DOM element that may have the reactRoot ID, or null.
 	 */
 	function getReactRootElementInContainer(container) {
 	  if (!container) {
@@ -20540,10 +20540,10 @@
 	/**
 	 * Mounts this component and inserts it into the DOM.
 	 *
-	 * @param {ReactComponent} componentInstance The instance to mount.
-	 * @param {DOMElement} container DOM element to mount into.
-	 * @param {ReactReconcileTransaction} transaction
-	 * @param {boolean} shouldReuseMarkup If true, do not insert markup
+	 * @param  componentInstance The instance to mount.
+	 * @param  container DOM element to mount into.
+	 * @param  transaction
+	 * @param  shouldReuseMarkup If true, do not insert markup
 	 */
 	function mountComponentIntoNode(wrapperInstance, container, transaction, shouldReuseMarkup, context) {
 	  var markerName;
@@ -20568,9 +20568,9 @@
 	/**
 	 * Batched mount.
 	 *
-	 * @param {ReactComponent} componentInstance The instance to mount.
-	 * @param {DOMElement} container DOM element to mount into.
-	 * @param {boolean} shouldReuseMarkup If true, do not insert markup
+	 * @param  componentInstance The instance to mount.
+	 * @param  container DOM element to mount into.
+	 * @param  shouldReuseMarkup If true, do not insert markup
 	 */
 	function batchedMountComponentIntoNode(componentInstance, container, shouldReuseMarkup, context) {
 	  var transaction = ReactUpdates.ReactReconcileTransaction.getPooled(
@@ -20583,8 +20583,8 @@
 	/**
 	 * Unmounts a component and removes it from the DOM.
 	 *
-	 * @param {ReactComponent} instance React component instance.
-	 * @param {DOMElement} container DOM element to unmount from.
+	 * @param  instance React component instance.
+	 * @param  container DOM element to unmount from.
 	 * @final
 	 * @internal
 	 * @see {ReactMount.unmountComponentAtNode}
@@ -20613,7 +20613,7 @@
 	 * not a React root element. Useful for warning in `render`,
 	 * `unmountComponentAtNode`, etc.
 	 *
-	 * @param {?DOMElement} node The candidate DOM node.
+	 * @param  node The candidate DOM node.
 	 * @return  True if the DOM element contains a direct child that was
 	 * rendered by React but is not a root element.
 	 * @internal
@@ -20630,7 +20630,7 @@
 	 * True if the supplied DOM node is a React DOM element and
 	 * it has been rendered by another copy of React.
 	 *
-	 * @param {?DOMElement} node The candidate DOM node.
+	 * @param  node The candidate DOM node.
 	 * @return  True if the DOM has been rendered by another copy of React
 	 * @internal
 	 */
@@ -20642,7 +20642,7 @@
 	/**
 	 * True if the supplied DOM node is a valid node element.
 	 *
-	 * @param {?DOMElement} node The candidate DOM node.
+	 * @param  node The candidate DOM node.
 	 * @return  True if the DOM is a valid DOM node.
 	 * @internal
 	 */
@@ -20653,7 +20653,7 @@
 	/**
 	 * True if the supplied DOM node is a valid React node element.
 	 *
-	 * @param {?DOMElement} node The candidate DOM node.
+	 * @param  node The candidate DOM node.
 	 * @return  True if the DOM is a valid React DOM node.
 	 * @internal
 	 */
@@ -20722,8 +20722,8 @@
 	   * ensuring that the apparent scroll position of its `container` does not
 	   * change.
 	   *
-	   * @param {DOMElement} container The `container` being rendered into.
-	   * @param {function} renderCallback This must be called once to do the render.
+	   * @param  container The `container` being rendered into.
+	   * @param  renderCallback This must be called once to do the render.
 	   */
 	  scrollMonitor: function (container, renderCallback) {
 	    renderCallback();
@@ -20731,10 +20731,10 @@
 
 	  /**
 	   * Take a component that's already mounted into the DOM and replace its props
-	   * @param {ReactComponent} prevComponent component instance already in the DOM
-	   * @param {ReactElement} nextElement component instance to render
-	   * @param {DOMElement} container container to render into
-	   * @param {?function} callback function triggered on completion
+	   * @param  prevComponent component instance already in the DOM
+	   * @param  nextElement component instance to render
+	   * @param  container container to render into
+	   * @param  callback function triggered on completion
 	   */
 	  _updateRootComponent: function (prevComponent, nextElement, nextContext, container, callback) {
 	    ReactMount.scrollMonitor(container, function () {
@@ -20750,10 +20750,10 @@
 	  /**
 	   * Render a new component into the DOM. Hooked by hooks!
 	   *
-	   * @param {ReactElement} nextElement element to render
-	   * @param {DOMElement} container container to render into
-	   * @param {boolean} shouldReuseMarkup if we should skip the markup insertion
-	   * @return {ReactComponent} nextComponent
+	   * @param  nextElement element to render
+	   * @param  container container to render into
+	   * @param  shouldReuseMarkup if we should skip the markup insertion
+	   * @return  nextComponent
 	   */
 	  _renderNewRootComponent: function (nextElement, container, shouldReuseMarkup, context) {
 	    // Various parts of our code (such as ReactCompositeComponent's
@@ -20785,11 +20785,11 @@
 	   * perform an update on it and only mutate the DOM as necessary to reflect the
 	   * latest React component.
 	   *
-	   * @param {ReactComponent} parentComponent The conceptual parent of this render tree.
-	   * @param {ReactElement} nextElement Component element to render.
-	   * @param {DOMElement} container DOM element to render into.
-	   * @param {?function} callback function triggered on completion
-	   * @return {ReactComponent} Component instance rendered in `container`.
+	   * @param  parentComponent The conceptual parent of this render tree.
+	   * @param  nextElement Component element to render.
+	   * @param  container DOM element to render into.
+	   * @param  callback function triggered on completion
+	   * @return  Component instance rendered in `container`.
 	   */
 	  renderSubtreeIntoContainer: function (parentComponent, nextElement, container, callback) {
 	    !(parentComponent != null && ReactInstanceMap.has(parentComponent)) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'parentComponent must be a valid React Component') : _prodInvariant('38') : void 0;
@@ -20866,10 +20866,10 @@
 	   * perform an update on it and only mutate the DOM as necessary to reflect the
 	   * latest React component.
 	   *
-	   * @param {ReactElement} nextElement Component element to render.
-	   * @param {DOMElement} container DOM element to render into.
-	   * @param {?function} callback function triggered on completion
-	   * @return {ReactComponent} Component instance rendered in `container`.
+	   * @param  nextElement Component element to render.
+	   * @param  container DOM element to render into.
+	   * @param  callback function triggered on completion
+	   * @return  Component instance rendered in `container`.
 	   */
 	  render: function (nextElement, container, callback) {
 	    return ReactMount._renderSubtreeIntoContainer(null, nextElement, container, callback);
@@ -20879,7 +20879,7 @@
 	   * Unmounts and destroys the React component rendered in the `container`.
 	   * See https://facebook.github.io/react/docs/top-level-api.html#reactdom.unmountcomponentatnode
 	   *
-	   * @param {DOMElement} container DOM element containing a React component.
+	   * @param  container DOM element containing a React component.
 	   * @return  True if a component was found in and unmounted from
 	   *                   `container`
 	   */
@@ -21090,7 +21090,7 @@
 
 	  /**
 	   * @param  markup to use
-	   * @param {DOMElement} element root React element
+	   * @param  element root React element
 	   * @returns whether or not the markup is the same
 	   */
 	  canReuseMarkup: function (markup, element) {
@@ -21184,8 +21184,8 @@
 	 *
 	 * See https://facebook.github.io/react/docs/top-level-api.html#reactdom.finddomnode
 	 *
-	 * @param {ReactComponent|DOMElement} componentOrElement
-	 * @return {?DOMElement} The root node of this element.
+	 * @param  componentOrElement
+	 * @return  The root node of this element.
 	 */
 	function findDOMNode(componentOrElement) {
 	  if (process.env.NODE_ENV !== 'production') {
@@ -23453,7 +23453,7 @@
 	var LoopBackAuth = exports.LoopBackAuth = function () {
 		/**
 	  * @method constructor
-	  * @param {InternalStorage} storage Internal Storage Driver
+	  * @param  storage Internal Storage Driver
 	  * @description
 	  * The constructor will initialize the token loading data from storage
 	  **/
@@ -23478,7 +23478,7 @@
 		}
 		/**
 	  * @method setRememberMe
-	  * @param {boolean} value Flag to remember credentials
+	  * @param  value Flag to remember credentials
 	  * @return
 	  * @description
 	  * This method will set a flag in order to remember the current credentials
@@ -23511,7 +23511,7 @@
 			}
 			/**
 	   * @method setToken
-	   * @param {SDKToken} token SDKToken or casted AccessToken instance
+	   * @param  token SDKToken or casted AccessToken instance
 	   * @return
 	   * @description
 	   * This method will set a flag in order to remember the current credentials
@@ -23823,7 +23823,7 @@
 	var Observable = (function () {
 	    /**
 	     * @constructor
-	     * @param {Function} subscribe the function that is called when the Observable is
+	     * @param  subscribe the function that is called when the Observable is
 	     * initially subscribed to. This function is given a Subscriber, to which new values
 	     * can be `next`ed, or an `error` method can be called to raise an error, or
 	     * `complete` can be called to notify of a successful completion.
@@ -23838,8 +23838,8 @@
 	     * Creates a new Observable, with this Observable as the source, and the passed
 	     * operator defined as the new observable's operator.
 	     * @method lift
-	     * @param {Operator} operator the operator defining the operation to take on the observable
-	     * @return {Observable} a new observable with the Operator applied
+	     * @param  operator the operator defining the operation to take on the observable
+	     * @return  a new observable with the Operator applied
 	     */
 	    Observable.prototype.lift = function (operator) {
 	        var observable = new Observable();
@@ -23952,13 +23952,13 @@
 	     * // "unsubscribed!" after 2.5s
 	     *
 	     *
-	     * @param {Observer|Function} observerOrNext (optional) Either an observer with methods to be called,
+	     * @param  observerOrNext (optional) Either an observer with methods to be called,
 	     *  or the first of three possible handlers, which is the handler for each value emitted from the subscribed
 	     *  Observable.
-	     * @param {Function} error (optional) A handler for a terminal event resulting from an error. If no error handler is provided,
+	     * @param  error (optional) A handler for a terminal event resulting from an error. If no error handler is provided,
 	     *  the error will be thrown as unhandled.
-	     * @param {Function} complete (optional) A handler for a terminal event resulting from successful completion.
-	     * @return {ISubscription} a subscription reference to the registered handlers
+	     * @param  complete (optional) A handler for a terminal event resulting from successful completion.
+	     * @return  a subscription reference to the registered handlers
 	     * @method subscribe
 	     */
 	    Observable.prototype.subscribe = function (observerOrNext, error, complete) {
@@ -23990,9 +23990,9 @@
 	    };
 	    /**
 	     * @method forEach
-	     * @param {Function} next a handler for each value emitted by the observable
-	     * @param {PromiseConstructor} [PromiseCtor] a constructor function used to instantiate the Promise
-	     * @return {Promise} a promise that either resolves on observable completion or
+	     * @param  next a handler for each value emitted by the observable
+	     * @param  [PromiseCtor] a constructor function used to instantiate the Promise
+	     * @return  a promise that either resolves on observable completion or
 	     *  rejects with the handled error
 	     */
 	    Observable.prototype.forEach = function (next, PromiseCtor) {
@@ -24044,7 +24044,7 @@
 	    /**
 	     * An interop point defined by the es7-observable spec https://github.com/zenparsing/es-observable
 	     * @method Symbol.observable
-	     * @return {Observable} this instance of the observable
+	     * @return  this instance of the observable
 	     */
 	    Observable.prototype[observable_1.observable] = function () {
 	        return this;
@@ -24056,8 +24056,8 @@
 	     * @static true
 	     * @owner Observable
 	     * @method create
-	     * @param {Function} subscribe? the subscriber function to be passed to the Observable constructor
-	     * @return {Observable} a new cold observable
+	     * @param  subscribe? the subscriber function to be passed to the Observable constructor
+	     * @return  a new cold observable
 	     */
 	    Observable.create = function (subscribe) {
 	        return new Observable(subscribe);
@@ -24144,11 +24144,11 @@
 	var Subscriber = (function (_super) {
 	    __extends(Subscriber, _super);
 	    /**
-	     * @param {Observer|function(value: T): void} [destinationOrNext] A partially
+	     * @param  [destinationOrNext] A partially
 	     * defined Observer or a `next` callback function.
-	     * @param {function(e: ?any): void} [error] The `error` callback of an
+	     * @param  [error] The `error` callback of an
 	     * Observer.
-	     * @param {function(): void} [complete] The `complete` callback of an
+	     * @param  [complete] The `complete` callback of an
 	     * Observer.
 	     */
 	    function Subscriber(destinationOrNext, error, complete) {
@@ -24187,12 +24187,12 @@
 	    /**
 	     * A static factory for a Subscriber, given a (potentially partial) definition
 	     * of an Observer.
-	     * @param {function(x: ?T): void} [next] The `next` callback of an Observer.
-	     * @param {function(e: ?any): void} [error] The `error` callback of an
+	     * @param  [next] The `next` callback of an Observer.
+	     * @param  [error] The `error` callback of an
 	     * Observer.
-	     * @param {function(): void} [complete] The `complete` callback of an
+	     * @param  [complete] The `complete` callback of an
 	     * Observer.
-	     * @return {Subscriber<T>} A Subscriber wrapping the (partially defined)
+	     * @return  A Subscriber wrapping the (partially defined)
 	     * Observer represented by the given arguments.
 	     */
 	    Subscriber.create = function (next, error, complete) {
@@ -24204,7 +24204,7 @@
 	     * The {@link Observer} callback to receive notifications of type `next` from
 	     * the Observable, with a value. The Observable may call this method 0 or more
 	     * times.
-	     * @param {T} [value] The `next` value.
+	     * @param  [value] The `next` value.
 	     * @return
 	     */
 	    Subscriber.prototype.next = function (value) {
@@ -24422,7 +24422,7 @@
 	 */
 	var Subscription = (function () {
 	    /**
-	     * @param {function(): void} [unsubscribe] A function describing how to
+	     * @param  [unsubscribe] A function describing how to
 	     * perform the disposal of resources when the `unsubscribe` method is called.
 	     */
 	    function Subscription(unsubscribe) {
@@ -24511,9 +24511,9 @@
 	     * If this subscription is already in an `closed` state, the passed
 	     * tear down logic will be executed immediately.
 	     *
-	     * @param {TeardownLogic} teardown The additional logic to execute on
+	     * @param  teardown The additional logic to execute on
 	     * teardown.
-	     * @return {Subscription} Returns the Subscription used or created to be
+	     * @return  Returns the Subscription used or created to be
 	     * added to the inner subscriptions list. This Subscription can be used with
 	     * `remove()` to remove the passed teardown logic from the inner subscriptions
 	     * list.
@@ -24554,7 +24554,7 @@
 	    /**
 	     * Removes a Subscription from the internal list of subscriptions that will
 	     * unsubscribe during the unsubscribe process of this Subscription.
-	     * @param {Subscription} subscription The subscription to remove.
+	     * @param  subscription The subscription to remove.
 	     * @return
 	     */
 	    Subscription.prototype.remove = function (subscription) {
@@ -24810,9 +24810,9 @@
 	     * @see {@link of}
 	     *
 	     * @param  error The particular Error to pass to the error notification.
-	     * @param {Scheduler} [scheduler] A {@link IScheduler} to use for scheduling
+	     * @param  [scheduler] A {@link IScheduler} to use for scheduling
 	     * the emission of the error notification.
-	     * @return {Observable} An error Observable: emits only the error notification
+	     * @return  An error Observable: emits only the error notification
 	     * using the given error argument.
 	     * @static true
 	     * @name throw
@@ -25072,7 +25072,7 @@
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
 	     * @param  url Server URL
-	     * @param {Headers} headers HTTP Headers
+	     * @param  headers HTTP Headers
 	     * @return
 	     * @description
 	     * This method will try to authenticate using either an access_token or basic http auth
@@ -25089,8 +25089,8 @@
 	     * @method create
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @param {T} data Generic data type
-	     * @return {Observable}
+	     * @param  data Generic data type
+	     * @return
 	     * @description
 	     * Generic create method
 	     */
@@ -25108,8 +25108,8 @@
 	     * @method createMany
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @param {T[]} data Generic data type array
-	     * @return {Observable<T[]>}
+	     * @param  data Generic data type array
+	     * @return
 	     * @description
 	     * Generic create many method
 	     */
@@ -25130,7 +25130,7 @@
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
 	     * @param  data Generic data type
-	     * @return {Observable}
+	     * @return
 	     * @description
 	     * Generic findById method
 	     */
@@ -25153,7 +25153,7 @@
 	     * @method find
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable<T[+>}
+	     * @return
 	     * @description
 	     * Generic find method
 	     */
@@ -25176,7 +25176,7 @@
 	     * @method exists
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable<T[]>}
+	     * @return
 	     * @description
 	     * Generic exists method
 	     */
@@ -25211,7 +25211,7 @@
 	     * @method updateAll
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable<T[]>}
+	     * @return
 	     * @description
 	     * Generic updateAll method
 	     */
@@ -25231,7 +25231,7 @@
 	     * @method deleteById
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable}
+	     * @return
 	     * @description
 	     * Generic deleteById method
 	     */
@@ -25249,7 +25249,7 @@
 	     * @method count
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable<{ count: number }>}
+	     * @return >}
 	     * @description
 	     * Generic count method
 	     */
@@ -25268,7 +25268,7 @@
 	     * @method updateAttributes
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable}
+	     * @return
 	     * @description
 	     * Generic updateAttributes method
 	     */
@@ -25286,7 +25286,7 @@
 	     * @method upsert
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable}
+	     * @return
 	     * @description
 	     * Generic upsert method
 	     */
@@ -25307,7 +25307,7 @@
 	     * @method upsertPatch
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable}
+	     * @return
 	     * @description
 	     * Generic upsert method using patch http method
 	     */
@@ -25328,7 +25328,7 @@
 	     * @method upsertWithWhere
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable}
+	     * @return
 	     * @description
 	     * Generic upsertWithWhere method
 	     */
@@ -25353,7 +25353,7 @@
 	     * @method replaceOrCreate
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable}
+	     * @return
 	     * @description
 	     * Generic replaceOrCreate method
 	     */
@@ -25374,7 +25374,7 @@
 	     * @method replaceById
 	     * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
 	     * @license MIT
-	     * @return {Observable}
+	     * @return
 	     * @description
 	     * Generic replaceById method
 	     */
@@ -25966,10 +25966,10 @@
 	 *   );
 	 *   // 1, 2, 3, error in source. Details: four!
 	 *
-	 * @param {function} selector a function that takes as arguments `err`, which is the error, and `caught`, which
+	 * @param  selector a function that takes as arguments `err`, which is the error, and `caught`, which
 	 *  is the source observable, in case you'd like to "retry" that observable by returning it again. Whatever observable
 	 *  is returned by the `selector` will be used to continue the observable chain.
-	 * @return {Observable} An observable that originates from either the source or the observable returned by the
+	 * @return  An observable that originates from either the source or the observable returned by the
 	 *  catch `selector` function.
 	 * @method catch
 	 * @name catch
@@ -26289,13 +26289,13 @@
 	 * @see {@link mapTo}
 	 * @see {@link pluck}
 	 *
-	 * @param {function(value: T, index: number): R} project The function to apply
+	 * @param  project The function to apply
 	 * to each `value` emitted by the source Observable. The `index` parameter is
 	 * the number `i` for the i-th emission that has happened since the
 	 * subscription, starting from the number `0`.
 	 * @param  [thisArg] An optional argument to define what `this` is in the
 	 * `project` function.
-	 * @return {Observable<R>} An Observable that emits the values from the source
+	 * @return  An Observable that emits the values from the source
 	 * Observable transformed by the given `project` function.
 	 * @method map
 	 * @owner Observable
@@ -26368,8 +26368,8 @@
 	/**
 	 * Create an instance of Axios
 	 *
-	 * @param {Object} defaultConfig The default config for the instance
-	 * @return {Axios} A new instance of Axios
+	 * @param  defaultConfig The default config for the instance
+	 * @return  A new instance of Axios
 	 */
 	function createInstance(defaultConfig) {
 	  var context = new Axios(defaultConfig);
@@ -26430,7 +26430,7 @@
 	/**
 	 * Determine if a value is an Array
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is an Array, otherwise false
 	 */
 	function isArray(val) {
@@ -26440,7 +26440,7 @@
 	/**
 	 * Determine if a value is an ArrayBuffer
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is an ArrayBuffer, otherwise false
 	 */
 	function isArrayBuffer(val) {
@@ -26450,7 +26450,7 @@
 	/**
 	 * Determine if a value is a FormData
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is an FormData, otherwise false
 	 */
 	function isFormData(val) {
@@ -26460,7 +26460,7 @@
 	/**
 	 * Determine if a value is a view on an ArrayBuffer
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is a view on an ArrayBuffer, otherwise false
 	 */
 	function isArrayBufferView(val) {
@@ -26476,7 +26476,7 @@
 	/**
 	 * Determine if a value is a String
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is a String, otherwise false
 	 */
 	function isString(val) {
@@ -26486,7 +26486,7 @@
 	/**
 	 * Determine if a value is a Number
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is a Number, otherwise false
 	 */
 	function isNumber(val) {
@@ -26496,7 +26496,7 @@
 	/**
 	 * Determine if a value is undefined
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if the value is undefined, otherwise false
 	 */
 	function isUndefined(val) {
@@ -26506,7 +26506,7 @@
 	/**
 	 * Determine if a value is an Object
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is an Object, otherwise false
 	 */
 	function isObject(val) {
@@ -26516,7 +26516,7 @@
 	/**
 	 * Determine if a value is a Date
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is a Date, otherwise false
 	 */
 	function isDate(val) {
@@ -26526,7 +26526,7 @@
 	/**
 	 * Determine if a value is a File
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is a File, otherwise false
 	 */
 	function isFile(val) {
@@ -26536,7 +26536,7 @@
 	/**
 	 * Determine if a value is a Blob
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is a Blob, otherwise false
 	 */
 	function isBlob(val) {
@@ -26546,7 +26546,7 @@
 	/**
 	 * Determine if a value is a Function
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is a Function, otherwise false
 	 */
 	function isFunction(val) {
@@ -26556,7 +26556,7 @@
 	/**
 	 * Determine if a value is a Stream
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is a Stream, otherwise false
 	 */
 	function isStream(val) {
@@ -26566,7 +26566,7 @@
 	/**
 	 * Determine if a value is a URLSearchParams object
 	 *
-	 * @param {Object} val The value to test
+	 * @param  val The value to test
 	 * @returns True if value is a URLSearchParams object, otherwise false
 	 */
 	function isURLSearchParams(val) {
@@ -26615,8 +26615,8 @@
 	 * If 'obj' is an Object callback will be called passing
 	 * the value, key, and complete object for each property.
 	 *
-	 * @param {Object|Array} obj The object to iterate
-	 * @param {Function} fn The callback to invoke for each item
+	 * @param  obj The object to iterate
+	 * @param  fn The callback to invoke for each item
 	 */
 	function forEach(obj, fn) {
 	  // Don't bother if no value provided
@@ -26659,7 +26659,7 @@
 	 * console.log(result.foo); // outputs 456
 	 * ```
 	 *
-	 * @param {Object} obj1 Object to merge
+	 * @param  obj1 Object to merge
 	 * @returns Result of all merge properties
 	 */
 	function merge(/* obj1, obj2, obj3, ... */) {
@@ -26681,9 +26681,9 @@
 	/**
 	 * Extends object a by mutably adding to it the properties of object b.
 	 *
-	 * @param {Object} a The object to be extended
-	 * @param {Object} b The object to copy properties from
-	 * @param {Object} thisArg The object to bind function to
+	 * @param  a The object to be extended
+	 * @param  b The object to copy properties from
+	 * @param  thisArg The object to bind function to
 	 * @return  The resulting value of object a
 	 */
 	function extend(a, b, thisArg) {
@@ -26781,7 +26781,7 @@
 	/**
 	 * Create a new instance of Axios
 	 *
-	 * @param {Object} instanceConfig The default config for the instance
+	 * @param  instanceConfig The default config for the instance
 	 */
 	function Axios(instanceConfig) {
 	  this.defaults = instanceConfig;
@@ -26794,7 +26794,7 @@
 	/**
 	 * Dispatch a request
 	 *
-	 * @param {Object} config The config specific for this request (merged with this.defaults)
+	 * @param  config The config specific for this request (merged with this.defaults)
 	 */
 	Axios.prototype.request = function request(config) {
 	  /*eslint no-param-reassign:0*/
@@ -27172,9 +27172,9 @@
 	/**
 	 * Resolve or reject a Promise based on response status.
 	 *
-	 * @param {Function} resolve A function that resolves the promise.
-	 * @param {Function} reject A function that rejects the promise.
-	 * @param {object} response The response.
+	 * @param  resolve A function that resolves the promise.
+	 * @param  reject A function that rejects the promise.
+	 * @param  response The response.
 	 */
 	module.exports = function settle(resolve, reject, response) {
 	  var validateStatus = response.config.validateStatus;
@@ -27205,10 +27205,10 @@
 	 * Create an Error with the specified message, config, error code, request and response.
 	 *
 	 * @param  message The error message.
-	 * @param {Object} config The config.
+	 * @param  config The config.
 	 * @param  [code] The error code (for example, 'ECONNABORTED').
-	 * @param {Object} [request] The request.
-	 * @param {Object} [response] The response.
+	 * @param  [request] The request.
+	 * @param  [response] The response.
 	 * @returns {Error} The created error.
 	 */
 	module.exports = function createError(message, config, code, request, response) {
@@ -27226,11 +27226,11 @@
 	/**
 	 * Update an Error with the specified config, error code, and response.
 	 *
-	 * @param {Error} error The error to update.
-	 * @param {Object} config The config.
+	 * @param  error The error to update.
+	 * @param  config The config.
 	 * @param  [code] The error code (for example, 'ECONNABORTED').
-	 * @param {Object} [request] The request.
-	 * @param {Object} [response] The response.
+	 * @param  [request] The request.
+	 * @param  [response] The response.
 	 * @returns {Error} The error.
 	 */
 	module.exports = function enhanceError(error, config, code, request, response) {
@@ -27267,7 +27267,7 @@
 	 * Build a URL by appending params to the end
 	 *
 	 * @param  url The base of the url (e.g., http://www.google.com)
-	 * @param {object} [params] The params to be appended
+	 * @param  [params] The params to be appended
 	 * @returns {string} The formatted url
 	 */
 	module.exports = function buildURL(url, params, paramsSerializer) {
@@ -27551,8 +27551,8 @@
 	/**
 	 * Add a new interceptor to the stack
 	 *
-	 * @param {Function} fulfilled The function to handle `then` for a `Promise`
-	 * @param {Function} rejected The function to handle `reject` for a `Promise`
+	 * @param  fulfilled The function to handle `then` for a `Promise`
+	 * @param  rejected The function to handle `reject` for a `Promise`
 	 *
 	 * @return  An ID used to remove interceptor later
 	 */
@@ -27567,7 +27567,7 @@
 	/**
 	 * Remove an interceptor from the stack
 	 *
-	 * @param {Number} id The ID that was returned by `use`
+	 * @param  id The ID that was returned by `use`
 	 */
 	InterceptorManager.prototype.eject = function eject(id) {
 	  if (this.handlers[id]) {
@@ -27581,7 +27581,7 @@
 	 * This method is particularly useful for skipping over any
 	 * interceptors that may have become `null` calling `eject`.
 	 *
-	 * @param {Function} fn The function to call for each interceptor
+	 * @param  fn The function to call for each interceptor
 	 */
 	InterceptorManager.prototype.forEach = function forEach(fn) {
 	  utils.forEach(this.handlers, function forEachHandler(h) {
@@ -27617,7 +27617,7 @@
 	/**
 	 * Dispatch a request to the server using the configured adapter.
 	 *
-	 * @param {object} config The config that is to be used for the request
+	 * @param  config The config that is to be used for the request
 	 * @returns {Promise} The Promise to be fulfilled
 	 */
 	module.exports = function dispatchRequest(config) {
@@ -27690,9 +27690,9 @@
 	/**
 	 * Transform the data for a request or a response
 	 *
-	 * @param {Object|String} data The data to be transformed
-	 * @param {Array} headers The headers for the request or response
-	 * @param {Array|Function} fns A single function or Array of functions
+	 * @param  data The data to be transformed
+	 * @param  headers The headers for the request or response
+	 * @param  fns A single function or Array of functions
 	 * @returns The resulting transformed data
 	 */
 	module.exports = function transformData(data, headers, fns) {
@@ -27766,7 +27766,7 @@
 	 * A `Cancel` is an object that is thrown when an operation is canceled.
 	 *
 	 * @class
-	 * @param {string=} message The message.
+	 * @param  message The message.
 	 */
 	function Cancel(message) {
 	  this.message = message;
@@ -27793,7 +27793,7 @@
 	 * A `CancelToken` is an object that can be used to request cancellation of an operation.
 	 *
 	 * @class
-	 * @param {Function} executor The executor function.
+	 * @param  executor The executor function.
 	 */
 	function CancelToken(executor) {
 	  if (typeof executor !== 'function') {
@@ -27867,7 +27867,7 @@
 	 *  spread(function(x, y, z) {})([1, 2, 3]);
 	 *  ```
 	 *
-	 * @param {Function} callback
+	 * @param  callback
 	 * @returns {Function}
 	 */
 	module.exports = function spread(callback) {
@@ -27938,8 +27938,8 @@
 	     * @see {@link bindCallback}
 	     * @see {@link from}
 	     *
-	     * @param {PromiseLike<T>} promise The promise to be converted.
-	     * @param {Scheduler} [scheduler] An optional IScheduler to use for scheduling
+	     * @param  promise The promise to be converted.
+	     * @param  [scheduler] An optional IScheduler to use for scheduling
 	     * the delivery of the resolved value (or the rejection).
 	     * @return  An Observable which wraps the Promise.
 	     * @static true
@@ -28336,7 +28336,7 @@
 	     *
 	     * @param  fk Foreign key for accessTokens
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -28374,7 +28374,7 @@
 	     *
 	     * @param  id User id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -28408,7 +28408,7 @@
 	     *
 	     * @param  id User id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -28473,7 +28473,7 @@
 	     *
 	     * @param  id User id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -28504,7 +28504,7 @@
 	    /**
 	     * Patch an existing model instance or insert a new one into the data source.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
@@ -28539,7 +28539,7 @@
 	     *
 	     * @param  id User id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -28581,7 +28581,7 @@
 	     *     should be remembered in localStorage across app/browser restarts.
 	     *     Default: `true`.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -28627,7 +28627,7 @@
 	    /**
 	     * Logout a user with access token.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method does not accept any data. Supply an empty object.
 	     *
@@ -28659,7 +28659,7 @@
 	     *
 	     * @param  id User id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method does not accept any data. Supply an empty object.
 	     *
@@ -28722,7 +28722,7 @@
 	    /**
 	     * Reset password for a user with email.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -28752,7 +28752,7 @@
 	    /**
 	     * Change a user's password.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `oldPassword` – `{string}` -
 	     *
@@ -28787,7 +28787,7 @@
 	    /**
 	     * Reset user's password via a password-reset token.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `newPassword` – `{string}` -
 	     *
@@ -28821,7 +28821,7 @@
 	     *
 	     * @param  id User id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -29360,12 +29360,12 @@
 	     * @see {@link from}
 	     * @see {@link fromPromise}
 	     *
-	     * @param {function} func Function with a callback as the last parameter.
-	     * @param {function} [selector] A function which takes the arguments from the
+	     * @param  func Function with a callback as the last parameter.
+	     * @param  [selector] A function which takes the arguments from the
 	     * callback and maps those to a value to emit on the output Observable.
-	     * @param {Scheduler} [scheduler] The scheduler on which to schedule the
+	     * @param  [scheduler] The scheduler on which to schedule the
 	     * callbacks.
-	     * @return {function(...params: *): Observable} A function which returns the
+	     * @return  A function which returns the
 	     * Observable that delivers the same values the callback would deliver.
 	     * @static true
 	     * @name bindCallback
@@ -29695,12 +29695,12 @@
 	     * @see {@link from}
 	     * @see {@link fromPromise}
 	     *
-	     * @param {function} func Function with a Node.js-style callback as the last parameter.
-	     * @param {function} [selector] A function which takes the arguments from the
+	     * @param  func Function with a Node.js-style callback as the last parameter.
+	     * @param  [selector] A function which takes the arguments from the
 	     * callback and maps those to a value to emit on the output Observable.
-	     * @param {Scheduler} [scheduler] The scheduler on which to schedule the
+	     * @param  [scheduler] The scheduler on which to schedule the
 	     * callbacks.
-	     * @return {function(...params: *): Observable} A function which returns the
+	     * @return  A function which returns the
 	     * Observable that delivers the same values the Node.js callback would
 	     * deliver.
 	     * @static true
@@ -29933,15 +29933,15 @@
 	 * @see {@link merge}
 	 * @see {@link withLatestFrom}
 	 *
-	 * @param {ObservableInput} observable1 An input Observable to combine with other Observables.
-	 * @param {ObservableInput} observable2 An input Observable to combine with other Observables.
+	 * @param  observable1 An input Observable to combine with other Observables.
+	 * @param  observable2 An input Observable to combine with other Observables.
 	 * More than one input Observables may be given as arguments
 	 * or an array of Observables may be given as the first argument.
-	 * @param {function} [project] An optional function to project the values from
+	 * @param  [project] An optional function to project the values from
 	 * the combined latest values into a new value on the output Observable.
-	 * @param {Scheduler} [scheduler=null] The IScheduler to use for subscribing to
+	 * @param  [scheduler=null] The IScheduler to use for subscribing to
 	 * each input Observable.
-	 * @return {Observable} An Observable of projected values from the most recent
+	 * @return  An Observable of projected values from the most recent
 	 * values from each input Observable, or an array of the most recent values from
 	 * each input Observable.
 	 * @static true
@@ -30043,8 +30043,8 @@
 	     * @see {@link never}
 	     * @see {@link throw}
 	     *
-	     * @param {...T} values Arguments that represent `next` values to be emitted.
-	     * @param {Scheduler} [scheduler] A {@link IScheduler} to use for scheduling
+	     * @param  values Arguments that represent `next` values to be emitted.
+	     * @param  [scheduler] A {@link IScheduler} to use for scheduling
 	     * the emissions of the `next` notifications.
 	     * @return  An Observable that emits each given input value.
 	     * @static true
@@ -30229,9 +30229,9 @@
 	     * @see {@link of}
 	     * @see {@link throw}
 	     *
-	     * @param {Scheduler} [scheduler] A {@link IScheduler} to use for scheduling
+	     * @param  [scheduler] A {@link IScheduler} to use for scheduling
 	     * the emission of the complete notification.
-	     * @return {Observable} An "empty" Observable: emits only the complete
+	     * @return  An "empty" Observable: emits only the complete
 	     * notification.
 	     * @static true
 	     * @name empty
@@ -30307,11 +30307,11 @@
 	 * @see {@link merge}
 	 * @see {@link withLatestFrom}
 	 *
-	 * @param {ObservableInput} other An input Observable to combine with the source
+	 * @param  other An input Observable to combine with the source
 	 * Observable. More than one input Observables may be given as argument.
-	 * @param {function} [project] An optional function to project the values from
+	 * @param  [project] An optional function to project the values from
 	 * the combined latest values into a new value on the output Observable.
-	 * @return {Observable} An Observable of projected values from the most recent
+	 * @return  An Observable of projected values from the most recent
 	 * values from each input Observable, or an array of the most recent values from
 	 * each input Observable.
 	 * @method combineLatest
@@ -30484,11 +30484,11 @@
 	 * @see {@link concatMap}
 	 * @see {@link concatMapTo}
 	 *
-	 * @param {ObservableInput} other An input Observable to concatenate after the source
+	 * @param  other An input Observable to concatenate after the source
 	 * Observable. More than one input Observables may be given as argument.
-	 * @param {Scheduler} [scheduler=null] An optional IScheduler to schedule each
+	 * @param  [scheduler=null] An optional IScheduler to schedule each
 	 * Observable subscription on.
-	 * @return {Observable} All values of each passed Observable merged into a
+	 * @return  All values of each passed Observable merged into a
 	 * single Observable, in order, in serial fashion.
 	 * @method concat
 	 * @owner Observable
@@ -30584,12 +30584,12 @@
 	 * @see {@link concatMap}
 	 * @see {@link concatMapTo}
 	 *
-	 * @param {ObservableInput} input1 An input Observable to concatenate with others.
-	 * @param {ObservableInput} input2 An input Observable to concatenate with others.
+	 * @param  input1 An input Observable to concatenate with others.
+	 * @param  input2 An input Observable to concatenate with others.
 	 * More than one input Observables may be given as argument.
-	 * @param {Scheduler} [scheduler=null] An optional IScheduler to schedule each
+	 * @param  [scheduler=null] An optional IScheduler to schedule each
 	 * Observable subscription on.
-	 * @return {Observable} All values of each passed Observable merged into a
+	 * @return  All values of each passed Observable merged into a
 	 * single Observable, in order, in serial fashion.
 	 * @static true
 	 * @name concat
@@ -30662,9 +30662,9 @@
 	 * @see {@link switch}
 	 * @see {@link zipAll}
 	 *
-	 * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of inner
+	 * @param  [concurrent=Number.POSITIVE_INFINITY] Maximum number of inner
 	 * Observables being subscribed to concurrently.
-	 * @return {Observable} An Observable that emits values coming from all the
+	 * @return  An Observable that emits values coming from all the
 	 * inner Observables emitted by the source Observable.
 	 * @method mergeAll
 	 * @owner Observable
@@ -30808,11 +30808,11 @@
 	     *
 	     * @see {@link create}
 	     *
-	     * @param {function(): SubscribableOrPromise} observableFactory The Observable
+	     * @param  observableFactory The Observable
 	     * factory function to invoke for each Observer that subscribes to the output
 	     * Observable. May also return a Promise, which will be converted on the fly
 	     * to an Observable.
-	     * @return {Observable} An Observable whose Observers' subscriptions trigger
+	     * @return  An Observable whose Observers' subscriptions trigger
 	     * an invocation of the given Observable factory function.
 	     * @static true
 	     * @name defer
@@ -31104,10 +31104,10 @@
 	     * @see {@link fromEventPattern}
 	     * @see {@link fromPromise}
 	     *
-	     * @param {ObservableInput<T>} ish A subscribable object, a Promise, an
+	     * @param  ish A subscribable object, a Promise, an
 	     * Observable-like, an Array, an iterable or an array-like object to be
 	     * converted.
-	     * @param {Scheduler} [scheduler] The scheduler on which to schedule the
+	     * @param  [scheduler] The scheduler on which to schedule the
 	     * emissions of values.
 	     * @return  The Observable whose values are originally from the
 	     * input object that was converted.
@@ -31446,8 +31446,8 @@
 	 *
 	 * @see {@link delay}
 	 *
-	 * @param {IScheduler} scheduler Scheduler that will be used to reschedule notifications from source Observable.
-	 * @param {number} [delay] Number of milliseconds that states with what delay every notification should be rescheduled.
+	 * @param  scheduler Scheduler that will be used to reschedule notifications from source Observable.
+	 * @param  [delay] Number of milliseconds that states with what delay every notification should be rescheduled.
 	 * @return  Observable that emits the same notifications as the source Observable,
 	 * but with provided scheduler.
 	 *
@@ -31543,7 +31543,7 @@
 	    }
 	    /**
 	     * Delivers to the given `observer` the value wrapped by this Notification.
-	     * @param {Observer} observer
+	     * @param  observer
 	     * @return
 	     */
 	    Notification.prototype.observe = function (observer) {
@@ -31559,9 +31559,9 @@
 	    /**
 	     * Given some {@link Observer} callbacks, deliver the value represented by the
 	     * current Notification to the correctly corresponding callback.
-	     * @param {function(value: T): void} next An Observer `next` callback.
-	     * @param {function(err: any): void} [error] An Observer `error` callback.
-	     * @param {function(): void} [complete] An Observer `complete` callback.
+	     * @param  next An Observer `next` callback.
+	     * @param  [error] An Observer `error` callback.
+	     * @param  [complete] An Observer `complete` callback.
 	     * @return
 	     */
 	    Notification.prototype.do = function (next, error, complete) {
@@ -31578,10 +31578,10 @@
 	    /**
 	     * Takes an Observer or its individual callback functions, and calls `observe`
 	     * or `do` methods accordingly.
-	     * @param {Observer|function(value: T): void} nextOrObserver An Observer or
+	     * @param  nextOrObserver An Observer or
 	     * the `next` callback.
-	     * @param {function(err: any): void} [error] An Observer `error` callback.
-	     * @param {function(): void} [complete] An Observer `complete` callback.
+	     * @param  [error] An Observer `error` callback.
+	     * @param  [complete] An Observer `complete` callback.
 	     * @return
 	     */
 	    Notification.prototype.accept = function (nextOrObserver, error, complete) {
@@ -31612,8 +31612,8 @@
 	    /**
 	     * A shortcut to create a Notification instance of the type `next` from a
 	     * given value.
-	     * @param {T} value The `next` value.
-	     * @return {Notification<T>} The "next" Notification representing the
+	     * @param  value The `next` value.
+	     * @return  The "next" Notification representing the
 	     * argument.
 	     */
 	    Notification.createNext = function (value) {
@@ -31626,7 +31626,7 @@
 	     * A shortcut to create a Notification instance of the type `error` from a
 	     * given error.
 	     * @param  [err] The `error` error.
-	     * @return {Notification<T>} The "error" Notification representing the
+	     * @return  The "error" Notification representing the
 	     * argument.
 	     */
 	    Notification.createError = function (err) {
@@ -31634,7 +31634,7 @@
 	    };
 	    /**
 	     * A shortcut to create a Notification instance of the type `complete`.
-	     * @return {Notification<any>} The valueless "complete" Notification.
+	     * @return  The valueless "complete" Notification.
 	     */
 	    Notification.createComplete = function () {
 	        return Notification.completeNotification;
@@ -31738,12 +31738,12 @@
 	     * @see {@link from}
 	     * @see {@link fromEventPattern}
 	     *
-	     * @param {EventTargetLike} target The DOMElement, event target, Node.js
+	     * @param  target The DOMElement, event target, Node.js
 	     * EventEmitter, NodeList or HTMLCollection to attach the event handler to.
 	     * @param  eventName The event name of interest, being emitted by the
 	     * `target`.
-	     * @param {EventListenerOptions} [options] Options to pass through to addEventListener
-	     * @param {SelectorMethodSignature<T>} [selector] An optional function to
+	     * @param  [options] Options to pass through to addEventListener
+	     * @param  [selector] An optional function to
 	     * post-process results. It takes the arguments from the event handler and
 	     * should return a single value.
 	     * @return
@@ -31888,14 +31888,14 @@
 	     * @see {@link from}
 	     * @see {@link fromEvent}
 	     *
-	     * @param {function(handler: Function): any} addHandler A function that takes
+	     * @param  addHandler A function that takes
 	     * a `handler` function as argument and attaches it somehow to the actual
 	     * source of events.
-	     * @param {function(handler: Function, signal?: any): void} [removeHandler] An optional function that
+	     * @param  [removeHandler] An optional function that
 	     * takes a `handler` function as argument and removes it in case it was
 	     * previously attached using `addHandler`. if addHandler returns signal to teardown when remove,
 	     * removeHandler function will forward it.
-	     * @param {function(...args: any): T} [selector] An optional function to
+	     * @param  [selector] An optional function to
 	     * post-process results. It takes the arguments from the event handler and
 	     * should return a single value.
 	     * @return
@@ -32266,11 +32266,11 @@
 	     * @see {@link timer}
 	     * @see {@link delay}
 	     *
-	     * @param {number} [period=0] The interval size in milliseconds (by default)
+	     * @param  [period=0] The interval size in milliseconds (by default)
 	     * or the time unit determined by the scheduler's clock.
-	     * @param {Scheduler} [scheduler=async] The IScheduler to use for scheduling
+	     * @param  [scheduler=async] The IScheduler to use for scheduling
 	     * the emission of values, and providing a notion of "time".
-	     * @return {Observable} An Observable that emits a sequential number each time
+	     * @return  An Observable that emits a sequential number each time
 	     * interval.
 	     * @static true
 	     * @name interval
@@ -32553,9 +32553,9 @@
 	     * Schedules this action on its parent Scheduler for execution. May be passed
 	     * some context object, `state`. May happen at some point in the future,
 	     * according to the `delay` parameter, if specified.
-	     * @param {T} [state] Some contextual data that the `work` function uses when
+	     * @param  [state] Some contextual data that the `work` function uses when
 	     * called by the Scheduler.
-	     * @param {number} [delay] Time to wait before executing the work, where the
+	     * @param  [delay] Time to wait before executing the work, where the
 	     * time unit is implicit and defined by the Scheduler.
 	     * @return
 	     */
@@ -32659,13 +32659,13 @@
 	     * The given arguments will be processed an stored as an Action object in a
 	     * queue of actions.
 	     *
-	     * @param {function(state: ?T): ?Subscription} work A function representing a
+	     * @param  work A function representing a
 	     * task, or some unit of work to be executed by the Scheduler.
-	     * @param {number} [delay] Time to wait before executing the work, where the
+	     * @param  [delay] Time to wait before executing the work, where the
 	     * time unit is implicit and defined by the Scheduler itself.
-	     * @param {T} [state] Some contextual data that the `work` function uses when
+	     * @param  [state] Some contextual data that the `work` function uses when
 	     * called by the Scheduler.
-	     * @return {Subscription} A subscription in order to be able to unsubscribe
+	     * @return  A subscription in order to be able to unsubscribe
 	     * the scheduled work.
 	     */
 	    Scheduler.prototype.schedule = function (work, delay, state) {
@@ -32742,13 +32742,13 @@
 	 * @see {@link mergeMapTo}
 	 * @see {@link mergeScan}
 	 *
-	 * @param {ObservableInput} other An input Observable to merge with the source
+	 * @param  other An input Observable to merge with the source
 	 * Observable. More than one input Observables may be given as argument.
-	 * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
+	 * @param  [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
 	 * Observables being subscribed to concurrently.
-	 * @param {Scheduler} [scheduler=null] The IScheduler to use for managing
+	 * @param  [scheduler=null] The IScheduler to use for managing
 	 * concurrency of input Observables.
-	 * @return {Observable} An Observable that emits items that are the result of
+	 * @return  An Observable that emits items that are the result of
 	 * every input Observable.
 	 * @method merge
 	 * @owner Observable
@@ -32811,12 +32811,12 @@
 	 * @see {@link mergeMapTo}
 	 * @see {@link mergeScan}
 	 *
-	 * @param {...ObservableInput} observables Input Observables to merge together.
-	 * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
+	 * @param  observables Input Observables to merge together.
+	 * @param  [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
 	 * Observables being subscribed to concurrently.
-	 * @param {Scheduler} [scheduler=null] The IScheduler to use for managing
+	 * @param  [scheduler=null] The IScheduler to use for managing
 	 * concurrency of input Observables.
-	 * @return {Observable} an Observable that emits items that are the result of
+	 * @return  an Observable that emits items that are the result of
 	 * every input Observable.
 	 * @static true
 	 * @name merge
@@ -32884,8 +32884,8 @@
 	/**
 	 * Returns an Observable that mirrors the first source Observable to emit an item
 	 * from the combination of this Observable and supplied Observables.
-	 * @param {...Observables} ...observables Sources used to race for which Observable emits first.
-	 * @return {Observable} An Observable that mirrors the output of the first Observable to emit an item.
+	 * @param  ...observables Sources used to race for which Observable emits first.
+	 * @return  An Observable that mirrors the output of the first Observable to emit an item.
 	 * @method race
 	 * @owner Observable
 	 */
@@ -33049,7 +33049,7 @@
 	     * @see {@link of}
 	     * @see {@link throw}
 	     *
-	     * @return {Observable} A "never" Observable: never emits anything.
+	     * @return  A "never" Observable: never emits anything.
 	     * @static true
 	     * @name never
 	     * @owner Observable
@@ -33183,8 +33183,8 @@
 	 * @see {@link concat}
 	 * @see {@link catch}
 	 *
-	 * @param {...ObservableInput} observables Observables passed either directly or as an array.
-	 * @return {Observable} An Observable that emits values from source Observable, but - if it errors - subscribes
+	 * @param  observables Observables passed either directly or as an array.
+	 * @return  An Observable that emits values from source Observable, but - if it errors - subscribes
 	 * to the next passed Observable and so on, until it completes or runs out of Observables.
 	 * @method onErrorResumeNext
 	 * @owner Observable
@@ -33333,9 +33333,9 @@
 	     *     console.log('Completed');
 	     *   });
 	     *
-	     * @param {Object} obj The object to inspect and turn into an
+	     * @param  obj The object to inspect and turn into an
 	     * Observable sequence.
-	     * @param {Scheduler} [scheduler] An optional IScheduler to run the
+	     * @param  [scheduler] An optional IScheduler to run the
 	     * enumeration of the input sequence on.
 	     * @returns {(Observable<Array<string | T>>)} An observable sequence of
 	     * [key, value] pairs from the object.
@@ -33427,11 +33427,11 @@
 	     * @see {@link timer}
 	     * @see {@link interval}
 	     *
-	     * @param {number} [start=0] The value of the first integer in the sequence.
-	     * @param {number} [count=0] The number of sequential integers to generate.
-	     * @param {Scheduler} [scheduler] A {@link IScheduler} to use for scheduling
+	     * @param  [start=0] The value of the first integer in the sequence.
+	     * @param  [count=0] The number of sequential integers to generate.
+	     * @param  [scheduler] A {@link IScheduler} to use for scheduling
 	     * the emissions of the notifications.
-	     * @return {Observable} An Observable of numbers that emits a finite range of
+	     * @return  An Observable of numbers that emits a finite range of
 	     * sequential integers.
 	     * @static true
 	     * @name range
@@ -33658,13 +33658,13 @@
 	     * @see {@link interval}
 	     * @see {@link delay}
 	     *
-	     * @param {number|Date} initialDelay The initial delay time to wait before
+	     * @param  initialDelay The initial delay time to wait before
 	     * emitting the first value of `0`.
-	     * @param {number} [period] The period of time between emissions of the
+	     * @param  [period] The period of time between emissions of the
 	     * subsequent numbers.
-	     * @param {Scheduler} [scheduler=async] The IScheduler to use for scheduling
+	     * @param  [scheduler=async] The IScheduler to use for scheduling
 	     * the emission of values, and providing a notion of "time".
-	     * @return {Observable} An Observable that emits a `0` after the
+	     * @return  An Observable that emits a `0` after the
 	     * `initialDelay` and ever increasing numbers after each `period` of time
 	     * thereafter.
 	     * @static true
@@ -33749,7 +33749,7 @@
 	/* tslint:enable:max-line-length */
 	/**
 	 * @param observables
-	 * @return {Observable<R>}
+	 * @return
 	 * @method zip
 	 * @owner Observable
 	 */
@@ -33788,7 +33788,7 @@
 	 * // { age: 29, name: 'Beer', isDev: false }
 	 *
 	 * @param observables
-	 * @return {Observable<R>}
+	 * @return
 	 * @static true
 	 * @name zip
 	 * @owner Observable
@@ -34161,7 +34161,7 @@
 	     * source = Rx.Observable.ajax('/products');
 	     * source = Rx.Observable.ajax({ url: 'products', method: 'GET' });
 	     *
-	     * @param {string|Object} request Can be one of the following:
+	     * @param  request Can be one of the following:
 	     *   A string of the URL to make the Ajax call.
 	     *   An object with the following properties
 	     *   - url: URL of the request
@@ -34174,7 +34174,7 @@
 	     *   XMLHttpRequest implementation.
 	     *   - resultSelector: a function to use to alter the output value type of
 	     *   the Observable. Gets {@link AjaxResponse} as an argument.
-	     * @return {Observable} An observable sequence containing the XMLHttpRequest.
+	     * @return  An observable sequence containing the XMLHttpRequest.
 	     * @static true
 	     * @name ajax
 	     * @owner Observable
@@ -34554,8 +34554,8 @@
 	     *
 	     * socket$.next(JSON.stringify({ op: 'hello' }));
 	     *
-	     * @param {string | WebSocketSubjectConfig} urlConfigOrSource the source of the websocket as an url or a structure defining the websocket object
-	     * @return {WebSocketSubject}
+	     * @param  urlConfigOrSource the source of the websocket as an url or a structure defining the websocket object
+	     * @return
 	     * @static true
 	     * @name webSocket
 	     * @owner Observable
@@ -35058,9 +35058,9 @@
 	 * @see {@link bufferWhen}
 	 * @see {@link window}
 	 *
-	 * @param {Observable<any>} closingNotifier An Observable that signals the
+	 * @param  closingNotifier An Observable that signals the
 	 * buffer to be emitted on the output Observable.
-	 * @return {Observable<T[]>} An Observable of buffers, which are arrays of
+	 * @return  An Observable of buffers, which are arrays of
 	 * values.
 	 * @method buffer
 	 * @owner Observable
@@ -35155,12 +35155,12 @@
 	 * @see {@link pairwise}
 	 * @see {@link windowCount}
 	 *
-	 * @param {number} bufferSize The maximum size of the buffer emitted.
-	 * @param {number} [startBufferEvery] Interval at which to start a new buffer.
+	 * @param  bufferSize The maximum size of the buffer emitted.
+	 * @param  [startBufferEvery] Interval at which to start a new buffer.
 	 * For example if `startBufferEvery` is `2`, then a new buffer will be started
 	 * on every other value from the source. A new buffer is started at the
 	 * beginning of the source by default.
-	 * @return {Observable<T[]>} An Observable of arrays of buffered values.
+	 * @return  An Observable of arrays of buffered values.
 	 * @method bufferCount
 	 * @owner Observable
 	 */
@@ -35314,13 +35314,13 @@
 	 * @see {@link bufferWhen}
 	 * @see {@link windowTime}
 	 *
-	 * @param {number} bufferTimeSpan The amount of time to fill each buffer array.
-	 * @param {number} [bufferCreationInterval] The interval at which to start new
+	 * @param  bufferTimeSpan The amount of time to fill each buffer array.
+	 * @param  [bufferCreationInterval] The interval at which to start new
 	 * buffers.
-	 * @param {number} [maxBufferSize] The maximum buffer size.
-	 * @param {Scheduler} [scheduler=async] The scheduler on which to schedule the
+	 * @param  [maxBufferSize] The maximum buffer size.
+	 * @param  [scheduler=async] The scheduler on which to schedule the
 	 * intervals that determine buffer boundaries.
-	 * @return {Observable<T[]>} An observable of arrays of buffered values.
+	 * @return  An observable of arrays of buffered values.
 	 * @method bufferTime
 	 * @owner Observable
 	 */
@@ -35522,13 +35522,13 @@
 	 * @see {@link bufferWhen}
 	 * @see {@link windowToggle}
 	 *
-	 * @param {SubscribableOrPromise<O>} openings A Subscribable or Promise of notifications to start new
+	 * @param  openings A Subscribable or Promise of notifications to start new
 	 * buffers.
-	 * @param {function(value: O): SubscribableOrPromise} closingSelector A function that takes
+	 * @param  closingSelector A function that takes
 	 * the value emitted by the `openings` observable and returns a Subscribable or Promise,
 	 * which, when it emits, signals that the associated buffer should be emitted
 	 * and cleared.
-	 * @return {Observable<T[]>} An observable of arrays of buffered values.
+	 * @return  An observable of arrays of buffered values.
 	 * @method bufferToggle
 	 * @owner Observable
 	 */
@@ -35690,9 +35690,9 @@
 	 * @see {@link bufferToggle}
 	 * @see {@link windowWhen}
 	 *
-	 * @param {function(): Observable} closingSelector A function that takes no
+	 * @param  closingSelector A function that takes no
 	 * arguments and returns an Observable that signals buffer closure.
-	 * @return {Observable<T[]>} An observable of arrays of buffered values.
+	 * @return  An observable of arrays of buffered values.
 	 * @method bufferWhen
 	 * @owner Observable
 	 */
@@ -35823,10 +35823,10 @@
 	 * @see {@link combineLatest}
 	 * @see {@link mergeAll}
 	 *
-	 * @param {function} [project] An optional function to map the most recent
+	 * @param  [project] An optional function to map the most recent
 	 * values from each inner Observable into a new result. Takes each of the most
 	 * recent values from each collected inner Observable as arguments, in order.
-	 * @return {Observable} An Observable of projected results or arrays of recent
+	 * @return  An Observable of projected results or arrays of recent
 	 * values.
 	 * @method combineAll
 	 * @owner Observable
@@ -35917,7 +35917,7 @@
 	 * @see {@link switch}
 	 * @see {@link zipAll}
 	 *
-	 * @return {Observable} An Observable emitting values from all the inner
+	 * @return  An Observable emitting values from all the inner
 	 * Observables concatenated.
 	 * @method concatAll
 	 * @owner Observable
@@ -35986,10 +35986,10 @@
 	 * @see {@link mergeMap}
 	 * @see {@link switchMap}
 	 *
-	 * @param {function(value: T, ?index: number): ObservableInput} project A function
+	 * @param  project A function
 	 * that, when applied to an item emitted by the source Observable, returns an
 	 * Observable.
-	 * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
+	 * @param  [resultSelector]
 	 * A function to produce the value on the output Observable based on the values
 	 * and the indices of the source (outer) emission and the inner Observable
 	 * emission. The arguments passed to this function are:
@@ -35997,7 +35997,7 @@
 	 * - `innerValue`: the value that came from the projected Observable
 	 * - `outerIndex`: the "index" of the value that came from the source
 	 * - `innerIndex`: the "index" of the value from the projected Observable
-	 * @return {Observable} An Observable that emits the result of applying the
+	 * @return  An Observable that emits the result of applying the
 	 * projection function (and the optional `resultSelector`) to each item emitted
 	 * by the source Observable and taking values from each projected inner
 	 * Observable sequentially.
@@ -36061,10 +36061,10 @@
 	 * @see {@link mergeScan}
 	 * @see {@link switchMap}
 	 *
-	 * @param {function(value: T, ?index: number): ObservableInput} project A function
+	 * @param  project A function
 	 * that, when applied to an item emitted by the source Observable, returns an
 	 * Observable.
-	 * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
+	 * @param  [resultSelector]
 	 * A function to produce the value on the output Observable based on the values
 	 * and the indices of the source (outer) emission and the inner Observable
 	 * emission. The arguments passed to this function are:
@@ -36072,9 +36072,9 @@
 	 * - `innerValue`: the value that came from the projected Observable
 	 * - `outerIndex`: the "index" of the value that came from the source
 	 * - `innerIndex`: the "index" of the value from the projected Observable
-	 * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
+	 * @param  [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
 	 * Observables being subscribed to concurrently.
-	 * @return {Observable} An Observable that emits the result of applying the
+	 * @return  An Observable that emits the result of applying the
 	 * projection function (and the optional `resultSelector`) to each item emitted
 	 * by the source Observable and merging the results of the Observables obtained
 	 * from this transformation.
@@ -36243,9 +36243,9 @@
 	 * @see {@link mergeMapTo}
 	 * @see {@link switchMapTo}
 	 *
-	 * @param {ObservableInput} innerObservable An Observable to replace each value from
+	 * @param  innerObservable An Observable to replace each value from
 	 * the source Observable.
-	 * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
+	 * @param  [resultSelector]
 	 * A function to produce the value on the output Observable based on the values
 	 * and the indices of the source (outer) emission and the inner Observable
 	 * emission. The arguments passed to this function are:
@@ -36253,7 +36253,7 @@
 	 * - `innerValue`: the value that came from the projected Observable
 	 * - `outerIndex`: the "index" of the value that came from the source
 	 * - `innerIndex`: the "index" of the value from the projected Observable
-	 * @return {Observable} An observable of values merged together by joining the
+	 * @return  An observable of values merged together by joining the
 	 * passed observable with itself, one after the other, for each value emitted
 	 * from the source.
 	 * @method concatMapTo
@@ -36303,9 +36303,9 @@
 	 * @see {@link mergeScan}
 	 * @see {@link switchMapTo}
 	 *
-	 * @param {ObservableInput} innerObservable An Observable to replace each value from
+	 * @param  innerObservable An Observable to replace each value from
 	 * the source Observable.
-	 * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
+	 * @param  [resultSelector]
 	 * A function to produce the value on the output Observable based on the values
 	 * and the indices of the source (outer) emission and the inner Observable
 	 * emission. The arguments passed to this function are:
@@ -36313,9 +36313,9 @@
 	 * - `innerValue`: the value that came from the projected Observable
 	 * - `outerIndex`: the "index" of the value that came from the source
 	 * - `innerIndex`: the "index" of the value from the projected Observable
-	 * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
+	 * @param  [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
 	 * Observables being subscribed to concurrently.
-	 * @return {Observable} An Observable that emits items from the given
+	 * @return  An Observable that emits items from the given
 	 * `innerObservable` (and optionally transformed through `resultSelector`) every
 	 * time a value is emitted on the source Observable.
 	 * @method mergeMapTo
@@ -36483,13 +36483,13 @@
 	 * @see {@link min}
 	 * @see {@link reduce}
 	 *
-	 * @param {function(value: T, i: number, source: Observable<T>): boolean} [predicate] A
+	 * @param  [predicate] A
 	 * boolean function to select what values are to be counted. It is provided with
 	 * arguments of:
 	 * - `value`: the value from the source Observable.
 	 * - `index`: the (zero-based) "index" of the value from the source Observable.
 	 * - `source`: the source Observable instance itself.
-	 * @return {Observable} An Observable of one number that represents the count as
+	 * @return  An Observable of one number that represents the count as
 	 * described above.
 	 * @method count
 	 * @owner Observable
@@ -36607,7 +36607,7 @@
 	 * @see {@link Notification}
 	 * @see {@link materialize}
 	 *
-	 * @return {Observable} An Observable that emits items and notifications
+	 * @return  An Observable that emits items and notifications
 	 * embedded in Notification objects emitted by the source Observable.
 	 * @method dematerialize
 	 * @owner Observable
@@ -36696,10 +36696,10 @@
 	 * @see {@link delayWhen}
 	 * @see {@link throttle}
 	 *
-	 * @param {function(value: T): SubscribableOrPromise} durationSelector A function
+	 * @param  durationSelector A function
 	 * that receives a value from the source Observable, for computing the timeout
 	 * duration for each source value, returned as an Observable or a Promise.
-	 * @return {Observable} An Observable that delays the emissions of the source
+	 * @return  An Observable that delays the emissions of the source
 	 * Observable by the specified duration Observable returned by
 	 * `durationSelector`, and may drop some values if they occur too frequently.
 	 * @method debounce
@@ -36839,13 +36839,13 @@
 	 * @see {@link sampleTime}
 	 * @see {@link throttleTime}
 	 *
-	 * @param {number} dueTime The timeout duration in milliseconds (or the time
+	 * @param  dueTime The timeout duration in milliseconds (or the time
 	 * unit determined internally by the optional `scheduler`) for the window of
 	 * time required to wait for emission silence before emitting the most recent
 	 * source value.
-	 * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
+	 * @param  [scheduler=async] The {@link IScheduler} to use for
 	 * managing the timers that handle the timeout for each value.
-	 * @return {Observable} An Observable that delays the emissions of the source
+	 * @return  An Observable that delays the emissions of the source
 	 * Observable by the specified `dueTime`, and may drop some values if they occur
 	 * too frequently.
 	 * @method debounceTime
@@ -36960,7 +36960,7 @@
 	 *
 	 * @param  [defaultValue=null] The default value used if the source
 	 * Observable is empty.
-	 * @return {Observable} An Observable that emits either the specified
+	 * @return  An Observable that emits either the specified
 	 * `defaultValue` if the source Observable emits no items, or the values emitted
 	 * by the source Observable.
 	 * @method defaultIfEmpty
@@ -37060,11 +37060,11 @@
 	 * @see {@link debounceTime}
 	 * @see {@link delayWhen}
 	 *
-	 * @param {number|Date} delay The delay duration in milliseconds (a `number`) or
+	 * @param  delay The delay duration in milliseconds (a `number`) or
 	 * a `Date` until which the emission of the source items is delayed.
-	 * @param {Scheduler} [scheduler=async] The IScheduler to use for
+	 * @param  [scheduler=async] The IScheduler to use for
 	 * managing the timers that handle the time-shift for each item.
-	 * @return {Observable} An Observable that delays the emissions of the source
+	 * @return  An Observable that delays the emissions of the source
 	 * Observable by the specified timeout or Date.
 	 * @method delay
 	 * @owner Observable
@@ -37213,13 +37213,13 @@
 	 * @see {@link debounce}
 	 * @see {@link delay}
 	 *
-	 * @param {function(value: T): Observable} delayDurationSelector A function that
+	 * @param  delayDurationSelector A function that
 	 * returns an Observable for each value emitted by the source Observable, which
 	 * is then used to delay the emission of that item on the output Observable
 	 * until the Observable returned from this function emits a value.
-	 * @param {Observable} subscriptionDelay An Observable that triggers the
+	 * @param  subscriptionDelay An Observable that triggers the
 	 * subscription to the source Observable once it emits any value.
-	 * @return {Observable} An Observable that delays the emissions of the source
+	 * @return  An Observable that delays the emissions of the source
 	 * Observable by an amount of time specified by the Observable returned by
 	 * `delayDurationSelector`.
 	 * @method delayWhen
@@ -37425,9 +37425,9 @@
 	 * @see {@link distinctUntilChanged}
 	 * @see {@link distinctUntilKeyChanged}
 	 *
-	 * @param {function} [keySelector] Optional function to select which value you want to check as distinct.
-	 * @param {Observable} [flushes] Optional Observable for flushing the internal HashSet of the operator.
-	 * @return {Observable} An Observable that emits items from the source Observable with distinct values.
+	 * @param  [keySelector] Optional function to select which value you want to check as distinct.
+	 * @param  [flushes] Optional Observable for flushing the internal HashSet of the operator.
+	 * @return  An Observable that emits items from the source Observable with distinct values.
 	 * @method distinct
 	 * @owner Observable
 	 */
@@ -37594,8 +37594,8 @@
 	 * @see {@link distinct}
 	 * @see {@link distinctUntilKeyChanged}
 	 *
-	 * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
-	 * @return {Observable} An Observable that emits items from the source Observable with distinct values.
+	 * @param  [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
+	 * @return  An Observable that emits items from the source Observable with distinct values.
 	 * @method distinctUntilChanged
 	 * @owner Observable
 	 */
@@ -37728,8 +37728,8 @@
 	 * @see {@link distinctUntilChanged}
 	 *
 	 * @param  key String key for object property lookup on each item.
-	 * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
-	 * @return {Observable} An Observable that emits items from the source Observable with distinct values based on the key specified.
+	 * @param  [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
+	 * @return  An Observable that emits items from the source Observable with distinct values based on the key specified.
 	 * @method distinctUntilKeyChanged
 	 * @owner Observable
 	 */
@@ -37800,11 +37800,11 @@
 	 * @see {@link map}
 	 * @see {@link subscribe}
 	 *
-	 * @param {Observer|function} [nextOrObserver] A normal Observer object or a
+	 * @param  [nextOrObserver] A normal Observer object or a
 	 * callback for `next`.
-	 * @param {function} [error] Callback for errors in the source.
-	 * @param {function} [complete] Callback for the completion of the source.
-	 * @return {Observable} An Observable identical to the source, but runs the
+	 * @param  [error] Callback for errors in the source.
+	 * @param  [complete] Callback for the completion of the source.
+	 * @return  An Observable identical to the source, but runs the
 	 * specified Observer or callback(s) for each item.
 	 * @method do
 	 * @name do
@@ -37925,7 +37925,7 @@
 	 * @see {@link exhaustMap}
 	 * @see {@link zipAll}
 	 *
-	 * @return {Observable} An Observable that takes a source of Observables and propagates the first observable
+	 * @return  An Observable that takes a source of Observables and propagates the first observable
 	 * exclusively until it completes before subscribing to the next.
 	 * @method exhaust
 	 * @owner Observable
@@ -38028,10 +38028,10 @@
 	 * @see {@link mergeMap}
 	 * @see {@link switchMap}
 	 *
-	 * @param {function(value: T, ?index: number): ObservableInput} project A function
+	 * @param  project A function
 	 * that, when applied to an item emitted by the source Observable, returns an
 	 * Observable.
-	 * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
+	 * @param  [resultSelector]
 	 * A function to produce the value on the output Observable based on the values
 	 * and the indices of the source (outer) emission and the inner Observable
 	 * emission. The arguments passed to this function are:
@@ -38039,7 +38039,7 @@
 	 * - `innerValue`: the value that came from the projected Observable
 	 * - `outerIndex`: the "index" of the value that came from the source
 	 * - `innerIndex`: the "index" of the value from the projected Observable
-	 * @return {Observable} An Observable containing projected Observables
+	 * @return  An Observable containing projected Observables
 	 * of each item of the source, ignoring projected Observables that start before
 	 * their preceding Observable has completed.
 	 * @method exhaustMap
@@ -38186,14 +38186,14 @@
 	 * @see {@link mergeMap}
 	 * @see {@link mergeScan}
 	 *
-	 * @param {function(value: T, index: number) => Observable} project A function
+	 * @param  project A function
 	 * that, when applied to an item emitted by the source or the output Observable,
 	 * returns an Observable.
-	 * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
+	 * @param  [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
 	 * Observables being subscribed to concurrently.
-	 * @param {Scheduler} [scheduler=null] The IScheduler to use for subscribing to
+	 * @param  [scheduler=null] The IScheduler to use for subscribing to
 	 * each projected inner Observable.
-	 * @return {Observable} An Observable that emits the source values and also
+	 * @return  An Observable that emits the source values and also
 	 * result of applying the projection function to each value emitted on the
 	 * output Observable and and merging the results of the Observables obtained
 	 * from this transformation.
@@ -38352,10 +38352,10 @@
 	 * ArgumentOutOrRangeError to the Observer's `error` callback if `i < 0` or the
 	 * Observable has completed before emitting the i-th `next` notification.
 	 *
-	 * @param {number} index Is the number `i` for the i-th source emission that has
+	 * @param  index Is the number `i` for the i-th source emission that has
 	 * happened since the subscription, starting from the number `0`.
-	 * @param {T} [defaultValue] The default value returned for missing indices.
-	 * @return {Observable} An Observable that emits a single item, if it is found.
+	 * @param  [defaultValue] The default value returned for missing indices.
+	 * @return  An Observable that emits a single item, if it is found.
 	 * Otherwise, will emit the default value if given. If not, then emits an error.
 	 * @method elementAt
 	 * @owner Observable
@@ -38492,7 +38492,7 @@
 	 * @see {@link partition}
 	 * @see {@link skip}
 	 *
-	 * @param {function(value: T, index: number): boolean} predicate A function that
+	 * @param  predicate A function that
 	 * evaluates each value emitted by the source Observable. If it returns `true`,
 	 * the value is emitted, if `false` the value is not passed to the output
 	 * Observable. The `index` parameter is the number `i` for the i-th source
@@ -38500,7 +38500,7 @@
 	 * `0`.
 	 * @param  [thisArg] An optional argument to determine the value of `this`
 	 * in the `predicate` function.
-	 * @return {Observable} An Observable of values from the source that were
+	 * @return  An Observable of values from the source that were
 	 * allowed by the `predicate` function.
 	 * @method filter
 	 * @owner Observable
@@ -38577,8 +38577,8 @@
 	/**
 	 * Returns an Observable that mirrors the source Observable, but will call a specified function when
 	 * the source terminates on complete or error.
-	 * @param {function} callback Function to be called when source terminates.
-	 * @return {Observable} An Observable that mirrors the source, but will call the specified function on termination.
+	 * @param  callback Function to be called when source terminates.
+	 * @return  An Observable that mirrors the source, but will call the specified function on termination.
 	 * @method finally
 	 * @owner Observable
 	 */
@@ -38656,7 +38656,7 @@
 	 * @see {@link findIndex}
 	 * @see {@link take}
 	 *
-	 * @param {function(value: T, index: number, source: Observable<T>): boolean} predicate
+	 * @param  predicate
 	 * A function called with each item to test for condition matching.
 	 * @param  [thisArg] An optional argument to determine the value of `this`
 	 * in the `predicate` function.
@@ -38767,11 +38767,11 @@
 	 * @see {@link first}
 	 * @see {@link take}
 	 *
-	 * @param {function(value: T, index: number, source: Observable<T>): boolean} predicate
+	 * @param  predicate
 	 * A function called with each item to test for condition matching.
 	 * @param  [thisArg] An optional argument to determine the value of `this`
 	 * in the `predicate` function.
-	 * @return {Observable} An Observable of the index of the first item that
+	 * @return  An Observable of the index of the first item that
 	 * matches the condition.
 	 * @method find
 	 * @owner Observable
@@ -38838,17 +38838,17 @@
 	 * @throws {EmptyError} Delivers an EmptyError to the Observer's `error`
 	 * callback if the Observable completes before any `next` notification was sent.
 	 *
-	 * @param {function(value: T, index: number, source: Observable<T>): boolean} [predicate]
+	 * @param  [predicate]
 	 * An optional function called with each item to test for condition matching.
-	 * @param {function(value: T, index: number): R} [resultSelector] A function to
+	 * @param  [resultSelector] A function to
 	 * produce the value on the output Observable based on the values
 	 * and the indices of the source Observable. The arguments passed to this
 	 * function are:
 	 * - `value`: the value that was emitted on the source.
 	 * - `index`: the "index" of the value from the source.
-	 * @param {R} [defaultValue] The default value emitted in case no valid value
+	 * @param  [defaultValue] The default value emitted in case no valid value
 	 * was found on the source.
-	 * @return {Observable<T|R>} An Observable of the first item that matches the
+	 * @return  An Observable of the first item that matches the
 	 * condition.
 	 * @method first
 	 * @owner Observable
@@ -39062,14 +39062,14 @@
 	 * // { id: 2, values: [ 'sf2', 'dg2', 'sfqfb2', 'qsgqsfg2' ] }
 	 * // { id: 3, values: [ 'qfs1' ] }
 	 *
-	 * @param {function(value: T): K} keySelector A function that extracts the key
+	 * @param  keySelector A function that extracts the key
 	 * for each item.
-	 * @param {function(value: T): R} [elementSelector] A function that extracts the
+	 * @param  [elementSelector] A function that extracts the
 	 * return element for each item.
-	 * @param {function(grouped: GroupedObservable<K,R>): Observable<any>} [durationSelector]
+	 * @param  [durationSelector]
 	 * A function that returns an Observable to determine how long each group should
 	 * exist.
-	 * @return {Observable<GroupedObservable<K,R>>} An Observable that emits
+	 * @return  An Observable that emits
 	 * GroupedObservables, each of which corresponds to a unique key value and each
 	 * of which emits those items from the source Observable that share that key
 	 * value.
@@ -39396,7 +39396,7 @@
 	 *
 	 * <img src="./img/ignoreElements.png" width="100%">
 	 *
-	 * @return {Observable} An empty Observable that only calls `complete`
+	 * @return  An empty Observable that only calls `complete`
 	 * or `error`, based on which one is called by the source Observable.
 	 * @method ignoreElements
 	 * @owner Observable
@@ -39457,7 +39457,7 @@
 	 *
 	 * <img src="./img/isEmpty.png" width="100%">
 	 *
-	 * @return {Observable} An Observable that emits a Boolean.
+	 * @return  An Observable that emits a Boolean.
 	 * @method isEmpty
 	 * @owner Observable
 	 */
@@ -39554,7 +39554,7 @@
 	 * @see {@link sample}
 	 * @see {@link throttle}
 	 *
-	 * @param {function(value: T): SubscribableOrPromise} durationSelector A function
+	 * @param  durationSelector A function
 	 * that receives a value from the source Observable, for computing the silencing
 	 * duration, returned as an Observable or a Promise.
 	 * @return  An Observable that performs rate-limiting of
@@ -39683,10 +39683,10 @@
 	 * @see {@link sampleTime}
 	 * @see {@link throttleTime}
 	 *
-	 * @param {number} duration Time to wait before emitting the most recent source
+	 * @param  duration Time to wait before emitting the most recent source
 	 * value, measured in milliseconds or the time unit determined internally
 	 * by the optional `scheduler`.
-	 * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
+	 * @param  [scheduler=async] The {@link IScheduler} to use for
 	 * managing the timers that handle the rate-limiting behavior.
 	 * @return  An Observable that performs rate-limiting of
 	 * emissions from the source Observable.
@@ -39781,8 +39781,8 @@
 	 *
 	 * @throws {EmptyError} Delivers an EmptyError to the Observer's `error`
 	 * callback if the Observable completes before any `next` notification was sent.
-	 * @param {function} predicate - The condition any source emitted item has to satisfy.
-	 * @return {Observable} An Observable that emits only the last item satisfying the given condition
+	 * @param  predicate - The condition any source emitted item has to satisfy.
+	 * @return  An Observable that emits only the last item satisfying the given condition
 	 * from the source, or an NoSuchElementException if no such items are emitted.
 	 * @throws - Throws if no items that match the predicate are emitted by the source Observable.
 	 * @method last
@@ -39900,7 +39900,7 @@
 	"use strict";
 	/**
 	 * @param func
-	 * @return {Observable<R>}
+	 * @return
 	 * @method let
 	 * @owner Observable
 	 */
@@ -39939,9 +39939,9 @@
 	 *     .every(x => x < 5)
 	 *     .subscribe(x => console.log(x)); // -> false
 	 *
-	 * @param {function} predicate A function for determining if an item meets a specified condition.
+	 * @param  predicate A function for determining if an item meets a specified condition.
 	 * @param  [thisArg] Optional object to use for `this` in the callback.
-	 * @return {Observable} An Observable of booleans that determines if all items of the source Observable meet the condition specified.
+	 * @return  An Observable of booleans that determines if all items of the source Observable meet the condition specified.
 	 * @method every
 	 * @owner Observable
 	 */
@@ -40041,7 +40041,7 @@
 	 * @see {@link map}
 	 *
 	 * @param  value The value to map each source value to.
-	 * @return {Observable} An Observable that emits the given `value` every time
+	 * @return  An Observable that emits the given `value` every time
 	 * the source Observable emits something.
 	 * @method mapTo
 	 * @owner Observable
@@ -40137,7 +40137,7 @@
 	 * @see {@link Notification}
 	 * @see {@link dematerialize}
 	 *
-	 * @return {Observable<Notification<T>>} An Observable that emits
+	 * @return  An Observable that emits
 	 * {@link Notification} objects that wrap the original emissions from the source
 	 * Observable with metadata.
 	 * @method materialize
@@ -40223,9 +40223,9 @@
 	 *
 	 * @see {@link min}
 	 *
-	 * @param {Function} [comparer] - Optional comparer function that it will use instead of its default to compare the
+	 * @param  [comparer] - Optional comparer function that it will use instead of its default to compare the
 	 * value of two items.
-	 * @return {Observable} An Observable that emits item with the largest value.
+	 * @return  An Observable that emits item with the largest value.
 	 * @method max
 	 * @owner Observable
 	 */
@@ -40286,10 +40286,10 @@
 	 * @see {@link mergeScan}
 	 * @see {@link scan}
 	 *
-	 * @param {function(acc: R, value: T, index: number): R} accumulator The accumulator function
+	 * @param  accumulator The accumulator function
 	 * called on each source value.
-	 * @param {R} [seed] The initial accumulation value.
-	 * @return {Observable<R>} An Observable that emits a single value that is the
+	 * @param  [seed] The initial accumulation value.
+	 * @return  An Observable that emits a single value that is the
 	 * result of accumulating the values emitted by the source Observable.
 	 * @method reduce
 	 * @owner Observable
@@ -40457,12 +40457,12 @@
 	 * 4
 	 * // ...and so on for each click
 	 *
-	 * @param {function(acc: R, value: T): Observable<R>} accumulator
+	 * @param  accumulator
 	 * The accumulator function called on each source value.
 	 * @param seed The initial accumulation value.
-	 * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of
+	 * @param  [concurrent=Number.POSITIVE_INFINITY] Maximum number of
 	 * input Observables being subscribed to concurrently.
-	 * @return {Observable<R>} An observable of the accumulated values.
+	 * @return  An observable of the accumulated values.
 	 * @method mergeScan
 	 * @owner Observable
 	 */
@@ -40596,9 +40596,9 @@
 	 *
 	 * @see {@link max}
 	 *
-	 * @param {Function} [comparer] - Optional comparer function that it will use instead of its default to compare the
+	 * @param  [comparer] - Optional comparer function that it will use instead of its default to compare the
 	 * value of two items.
-	 * @return {Observable<R>} An Observable that emits item with the smallest value.
+	 * @return  An Observable that emits item with the smallest value.
 	 * @method min
 	 * @owner Observable
 	 */
@@ -40634,14 +40634,14 @@
 	 *
 	 * <img src="./img/multicast.png" width="100%">
 	 *
-	 * @param {Function|Subject} subjectOrSubjectFactory - Factory function to create an intermediate subject through
+	 * @param  subjectOrSubjectFactory - Factory function to create an intermediate subject through
 	 * which the source sequence's elements will be multicast to the selector function
 	 * or Subject to push source elements into.
-	 * @param {Function} [selector] - Optional selector function that can use the multicasted source stream
+	 * @param  [selector] - Optional selector function that can use the multicasted source stream
 	 * as many times as needed, without causing multiple subscriptions to the source stream.
 	 * Subscribers to the given source will receive all notifications of the source from the
 	 * time of the subscription forward.
-	 * @return {Observable} An Observable that emits the results of invoking the selector
+	 * @return  An Observable that emits the results of invoking the selector
 	 * on the items emitted by a `ConnectableObservable` that shares a single subscription to
 	 * the underlying stream.
 	 * @method multicast
@@ -40928,7 +40928,7 @@
 	 * @see {@link buffer}
 	 * @see {@link bufferCount}
 	 *
-	 * @return {Observable<Array<T>>} An Observable of pairs (as arrays) of
+	 * @return  An Observable of pairs (as arrays) of
 	 * consecutive values from the source Observable.
 	 * @method pairwise
 	 * @owner Observable
@@ -41013,7 +41013,7 @@
 	 *
 	 * @see {@link filter}
 	 *
-	 * @param {function(value: T, index: number): boolean} predicate A function that
+	 * @param  predicate A function that
 	 * evaluates each value emitted by the source Observable. If it returns `true`,
 	 * the value is emitted on the first Observable in the returned array, if
 	 * `false` the value is emitted on the second Observable in the array. The
@@ -41021,7 +41021,7 @@
 	 * happened since the subscription, starting from the number `0`.
 	 * @param  [thisArg] An optional argument to determine the value of `this`
 	 * in the `predicate` function.
-	 * @return {[Observable<T>, Observable<T>]} An array with two Observables: one
+	 * @return  An array with two Observables: one
 	 * with values that passed the predicate, and another with values that did not
 	 * pass the predicate.
 	 * @method partition
@@ -41088,9 +41088,9 @@
 	 *
 	 * @see {@link map}
 	 *
-	 * @param {...string} properties The nested properties to pluck from each source
+	 * @param  properties The nested properties to pluck from each source
 	 * value (an object).
-	 * @return {Observable} A new Observable of property values from the source values.
+	 * @return  A new Observable of property values from the source values.
 	 * @method pluck
 	 * @owner Observable
 	 */
@@ -41148,7 +41148,7 @@
 	 *
 	 * <img src="./img/publish.png" width="100%">
 	 *
-	 * @param {Function} [selector] - Optional selector function which can use the multicasted source sequence as many times
+	 * @param  [selector] - Optional selector function which can use the multicasted source sequence as many times
 	 * as needed, without causing multiple subscriptions to the source sequence.
 	 * Subscribers to the given source will receive all notifications of the source from the time of the subscription on.
 	 * @return A ConnectableObservable that upon connection causes the source Observable to emit items to its Observers.
@@ -41181,7 +41181,7 @@
 	var multicast_1 = __webpack_require__(456);
 	/**
 	 * @param value
-	 * @return {ConnectableObservable<T>}
+	 * @return
 	 * @method publishBehavior
 	 * @owner Observable
 	 */
@@ -41266,7 +41266,7 @@
 	 * @param bufferSize
 	 * @param windowTime
 	 * @param scheduler
-	 * @return {ConnectableObservable<T>}
+	 * @return
 	 * @method publishReplay
 	 * @owner Observable
 	 */
@@ -41296,7 +41296,7 @@
 	var AsyncSubject_1 = __webpack_require__(263);
 	var multicast_1 = __webpack_require__(456);
 	/**
-	 * @return {ConnectableObservable<T>}
+	 * @return
 	 * @method publishLast
 	 * @owner Observable
 	 */
@@ -41353,9 +41353,9 @@
 	 *
 	 * <img src="./img/repeat.png" width="100%">
 	 *
-	 * @param {number} [count] The number of times the source Observable items are repeated, a count of 0 will yield
+	 * @param  [count] The number of times the source Observable items are repeated, a count of 0 will yield
 	 * an empty Observable.
-	 * @return {Observable} An Observable that repeats the stream of items emitted by the source Observable at most
+	 * @return  An Observable that repeats the stream of items emitted by the source Observable at most
 	 * count times.
 	 * @method repeat
 	 * @owner Observable
@@ -41444,9 +41444,9 @@
 	 *
 	 * <img src="./img/repeatWhen.png" width="100%">
 	 *
-	 * @param {function(notifications: Observable): Observable} notifier - Receives an Observable of notifications with
+	 * @param  notifier - Receives an Observable of notifications with
 	 * which a user can `complete` or `error`, aborting the repetition.
-	 * @return {Observable} The source Observable modified with repeat logic.
+	 * @return  The source Observable modified with repeat logic.
 	 * @method repeatWhen
 	 * @owner Observable
 	 */
@@ -41566,8 +41566,8 @@
 	 * during failed subscriptions. For example, if an Observable fails at first but emits [1, 2] then succeeds the second
 	 * time and emits: [1, 2, 3, 4, 5] then the complete stream of emissions and notifications
 	 * would be: [1, 2, 1, 2, 3, 4, 5, `complete`].
-	 * @param {number} count - Number of retry attempts before failing.
-	 * @return {Observable} The source Observable modified with the retry logic.
+	 * @param  count - Number of retry attempts before failing.
+	 * @return  The source Observable modified with the retry logic.
 	 * @method retry
 	 * @owner Observable
 	 */
@@ -41647,9 +41647,9 @@
 	 *
 	 * <img src="./img/retryWhen.png" width="100%">
 	 *
-	 * @param {function(errors: Observable): Observable} notifier - Receives an Observable of notifications with which a
+	 * @param  notifier - Receives an Observable of notifications with which a
 	 * user can `complete` or `error`, aborting the retry.
-	 * @return {Observable} The source Observable modified with retry logic.
+	 * @return  The source Observable modified with retry logic.
 	 * @method retryWhen
 	 * @owner Observable
 	 */
@@ -41778,7 +41778,7 @@
 	 * @see {@link sampleTime}
 	 * @see {@link throttle}
 	 *
-	 * @param {Observable<any>} notifier The Observable to use for sampling the
+	 * @param  notifier The Observable to use for sampling the
 	 * source Observable.
 	 * @return  An Observable that emits the results of sampling the
 	 * values emitted by the source Observable whenever the notifier Observable
@@ -41882,9 +41882,9 @@
 	 * @see {@link sample}
 	 * @see {@link throttleTime}
 	 *
-	 * @param {number} period The sampling period expressed in milliseconds or the
+	 * @param  period The sampling period expressed in milliseconds or the
 	 * time unit determined internally by the optional `scheduler`.
-	 * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
+	 * @param  [scheduler=async] The {@link IScheduler} to use for
 	 * managing the timers that handle the sampling.
 	 * @return  An Observable that emits the results of sampling the
 	 * values emitted by the source Observable at the specified time interval.
@@ -41991,10 +41991,10 @@
 	 * @see {@link mergeScan}
 	 * @see {@link reduce}
 	 *
-	 * @param {function(acc: R, value: T, index: number): R} accumulator
+	 * @param  accumulator
 	 * The accumulator function called on each source value.
-	 * @param {T|R} [seed] The initial accumulation value.
-	 * @return {Observable<R>} An observable of the accumulated values.
+	 * @param  [seed] The initial accumulation value.
+	 * @return  An observable of the accumulated values.
 	 * @method scan
 	 * @owner Observable
 	 */
@@ -42141,9 +42141,9 @@
 	 * @see {@link zip}
 	 * @see {@link withLatestFrom}
 	 *
-	 * @param {Observable} compareTo The observable sequence to compare the source sequence to.
-	 * @param {function} [comparor] An optional function to compare each value pair
-	 * @return {Observable} An Observable of a single boolean value representing whether or not
+	 * @param  compareTo The observable sequence to compare the source sequence to.
+	 * @param  [comparor] An optional function to compare each value pair
+	 * @return  An Observable of a single boolean value representing whether or not
 	 * the values emitted by both observables were equal in sequence.
 	 * @method sequenceEqual
 	 * @owner Observable
@@ -42359,7 +42359,7 @@
 	 *
 	 * @throws {EmptyError} Delivers an EmptyError to the Observer's `error`
 	 * callback if the Observable completes before any `next` notification was sent.
-	 * @param {Function} predicate - A predicate function to evaluate items emitted by the source Observable.
+	 * @param  predicate - A predicate function to evaluate items emitted by the source Observable.
 	 * @return  An Observable that emits the single item emitted by the source Observable that matches
 	 * the predicate.
 	 .
@@ -42462,8 +42462,8 @@
 	 *
 	 * <img src="./img/skip.png" width="100%">
 	 *
-	 * @param {Number} count - The number of times, items emitted by source Observable should be skipped.
-	 * @return {Observable} An Observable that skips values emitted by the source Observable.
+	 * @param  count - The number of times, items emitted by source Observable should be skipped.
+	 * @return  An Observable that skips values emitted by the source Observable.
 	 *
 	 * @method skip
 	 * @owner Observable
@@ -42550,7 +42550,7 @@
 	 * @throws {ArgumentOutOfRangeError} When using `skipLast(i)`, it throws
 	 * ArgumentOutOrRangeError if `i < 0`.
 	 *
-	 * @param {number} count Number of elements to skip from the end of the source Observable.
+	 * @param  count Number of elements to skip from the end of the source Observable.
 	 * @returns {Observable<T>} An Observable that skips the last count values
 	 * emitted by the source Observable.
 	 * @method skipLast
@@ -42637,7 +42637,7 @@
 	 *
 	 * <img src="./img/skipUntil.png" width="100%">
 	 *
-	 * @param {Observable} notifier - The second Observable that has to emit an item before the source Observable's elements begin to
+	 * @param  notifier - The second Observable that has to emit an item before the source Observable's elements begin to
 	 * be mirrored by the resulting Observable.
 	 * @return  An Observable that skips items from the source Observable until the second Observable emits
 	 * an item, then emits the remaining items.
@@ -42723,7 +42723,7 @@
 	 *
 	 * <img src="./img/skipWhile.png" width="100%">
 	 *
-	 * @param {Function} predicate - A function to test each item emitted from the source Observable.
+	 * @param  predicate - A function to test each item emitted from the source Observable.
 	 * @return  An Observable that begins emitting items emitted by the source Observable when the
 	 * specified predicate becomes false.
 	 * @method skipWhile
@@ -42804,10 +42804,10 @@
 	 *
 	 * <img src="./img/startWith.png" width="100%">
 	 *
-	 * @param {...T} values - Items you want the modified Observable to emit first.
-	 * @param {Scheduler} [scheduler] - A {@link IScheduler} to use for scheduling
+	 * @param  values - Items you want the modified Observable to emit first.
+	 * @param  [scheduler] - A {@link IScheduler} to use for scheduling
 	 * the emissions of the `next` notifications.
-	 * @return {Observable} An Observable that emits the items in the specified Iterable and then emits the items
+	 * @return  An Observable that emits the items in the specified Iterable and then emits the items
 	 * emitted by the source Observable.
 	 * @method startWith
 	 * @owner Observable
@@ -42859,7 +42859,7 @@
 	 *
 	 * <img src="./img/subscribeOn.png" width="100%">
 	 *
-	 * @param {Scheduler} scheduler - The IScheduler to perform subscription actions on.
+	 * @param  scheduler - The IScheduler to perform subscription actions on.
 	 * @return  The source Observable modified so that its subscriptions happen on the specified IScheduler.
 	 .
 	 * @method subscribeOn
@@ -43557,10 +43557,10 @@
 	 * @see {@link switch}
 	 * @see {@link switchMapTo}
 	 *
-	 * @param {function(value: T, ?index: number): ObservableInput} project A function
+	 * @param  project A function
 	 * that, when applied to an item emitted by the source Observable, returns an
 	 * Observable.
-	 * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
+	 * @param  [resultSelector]
 	 * A function to produce the value on the output Observable based on the values
 	 * and the indices of the source (outer) emission and the inner Observable
 	 * emission. The arguments passed to this function are:
@@ -43568,7 +43568,7 @@
 	 * - `innerValue`: the value that came from the projected Observable
 	 * - `outerIndex`: the "index" of the value that came from the source
 	 * - `innerIndex`: the "index" of the value from the projected Observable
-	 * @return {Observable} An Observable that emits the result of applying the
+	 * @return  An Observable that emits the result of applying the
 	 * projection function (and the optional `resultSelector`) to each item emitted
 	 * by the source Observable and taking only the values from the most recently
 	 * projected inner Observable.
@@ -43708,9 +43708,9 @@
 	 * @see {@link switchMap}
 	 * @see {@link mergeMapTo}
 	 *
-	 * @param {ObservableInput} innerObservable An Observable to replace each value from
+	 * @param  innerObservable An Observable to replace each value from
 	 * the source Observable.
-	 * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
+	 * @param  [resultSelector]
 	 * A function to produce the value on the output Observable based on the values
 	 * and the indices of the source (outer) emission and the inner Observable
 	 * emission. The arguments passed to this function are:
@@ -43718,7 +43718,7 @@
 	 * - `innerValue`: the value that came from the projected Observable
 	 * - `outerIndex`: the "index" of the value that came from the source
 	 * - `innerIndex`: the "index" of the value from the projected Observable
-	 * @return {Observable} An Observable that emits items from the given
+	 * @return  An Observable that emits items from the given
 	 * `innerObservable` (and optionally transformed through `resultSelector`) every
 	 * time a value is emitted on the source Observable, and taking only the values
 	 * from the most recently projected inner Observable.
@@ -43849,7 +43849,7 @@
 	 * @throws {ArgumentOutOfRangeError} When using `take(i)`, it delivers an
 	 * ArgumentOutOrRangeError to the Observer's `error` callback if `i < 0`.
 	 *
-	 * @param {number} count The maximum number of `next` values to emit.
+	 * @param  count The maximum number of `next` values to emit.
 	 * @return  An Observable that emits only the first `count`
 	 * values emitted by the source Observable, or all of the values from the source
 	 * if the source emits fewer than `count` values.
@@ -43956,7 +43956,7 @@
 	 * @throws {ArgumentOutOfRangeError} When using `takeLast(i)`, it delivers an
 	 * ArgumentOutOrRangeError to the Observer's `error` callback if `i < 0`.
 	 *
-	 * @param {number} count The maximum number of values to emit from the end of
+	 * @param  count The maximum number of values to emit from the end of
 	 * the sequence of values emitted by the source Observable.
 	 * @return  An Observable that emits at most the last count
 	 * values emitted by the source Observable.
@@ -44073,7 +44073,7 @@
 	 * @see {@link takeWhile}
 	 * @see {@link skip}
 	 *
-	 * @param {Observable} notifier The Observable whose first emitted value will
+	 * @param  notifier The Observable whose first emitted value will
 	 * cause the output Observable of `takeUntil` to stop emitting values from the
 	 * source Observable.
 	 * @return  An Observable that emits the values from the source
@@ -44164,7 +44164,7 @@
 	 * @see {@link takeUntil}
 	 * @see {@link skip}
 	 *
-	 * @param {function(value: T, index: number): boolean} predicate A function that
+	 * @param  predicate A function that
 	 * evaluates a value emitted by the source Observable and returns a boolean.
 	 * Also takes the (zero-based) index as the second argument.
 	 * @return  An Observable that emits the values from the source
@@ -44279,10 +44279,10 @@
 	 * @see {@link sample}
 	 * @see {@link throttleTime}
 	 *
-	 * @param {function(value: T): SubscribableOrPromise} durationSelector A function
+	 * @param  durationSelector A function
 	 * that receives a value from the source Observable, for computing the silencing
 	 * duration for each source value, returned as an Observable or a Promise.
-	 * @param {Object} config a configuration object to define `leading` and `trailing` behavior. Defaults
+	 * @param  config a configuration object to define `leading` and `trailing` behavior. Defaults
 	 * to `{ leading: true, trailing: false }`.
 	 * @return  An Observable that performs the throttle operation to
 	 * limit the rate of emissions from the source.
@@ -44432,10 +44432,10 @@
 	 * @see {@link sampleTime}
 	 * @see {@link throttle}
 	 *
-	 * @param {number} duration Time to wait before emitting another value after
+	 * @param  duration Time to wait before emitting another value after
 	 * emitting the last value, measured in milliseconds or the time unit determined
 	 * internally by the optional `scheduler`.
-	 * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
+	 * @param  [scheduler=async] The {@link IScheduler} to use for
 	 * managing the timers that handle the throttling.
 	 * @return  An Observable that performs the throttle operation to
 	 * limit the rate of emissions from the source.
@@ -44535,7 +44535,7 @@
 	var async_1 = __webpack_require__(309);
 	/**
 	 * @param scheduler
-	 * @return {Observable<TimeInterval<any>>|WebSocketSubject<T>|Observable<T>}
+	 * @return
 	 * @method timeInterval
 	 * @owner Observable
 	 */
@@ -44667,9 +44667,9 @@
 	 *
 	 * @see {@link timeoutWith}
 	 *
-	 * @param {number|Date} due Number specifying period within which Observable must emit values
+	 * @param  due Number specifying period within which Observable must emit values
 	 *                          or Date specifying before when Observable should complete
-	 * @param {Scheduler} [scheduler] Scheduler controlling when timeout checks occur.
+	 * @param  [scheduler] Scheduler controlling when timeout checks occur.
 	 * @return  Observable that mirrors behaviour of source, unless timeout checks fail.
 	 * @method timeout
 	 * @owner Observable
@@ -44800,7 +44800,7 @@
 	 * @param due
 	 * @param withObservable
 	 * @param scheduler
-	 * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
+	 * @return
 	 * @method timeoutWith
 	 * @owner Observable
 	 */
@@ -44897,7 +44897,7 @@
 	var async_1 = __webpack_require__(309);
 	/**
 	 * @param scheduler
-	 * @return {Observable<Timestamp<any>>|WebSocketSubject<T>|Observable<T>}
+	 * @return
 	 * @method timestamp
 	 * @owner Observable
 	 */
@@ -44960,7 +44960,7 @@
 	};
 	var Subscriber_1 = __webpack_require__(197);
 	/**
-	 * @return {Observable<any[]>|WebSocketSubject<T>|Observable<T>}
+	 * @return
 	 * @method toArray
 	 * @owner Observable
 	 */
@@ -45056,10 +45056,10 @@
 	 * source.then((value) => console.log('Value: %s', value));
 	 * // => Value: 42
 	 *
-	 * @param {PromiseConstructor} [PromiseCtor] The constructor of the promise. If not provided,
+	 * @param  [PromiseCtor] The constructor of the promise. If not provided,
 	 * it will look for a constructor first in Rx.config.Promise then fall back to
 	 * the native Promise constructor if available.
-	 * @return {Promise<T>} An ES2015 compatible promise with the last value from
+	 * @return  An ES2015 compatible promise with the last value from
 	 * the observable sequence.
 	 * @method toPromise
 	 * @owner Observable
@@ -45137,9 +45137,9 @@
 	 * @see {@link windowWhen}
 	 * @see {@link buffer}
 	 *
-	 * @param {Observable<any>} windowBoundaries An Observable that completes the
+	 * @param  windowBoundaries An Observable that completes the
 	 * previous window and starts a new window.
-	 * @return {Observable<Observable<T>>} An Observable of windows, which are
+	 * @return  An Observable of windows, which are
 	 * Observables emitting values of the source Observable.
 	 * @method window
 	 * @owner Observable
@@ -45269,13 +45269,13 @@
 	 * @see {@link windowWhen}
 	 * @see {@link bufferCount}
 	 *
-	 * @param {number} windowSize The maximum number of values emitted by each
+	 * @param  windowSize The maximum number of values emitted by each
 	 * window.
-	 * @param {number} [startWindowEvery] Interval at which to start a new window.
+	 * @param  [startWindowEvery] Interval at which to start a new window.
 	 * For example if `startWindowEvery` is `2`, then a new window will be started
 	 * on every other value from the source. A new window is started at the
 	 * beginning of the source by default.
-	 * @return {Observable<Observable<T>>} An Observable of windows, which in turn
+	 * @return  An Observable of windows, which in turn
 	 * are Observable of values.
 	 * @method windowCount
 	 * @owner Observable
@@ -45588,13 +45588,13 @@
 	 * @see {@link windowWhen}
 	 * @see {@link bufferToggle}
 	 *
-	 * @param {Observable<O>} openings An observable of notifications to start new
+	 * @param  openings An observable of notifications to start new
 	 * windows.
-	 * @param {function(value: O): Observable} closingSelector A function that takes
+	 * @param  closingSelector A function that takes
 	 * the value emitted by the `openings` observable and returns an Observable,
 	 * which, when it emits (either `next` or `complete`), signals that the
 	 * associated window should complete.
-	 * @return {Observable<Observable<T>>} An observable of windows, which in turn
+	 * @return  An observable of windows, which in turn
 	 * are Observables.
 	 * @method windowToggle
 	 * @owner Observable
@@ -45782,10 +45782,10 @@
 	 * @see {@link windowToggle}
 	 * @see {@link bufferWhen}
 	 *
-	 * @param {function(): Observable} closingSelector A function that takes no
+	 * @param  closingSelector A function that takes no
 	 * arguments and returns an Observable that signals (on either `next` or
 	 * `complete`) when to close the previous window and start a new one.
-	 * @return {Observable<Observable<T>>} An observable of windows, which in turn
+	 * @return  An observable of windows, which in turn
 	 * are Observables.
 	 * @method windowWhen
 	 * @owner Observable
@@ -45917,14 +45917,14 @@
 	 *
 	 * @see {@link combineLatest}
 	 *
-	 * @param {ObservableInput} other An input Observable to combine with the source
+	 * @param  other An input Observable to combine with the source
 	 * Observable. More than one input Observables may be given as argument.
-	 * @param {Function} [project] Projection function for combining values
+	 * @param  [project] Projection function for combining values
 	 * together. Receives all values in order of the Observables passed, where the
 	 * first parameter is a value from the source Observable. (e.g.
 	 * `a.withLatestFrom(b, c, (a1, b1, c1) => a1 + b1 + c1)`). If this is not
 	 * passed, arrays will be emitted on the output Observable.
-	 * @return {Observable} An Observable of projected values from the most recent
+	 * @return  An Observable of projected values from the most recent
 	 * values from each input Observable, or an array of the most recent values from
 	 * each input Observable.
 	 * @method withLatestFrom
@@ -46042,7 +46042,7 @@
 	var zip_1 = __webpack_require__(344);
 	/**
 	 * @param project
-	 * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
+	 * @return
 	 * @method zipAll
 	 * @owner Observable
 	 */
@@ -46871,7 +46871,7 @@
 	     *
 	     * @param  fk Foreign key for accessTokens
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -46976,7 +46976,7 @@
 	     *
 	     * @param  fk Foreign key for rooms
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -47016,7 +47016,7 @@
 	     *
 	     * @param  fk Foreign key for rooms
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -47186,7 +47186,7 @@
 	     *
 	     * @param  fk Foreign key for administrations
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -47226,7 +47226,7 @@
 	     *
 	     * @param  fk Foreign key for administrations
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -47329,7 +47329,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47363,7 +47363,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -47428,7 +47428,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47461,7 +47461,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47495,7 +47495,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -47560,7 +47560,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47593,7 +47593,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47627,7 +47627,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -47692,7 +47692,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47723,7 +47723,7 @@
 	    /**
 	     * Patch an existing model instance or insert a new one into the data source.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
@@ -47758,7 +47758,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -47800,7 +47800,7 @@
 	     *     should be remembered in localStorage across app/browser restarts.
 	     *     Default: `true`.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -47846,7 +47846,7 @@
 	    /**
 	     * Logout a user with access token.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method does not accept any data. Supply an empty object.
 	     *
@@ -47878,7 +47878,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method does not accept any data. Supply an empty object.
 	     *
@@ -47941,7 +47941,7 @@
 	    /**
 	     * Reset password for a user with email.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -47971,7 +47971,7 @@
 	    /**
 	     * Change a user's password.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `oldPassword` – `{string}` -
 	     *
@@ -48006,7 +48006,7 @@
 	    /**
 	     * Reset user's password via a password-reset token.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `newPassword` – `{string}` -
 	     *
@@ -48068,9 +48068,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -48107,7 +48107,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -48144,7 +48144,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -48181,7 +48181,7 @@
 	     *
 	     * @param  id Account id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -48363,7 +48363,7 @@
 	  /**
 	   * Patch an existing model instance or insert a new one into the data source.
 	   *
-	   * @param {object} data Request data.
+	   * @param  data Request data.
 	   *
 	   *  - `data` – `{object}` - Model instance data
 	   *
@@ -48399,7 +48399,7 @@
 	     *
 	     * @param  id ApplicationCredential id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -48464,9 +48464,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -48639,7 +48639,7 @@
 	     *
 	     * @param  fk Foreign key for rooms
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -48679,7 +48679,7 @@
 	     *
 	     * @param  fk Foreign key for rooms
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -48782,7 +48782,7 @@
 	     *
 	     * @param  id Category id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48816,7 +48816,7 @@
 	     *
 	     * @param  id Category id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -48881,7 +48881,7 @@
 	     *
 	     * @param  id Category id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48912,7 +48912,7 @@
 	    /**
 	     * Patch an existing model instance or insert a new one into the data source.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
@@ -48947,7 +48947,7 @@
 	     *
 	     * @param  id Category id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -49012,9 +49012,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -49051,7 +49051,7 @@
 	     *
 	     * @param  id Category id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -49183,9 +49183,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -49292,7 +49292,7 @@
 	   *
 	   * @param  id like id
 	   *
-	   * @param {boolean} refresh
+	   * @param  refresh
 	   *
 	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
@@ -49327,7 +49327,7 @@
 	     *
 	     * @param  id like id
 	     *
-	     * @param {boolean} refresh
+	     * @param  refresh
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49359,7 +49359,7 @@
 	    /**
 	     * Patch an existing model instance or insert a new one into the data source.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
@@ -49394,7 +49394,7 @@
 	     *
 	     * @param  id like id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -49459,9 +49459,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -49636,7 +49636,7 @@
 	     *
 	     * @param  fk Foreign key for likes
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -49741,7 +49741,7 @@
 	     *
 	     * @param  fk Foreign key for replies
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -49779,7 +49779,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {boolean} refresh
+	     * @param  refresh
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49813,7 +49813,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {boolean} refresh
+	     * @param  refresh
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49847,7 +49847,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49881,7 +49881,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -49946,7 +49946,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49979,7 +49979,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50013,7 +50013,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -50078,7 +50078,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50109,7 +50109,7 @@
 	    /**
 	     * Patch an existing model instance or insert a new one into the data source.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
@@ -50144,7 +50144,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -50209,9 +50209,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -50248,7 +50248,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -50285,7 +50285,7 @@
 	     *
 	     * @param  id Message id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -50468,7 +50468,7 @@
 	     *
 	     * @param  fk Foreign key for messages
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -50573,7 +50573,7 @@
 	     *
 	     * @param  fk Foreign key for likes
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -50678,7 +50678,7 @@
 	     *
 	     * @param  fk Foreign key for categories
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -50718,7 +50718,7 @@
 	     *
 	     * @param  fk Foreign key for categories
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -50888,7 +50888,7 @@
 	     *
 	     * @param  fk Foreign key for accounts
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -50928,7 +50928,7 @@
 	     *
 	     * @param  fk Foreign key for accounts
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -51098,7 +51098,7 @@
 	     *
 	     * @param  fk Foreign key for admins
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -51138,7 +51138,7 @@
 	     *
 	     * @param  fk Foreign key for admins
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -51241,7 +51241,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51275,7 +51275,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -51340,7 +51340,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51373,7 +51373,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51407,7 +51407,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -51472,7 +51472,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51505,7 +51505,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51539,7 +51539,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -51604,7 +51604,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51637,7 +51637,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51671,7 +51671,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -51736,7 +51736,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51769,7 +51769,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} filter
+	     * @param  filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51803,7 +51803,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -51868,7 +51868,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} where Criteria to match model instances
+	     * @param  where Criteria to match model instances
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51899,7 +51899,7 @@
 	    /**
 	     * Patch an existing model instance or insert a new one into the data source.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
@@ -51934,7 +51934,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -52046,7 +52046,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `a` – `{object}` -
 	     *
@@ -52086,7 +52086,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -52123,7 +52123,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `room` – `{object}` -
 	     *
@@ -52159,7 +52159,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -52194,7 +52194,7 @@
 	     *
 	     * @param  property Property name to lookup values for.
 	     *
-	     * @param {object} filter Filter defining fields, where, include, order, offset, and limit
+	     * @param  filter Filter defining fields, where, include, order, offset, and limit
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -52227,9 +52227,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -52266,7 +52266,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -52303,7 +52303,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -52340,7 +52340,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -52377,7 +52377,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -52414,7 +52414,7 @@
 	     *
 	     * @param  id Room id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -52521,7 +52521,7 @@
 	   *
 	   * @param  id RoomAccount id
 	   *
-	   * @param {boolean} refresh
+	   * @param  refresh
 	   *
 	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
@@ -52556,7 +52556,7 @@
 	     *
 	     * @param  id RoomAccount id
 	     *
-	     * @param {boolean} refresh
+	     * @param  refresh
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -52588,7 +52588,7 @@
 	    /**
 	     * Patch an existing model instance or insert a new one into the data source.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
@@ -52623,7 +52623,7 @@
 	     *
 	     * @param  id RoomAccount id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -52688,9 +52688,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -52797,7 +52797,7 @@
 	   *
 	   * @param  id RoomAdmin id
 	   *
-	   * @param {boolean} refresh
+	   * @param  refresh
 	   *
 	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
@@ -52832,7 +52832,7 @@
 	     *
 	     * @param  id RoomAdmin id
 	     *
-	     * @param {boolean} refresh
+	     * @param  refresh
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -52864,7 +52864,7 @@
 	    /**
 	     * Patch an existing model instance or insert a new one into the data source.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
@@ -52899,7 +52899,7 @@
 	     *
 	     * @param  id RoomAdmin id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -52964,9 +52964,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -53099,7 +53099,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
@@ -53305,7 +53305,7 @@
 	     *
 	     * @param  container
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `req` – `{object}` -
 	     *
@@ -53345,9 +53345,9 @@
 	     *
 	     * @param  file
 	     *
-	     * @param {object} req
+	     * @param  req
 	     *
-	     * @param {object} res
+	     * @param  res
 	     *
 	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53406,9 +53406,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -53509,7 +53509,7 @@
 	  /**
 	   * Patch an existing model instance or insert a new one into the data source.
 	   *
-	   * @param {object} data Request data.
+	   * @param  data Request data.
 	   *
 	   *  - `data` – `{object}` - Model instance data
 	   *
@@ -53545,7 +53545,7 @@
 	     *
 	     * @param  id UserCredential id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -53610,9 +53610,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -53717,7 +53717,7 @@
 	   *
 	   * @param  id UserIdentity id
 	   *
-	   * @param {boolean} refresh
+	   * @param  refresh
 	   *
 	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
@@ -53750,7 +53750,7 @@
 	    /**
 	     * Patch an existing model instance or insert a new one into the data source.
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
@@ -53785,7 +53785,7 @@
 	     *
 	     * @param  id UserIdentity id
 	     *
-	     * @param {object} data Request data.
+	     * @param  data Request data.
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
@@ -53850,9 +53850,9 @@
 	     *
 	     * @param  range hourly, daily, weekly, monthly, yearly, custom
 	     *
-	     * @param {object} custom {"start": date, "end": date }
+	     * @param  custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter
+	     * @param  where where filter
 	     *
 	     * @param  groupBy group by filter
 	     *
@@ -54059,7 +54059,7 @@
 	     * @method set
 	     * @param  key Cookie key name
 	     * @param  value Any value
-	     * @param {Date=} expires The date of expiration (Optional)
+	     * @param  expires The date of expiration (Optional)
 	     * @return
 	     * @description
 	     * The setter will return any type of data persisted in cookies.
