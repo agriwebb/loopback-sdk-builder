@@ -786,7 +786,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule reactProdInvariant
-	 * 
+	 *
 	 */
 	'use strict';
 
@@ -1352,7 +1352,7 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * 
+	 *
 	 */
 
 	function makeEmptyFunction(arg) {
@@ -1597,7 +1597,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule getIteratorFn
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -1643,7 +1643,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule KeyEscapeUtils
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -6374,7 +6374,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule accumulateInto
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -6438,7 +6438,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule forEachAccumulated
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -7708,7 +7708,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule ReactFeatureFlags
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -8981,7 +8981,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule isTextInputElement
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -12452,7 +12452,7 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * 
+	 *
 	 * @typechecks static-only
 	 */
 
@@ -13129,7 +13129,7 @@
 	 *
 	 * @param {string} styleProp
 	 * @param {string} eventName
-	 * @returns {object}
+	 * @returns
 	 */
 	function makePrefixMap(styleProp, eventName) {
 	  var prefixes = {};
@@ -15978,7 +15978,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule ReactNodeTypes
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -16024,7 +16024,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @typechecks
-	 * 
+	 *
 	 */
 
 	/*eslint-disable no-self-compare */
@@ -16260,7 +16260,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule flattenChildren
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -16438,7 +16438,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule ReactServerUpdateQueue
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -18593,7 +18593,7 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * 
+	 *
 	 */
 
 	var isTextNode = __webpack_require__(146);
@@ -21091,7 +21091,7 @@
 	  /**
 	   * @param {string} markup to use
 	   * @param {DOMElement} element root React element
-	   * @returns {boolean} whether or not the markup is the same
+	   * @returns whether or not the markup is the same
 	   */
 	  canReuseMarkup: function (markup, element) {
 	    var existingChecksum = element.getAttribute(ReactMarkupChecksum.CHECKSUM_ATTR_NAME);
@@ -21116,7 +21116,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @providesModule adler32
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -21633,7 +21633,7 @@
 	* ============================================================================
 	* import { NgModule }       from '@angular/core';
 	* import { BrowserModule }  from '@angular/platform-browser';
-	* // App Root 
+	* // App Root
 	* import { AppComponent }   from './app.component';
 	* // Feature Modules
 	* import { SDK[Browser|Node|Native]Module } from './shared/sdk/sdk.module';
@@ -25040,7 +25040,7 @@
 	        /**
 	        CODE BELOW WILL GENERATE THE FOLLOWING ISSUES:
 	        - https://github.com/mean-expert-official/loopback-sdk-builder/issues/356
-	        - https://github.com/mean-expert-official/loopback-sdk-builder/issues/328 
+	        - https://github.com/mean-expert-official/loopback-sdk-builder/issues/328
 	        if (urlParams.where) {
 	          headers.append('where', JSON.stringify(urlParams.where));
 	          delete urlParams.where;
@@ -25451,13 +25451,13 @@
 	* @module LoopBackConfig
 	* @description
 	*
-	* The LoopBackConfig module help developers to externally 
+	* The LoopBackConfig module help developers to externally
 	* configure the base url and api version for loopback.io
 	*
 	* Example
 	*
 	* import { LoopBackConfig } from './sdk';
-	* 
+	*
 	* @Component() // No metadata needed for this module
 	*
 	* export class MyApp {
@@ -26431,7 +26431,7 @@
 	 * Determine if a value is an Array
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is an Array, otherwise false
+	 * @returns True if value is an Array, otherwise false
 	 */
 	function isArray(val) {
 	  return toString.call(val) === '[object Array]';
@@ -26441,7 +26441,7 @@
 	 * Determine if a value is an ArrayBuffer
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+	 * @returns True if value is an ArrayBuffer, otherwise false
 	 */
 	function isArrayBuffer(val) {
 	  return toString.call(val) === '[object ArrayBuffer]';
@@ -26451,7 +26451,7 @@
 	 * Determine if a value is a FormData
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is an FormData, otherwise false
+	 * @returns True if value is an FormData, otherwise false
 	 */
 	function isFormData(val) {
 	  return (typeof FormData !== 'undefined') && (val instanceof FormData);
@@ -26461,7 +26461,7 @@
 	 * Determine if a value is a view on an ArrayBuffer
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+	 * @returns True if value is a view on an ArrayBuffer, otherwise false
 	 */
 	function isArrayBufferView(val) {
 	  var result;
@@ -26477,7 +26477,7 @@
 	 * Determine if a value is a String
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is a String, otherwise false
+	 * @returns True if value is a String, otherwise false
 	 */
 	function isString(val) {
 	  return typeof val === 'string';
@@ -26487,7 +26487,7 @@
 	 * Determine if a value is a Number
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is a Number, otherwise false
+	 * @returns True if value is a Number, otherwise false
 	 */
 	function isNumber(val) {
 	  return typeof val === 'number';
@@ -26497,7 +26497,7 @@
 	 * Determine if a value is undefined
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if the value is undefined, otherwise false
+	 * @returns True if the value is undefined, otherwise false
 	 */
 	function isUndefined(val) {
 	  return typeof val === 'undefined';
@@ -26507,7 +26507,7 @@
 	 * Determine if a value is an Object
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is an Object, otherwise false
+	 * @returns True if value is an Object, otherwise false
 	 */
 	function isObject(val) {
 	  return val !== null && typeof val === 'object';
@@ -26517,7 +26517,7 @@
 	 * Determine if a value is a Date
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is a Date, otherwise false
+	 * @returns True if value is a Date, otherwise false
 	 */
 	function isDate(val) {
 	  return toString.call(val) === '[object Date]';
@@ -26527,7 +26527,7 @@
 	 * Determine if a value is a File
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is a File, otherwise false
+	 * @returns True if value is a File, otherwise false
 	 */
 	function isFile(val) {
 	  return toString.call(val) === '[object File]';
@@ -26537,7 +26537,7 @@
 	 * Determine if a value is a Blob
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is a Blob, otherwise false
+	 * @returns True if value is a Blob, otherwise false
 	 */
 	function isBlob(val) {
 	  return toString.call(val) === '[object Blob]';
@@ -26547,7 +26547,7 @@
 	 * Determine if a value is a Function
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is a Function, otherwise false
+	 * @returns True if value is a Function, otherwise false
 	 */
 	function isFunction(val) {
 	  return toString.call(val) === '[object Function]';
@@ -26557,7 +26557,7 @@
 	 * Determine if a value is a Stream
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is a Stream, otherwise false
+	 * @returns True if value is a Stream, otherwise false
 	 */
 	function isStream(val) {
 	  return isObject(val) && isFunction(val.pipe);
@@ -26567,7 +26567,7 @@
 	 * Determine if a value is a URLSearchParams object
 	 *
 	 * @param {Object} val The value to test
-	 * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+	 * @returns True if value is a URLSearchParams object, otherwise false
 	 */
 	function isURLSearchParams(val) {
 	  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
@@ -26660,7 +26660,7 @@
 	 * ```
 	 *
 	 * @param {Object} obj1 Object to merge
-	 * @returns {Object} Result of all merge properties
+	 * @returns Result of all merge properties
 	 */
 	function merge(/* obj1, obj2, obj3, ... */) {
 	  var result = {};
@@ -27337,7 +27337,7 @@
 	 * ```
 	 *
 	 * @param {String} headers Headers needing to be parsed
-	 * @returns {Object} Headers parsed into an object
+	 * @returns Headers parsed into an object
 	 */
 	module.exports = function parseHeaders(headers) {
 	  var parsed = {};
@@ -27383,7 +27383,7 @@
 	    * Parse a URL to discover it's components
 	    *
 	    * @param {String} url The URL to be parsed
-	    * @returns {Object}
+	    * @returns
 	    */
 	    function resolveURL(url) {
 	      var href = url;
@@ -27417,7 +27417,7 @@
 	    * Determine if a URL shares the same origin as the current location
 	    *
 	    * @param {String} requestURL The URL to test
-	    * @returns {boolean} True if URL shares the same origin, otherwise false
+	    * @returns True if URL shares the same origin, otherwise false
 	    */
 	    return function isURLSameOrigin(requestURL) {
 	      var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
@@ -27693,7 +27693,7 @@
 	 * @param {Object|String} data The data to be transformed
 	 * @param {Array} headers The headers for the request or response
 	 * @param {Array|Function} fns A single function or Array of functions
-	 * @returns {*} The resulting transformed data
+	 * @returns The resulting transformed data
 	 */
 	module.exports = function transformData(data, headers, fns) {
 	  /*eslint no-param-reassign:0*/
@@ -27726,7 +27726,7 @@
 	 * Determines whether the specified URL is absolute
 	 *
 	 * @param {string} url The URL to test
-	 * @returns {boolean} True if the specified URL is absolute, otherwise false
+	 * @returns True if the specified URL is absolute, otherwise false
 	 */
 	module.exports = function isAbsoluteURL(url) {
 	  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
@@ -28270,7 +28270,7 @@
 	   *
 	   * @param {any} fk Foreign key for accessTokens
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -28305,7 +28305,7 @@
 	     *
 	     * @param {any} fk Foreign key for accessTokens
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28340,7 +28340,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28374,7 +28374,7 @@
 	     *
 	     * @param {any} id User id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -28412,7 +28412,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28445,7 +28445,7 @@
 	     *
 	     * @param {any} id User id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28475,13 +28475,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -28508,7 +28508,7 @@
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28543,7 +28543,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28585,15 +28585,15 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * The response body contains properties of the AccessToken created on login.
 	     * Depending on the value of `include` parameter, the body may contain additional properties:
-	     * 
+	     *
 	     *   - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)
-	     * 
+	     *
 	     *
 	     */
 
@@ -28631,7 +28631,7 @@
 	     *
 	     * This method does not accept any data. Supply an empty object.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28663,7 +28663,7 @@
 	     *
 	     * This method does not accept any data. Supply an empty object.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28689,13 +28689,13 @@
 	    /**
 	     * Confirm a user registration with identity verification token.
 	     *
-	     * @param {string} uid 
+	     * @param {string} uid
 	     *
-	     * @param {string} token 
+	     * @param {string} token
 	     *
-	     * @param {string} redirect 
+	     * @param {string} redirect
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28726,7 +28726,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28754,11 +28754,11 @@
 	     *
 	     * @param {object} data Request data.
 	     *
-	     *  - `oldPassword` – `{string}` - 
+	     *  - `oldPassword` – `{string}` -
 	     *
-	     *  - `newPassword` – `{string}` - 
+	     *  - `newPassword` – `{string}` -
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28789,9 +28789,9 @@
 	     *
 	     * @param {object} data Request data.
 	     *
-	     *  - `newPassword` – `{string}` - 
+	     *  - `newPassword` – `{string}` -
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -28913,7 +28913,7 @@
 	    /**
 	     * @name sdk.User#isAuthenticated
 	     *
-	     * @returns {boolean} True if the current user is authenticated (logged in).
+	     * @returns True if the current user is authenticated (logged in).
 	     */
 
 	  }, {
@@ -46805,7 +46805,7 @@
 	   *
 	   * @param {any} fk Foreign key for accessTokens
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -46840,7 +46840,7 @@
 	     *
 	     * @param {any} fk Foreign key for accessTokens
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -46875,7 +46875,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -46911,7 +46911,7 @@
 	     *
 	     * @param {any} fk Foreign key for rooms
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -46945,7 +46945,7 @@
 	     *
 	     * @param {any} fk Foreign key for rooms
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -46980,7 +46980,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47020,7 +47020,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47056,7 +47056,7 @@
 	     *
 	     * @param {any} fk Foreign key for rooms
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47087,7 +47087,7 @@
 	     *
 	     * @param {any} fk Foreign key for rooms
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47121,7 +47121,7 @@
 	     *
 	     * @param {any} fk Foreign key for administrations
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47155,7 +47155,7 @@
 	     *
 	     * @param {any} fk Foreign key for administrations
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47190,7 +47190,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47230,7 +47230,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47266,7 +47266,7 @@
 	     *
 	     * @param {any} fk Foreign key for administrations
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47297,7 +47297,7 @@
 	     *
 	     * @param {any} fk Foreign key for administrations
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47329,7 +47329,7 @@
 	     *
 	     * @param {any} id Account id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47367,7 +47367,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47400,7 +47400,7 @@
 	     *
 	     * @param {any} id Account id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47430,13 +47430,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -47461,7 +47461,7 @@
 	     *
 	     * @param {any} id Account id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47499,7 +47499,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47532,7 +47532,7 @@
 	     *
 	     * @param {any} id Account id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47562,13 +47562,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -47593,7 +47593,7 @@
 	     *
 	     * @param {any} id Account id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -47631,7 +47631,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47664,7 +47664,7 @@
 	     *
 	     * @param {any} id Account id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47694,13 +47694,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -47727,7 +47727,7 @@
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47762,7 +47762,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47804,15 +47804,15 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * The response body contains properties of the AccessToken created on login.
 	     * Depending on the value of `include` parameter, the body may contain additional properties:
-	     * 
+	     *
 	     *   - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)
-	     * 
+	     *
 	     *
 	     */
 
@@ -47850,7 +47850,7 @@
 	     *
 	     * This method does not accept any data. Supply an empty object.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47882,7 +47882,7 @@
 	     *
 	     * This method does not accept any data. Supply an empty object.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47908,13 +47908,13 @@
 	    /**
 	     * Confirm a user registration with identity verification token.
 	     *
-	     * @param {string} uid 
+	     * @param {string} uid
 	     *
-	     * @param {string} token 
+	     * @param {string} token
 	     *
-	     * @param {string} redirect 
+	     * @param {string} redirect
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47945,7 +47945,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -47973,11 +47973,11 @@
 	     *
 	     * @param {object} data Request data.
 	     *
-	     *  - `oldPassword` – `{string}` - 
+	     *  - `oldPassword` – `{string}` -
 	     *
-	     *  - `newPassword` – `{string}` - 
+	     *  - `newPassword` – `{string}` -
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48008,9 +48008,9 @@
 	     *
 	     * @param {object} data Request data.
 	     *
-	     *  - `newPassword` – `{string}` - 
+	     *  - `newPassword` – `{string}` -
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48040,13 +48040,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -48070,9 +48070,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48273,7 +48273,7 @@
 	    /**
 	     * @name sdk.Account#isAuthenticated
 	     *
-	     * @returns {boolean} True if the current user is authenticated (logged in).
+	     * @returns True if the current user is authenticated (logged in).
 	     */
 
 	  }, {
@@ -48367,7 +48367,7 @@
 	   *
 	   *  - `data` – `{object}` - Model instance data
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -48403,7 +48403,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48436,13 +48436,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -48466,9 +48466,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48573,7 +48573,7 @@
 	   *
 	   * @param {any} fk Foreign key for rooms
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -48608,7 +48608,7 @@
 	     *
 	     * @param {any} fk Foreign key for rooms
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48643,7 +48643,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48683,7 +48683,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48719,7 +48719,7 @@
 	     *
 	     * @param {any} fk Foreign key for rooms
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48750,7 +48750,7 @@
 	     *
 	     * @param {any} fk Foreign key for rooms
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48782,7 +48782,7 @@
 	     *
 	     * @param {any} id Category id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -48820,7 +48820,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48853,7 +48853,7 @@
 	     *
 	     * @param {any} id Category id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48883,13 +48883,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -48916,7 +48916,7 @@
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48951,7 +48951,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -48984,13 +48984,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -49014,9 +49014,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49154,13 +49154,13 @@
 	         * (The remote method definition does not provide any description.)
 	         * </em>
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
 	   * Data properties:
 	   *
-	   *  - `result` – `{any}` - 
+	   *  - `result` – `{any}` -
 	   */
 
 
@@ -49185,9 +49185,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49292,9 +49292,9 @@
 	   *
 	   * @param {any} id like id
 	   *
-	   * @param {boolean} refresh 
+	   * @param {boolean} refresh
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -49327,9 +49327,9 @@
 	     *
 	     * @param {any} id like id
 	     *
-	     * @param {boolean} refresh 
+	     * @param {boolean} refresh
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49363,7 +49363,7 @@
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49398,7 +49398,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49431,13 +49431,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -49461,9 +49461,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49570,7 +49570,7 @@
 	   *
 	   * @param {any} fk Foreign key for likes
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -49605,7 +49605,7 @@
 	     *
 	     * @param {any} fk Foreign key for likes
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49640,7 +49640,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49676,7 +49676,7 @@
 	     *
 	     * @param {any} fk Foreign key for replies
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49710,7 +49710,7 @@
 	     *
 	     * @param {any} fk Foreign key for replies
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49745,7 +49745,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49779,9 +49779,9 @@
 	     *
 	     * @param {any} id Message id
 	     *
-	     * @param {boolean} refresh 
+	     * @param {boolean} refresh
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49813,9 +49813,9 @@
 	     *
 	     * @param {any} id Message id
 	     *
-	     * @param {boolean} refresh 
+	     * @param {boolean} refresh
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49847,7 +49847,7 @@
 	     *
 	     * @param {any} id Message id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -49885,7 +49885,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49918,7 +49918,7 @@
 	     *
 	     * @param {any} id Message id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -49948,13 +49948,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -49979,7 +49979,7 @@
 	     *
 	     * @param {any} id Message id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50017,7 +50017,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50050,7 +50050,7 @@
 	     *
 	     * @param {any} id Message id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50080,13 +50080,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -50113,7 +50113,7 @@
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50148,7 +50148,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50181,13 +50181,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -50211,9 +50211,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -50402,7 +50402,7 @@
 	   *
 	   * @param {any} fk Foreign key for messages
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -50437,7 +50437,7 @@
 	     *
 	     * @param {any} fk Foreign key for messages
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50472,7 +50472,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50508,7 +50508,7 @@
 	     *
 	     * @param {any} fk Foreign key for likes
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50542,7 +50542,7 @@
 	     *
 	     * @param {any} fk Foreign key for likes
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50577,7 +50577,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50613,7 +50613,7 @@
 	     *
 	     * @param {any} fk Foreign key for categories
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50647,7 +50647,7 @@
 	     *
 	     * @param {any} fk Foreign key for categories
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50682,7 +50682,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50722,7 +50722,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50758,7 +50758,7 @@
 	     *
 	     * @param {any} fk Foreign key for categories
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50789,7 +50789,7 @@
 	     *
 	     * @param {any} fk Foreign key for categories
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50823,7 +50823,7 @@
 	     *
 	     * @param {any} fk Foreign key for accounts
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50857,7 +50857,7 @@
 	     *
 	     * @param {any} fk Foreign key for accounts
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50892,7 +50892,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50932,7 +50932,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50968,7 +50968,7 @@
 	     *
 	     * @param {any} fk Foreign key for accounts
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -50999,7 +50999,7 @@
 	     *
 	     * @param {any} fk Foreign key for accounts
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51033,7 +51033,7 @@
 	     *
 	     * @param {any} fk Foreign key for admins
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51067,7 +51067,7 @@
 	     *
 	     * @param {any} fk Foreign key for admins
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51102,7 +51102,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51142,7 +51142,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51178,7 +51178,7 @@
 	     *
 	     * @param {any} fk Foreign key for admins
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51209,7 +51209,7 @@
 	     *
 	     * @param {any} fk Foreign key for admins
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51241,7 +51241,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51279,7 +51279,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51312,7 +51312,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51342,13 +51342,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -51373,7 +51373,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51411,7 +51411,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51444,7 +51444,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51474,13 +51474,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -51505,7 +51505,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51543,7 +51543,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51576,7 +51576,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51606,13 +51606,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -51637,7 +51637,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51675,7 +51675,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51708,7 +51708,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51738,13 +51738,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -51769,7 +51769,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @param {object} filter 
+	     * @param {object} filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -51807,7 +51807,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51840,7 +51840,7 @@
 	     *
 	     * @param {any} id Room id
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51870,13 +51870,13 @@
 	     *
 	     * @param {object} where Criteria to match model instances
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `count` – `{number}` - 
+	     *  - `count` – `{number}` -
 	     */
 
 	  }, {
@@ -51903,7 +51903,7 @@
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51938,7 +51938,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -51971,19 +51971,19 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} a 
+	     * @param {string} a
 	     *
-	     * @param {string} b 
+	     * @param {string} b
 	     *
-	     * @param {string} c 
+	     * @param {string} c
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `greeting` – `{string}` - 
+	     *  - `greeting` – `{string}` -
 	     */
 
 	  }, {
@@ -52009,19 +52009,19 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} a 
+	     * @param {string} a
 	     *
-	     * @param {string} b 
+	     * @param {string} b
 	     *
-	     * @param {string} c 
+	     * @param {string} c
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `greeting` – `{string}` - 
+	     *  - `greeting` – `{string}` -
 	     */
 
 	  }, {
@@ -52048,19 +52048,19 @@
 	     *
 	     * @param {object} data Request data.
 	     *
-	     *  - `a` – `{object}` - 
+	     *  - `a` – `{object}` -
 	     *
-	     *  - `b` – `{object}` - 
+	     *  - `b` – `{object}` -
 	     *
-	     *  - `c` – `{object}` - 
+	     *  - `c` – `{object}` -
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `greeting` – `{object}` - 
+	     *  - `greeting` – `{object}` -
 	     */
 
 	  }, {
@@ -52090,7 +52090,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -52125,9 +52125,9 @@
 	     *
 	     * @param {object} data Request data.
 	     *
-	     *  - `room` – `{object}` - 
+	     *  - `room` – `{object}` -
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -52163,7 +52163,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -52229,9 +52229,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -52521,9 +52521,9 @@
 	   *
 	   * @param {any} id RoomAccount id
 	   *
-	   * @param {boolean} refresh 
+	   * @param {boolean} refresh
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -52556,9 +52556,9 @@
 	     *
 	     * @param {any} id RoomAccount id
 	     *
-	     * @param {boolean} refresh 
+	     * @param {boolean} refresh
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -52592,7 +52592,7 @@
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -52627,7 +52627,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -52660,13 +52660,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -52690,9 +52690,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -52797,9 +52797,9 @@
 	   *
 	   * @param {any} id RoomAdmin id
 	   *
-	   * @param {boolean} refresh 
+	   * @param {boolean} refresh
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -52832,9 +52832,9 @@
 	     *
 	     * @param {any} id RoomAdmin id
 	     *
-	     * @param {boolean} refresh 
+	     * @param {boolean} refresh
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -52868,7 +52868,7 @@
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -52903,7 +52903,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -52936,13 +52936,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -52966,9 +52966,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53103,7 +53103,7 @@
 	     *
 	     * This method expects a subset of model properties as request parameters.
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -53134,15 +53134,15 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container 
+	     * @param {string} container
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `` – `{}` - 
+	     *  - `` – `{}` -
 	     */
 
 	  }, {
@@ -53166,9 +53166,9 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container 
+	     * @param {string} container
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -53199,7 +53199,7 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container 
+	     * @param {string} container
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53232,11 +53232,11 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container 
+	     * @param {string} container
 	     *
-	     * @param {string} file 
+	     * @param {string} file
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -53268,17 +53268,17 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container 
+	     * @param {string} container
 	     *
-	     * @param {string} file 
+	     * @param {string} file
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `` – `{}` - 
+	     *  - `` – `{}` -
 	     */
 
 	  }, {
@@ -53303,21 +53303,21 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container 
+	     * @param {string} container
 	     *
 	     * @param {object} data Request data.
 	     *
-	     *  - `req` – `{object}` - 
+	     *  - `req` – `{object}` -
 	     *
-	     *  - `res` – `{object}` - 
+	     *  - `res` – `{object}` -
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{object}` - 
+	     *  - `result` – `{object}` -
 	     */
 
 	  }, {
@@ -53341,15 +53341,15 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @param {string} container 
+	     * @param {string} container
 	     *
-	     * @param {string} file 
+	     * @param {string} file
 	     *
-	     * @param {object} req 
+	     * @param {object} req
 	     *
-	     * @param {object} res 
+	     * @param {object} res
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -53378,13 +53378,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -53408,9 +53408,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53513,7 +53513,7 @@
 	   *
 	   *  - `data` – `{object}` - Model instance data
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -53549,7 +53549,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -53582,13 +53582,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -53612,9 +53612,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
@@ -53717,9 +53717,9 @@
 	   *
 	   * @param {any} id UserIdentity id
 	   *
-	   * @param {boolean} refresh 
+	   * @param {boolean} refresh
 	   *
-	   * @returns {object} An empty reference that will be
+	   * @returns An empty reference that will be
 	   *   populated with the actual data once the response is returned
 	   *   from the server.
 	   *
@@ -53754,7 +53754,7 @@
 	     *
 	     *  - `data` – `{object}` - Model instance data
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -53789,7 +53789,7 @@
 	     *
 	     *  - `data` – `{object}` - An object of model property name/value pairs
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
@@ -53822,13 +53822,13 @@
 	           * (The remote method definition does not provide any description.)
 	           * </em>
 	     *
-	     * @returns {object} An empty reference that will be
+	     * @returns An empty reference that will be
 	     *   populated with the actual data once the response is returned
 	     *   from the server.
 	     *
 	     * Data properties:
 	     *
-	     *  - `result` – `{any}` - 
+	     *  - `result` – `{any}` -
 	     */
 
 	  }, {
@@ -53852,9 +53852,9 @@
 	     *
 	     * @param {object} custom {"start": date, "end": date }
 	     *
-	     * @param {object} where where filter 
+	     * @param {object} where where filter
 	     *
-	     * @param {string} groupBy group by filter 
+	     * @param {string} groupBy group by filter
 	     *
 	     * @returns {object[]} An empty reference that will be
 	     *   populated with the actual data once the response is returned
