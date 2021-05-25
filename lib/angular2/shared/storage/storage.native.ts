@@ -1,20 +1,20 @@
 /* tslint:disable */
-import * as AppSettings from 'application-settings';
 import { Injectable } from '@angular/core';
+import * as AppSettings from 'application-settings';
 /**
-* @author Jonathan Casarrubias <twitter:@johncasarrubias> <github:@mean-expert-official>
-* @module StorageNative
-* @license MIT
-* @description
-* This module handle localStorage, it will be provided using DI Swapping according the
-* SDK Socket Driver Available currently supporting Angular 2 for web and NativeScript 2.
-**/
+ * @author Jonathan Casarrubias <twitter:@johncasarrubias> <github:@mean-expert-official>
+ * @module StorageNative
+ * @license MIT
+ * @description
+ * This module handle localStorage, it will be provided using DI Swapping according the
+ * SDK Socket Driver Available currently supporting Angular 2 for web and NativeScript 2.
+ **/
 @Injectable()
 export class StorageNative {
   /**
    * @method get
-   * @param {string} key Storage key name
-   * @return {any}
+   * @param  key Storage key name
+   * @return
    * @description
    * The getter will return any type of data persisted in localStorage.
    **/
@@ -24,9 +24,9 @@ export class StorageNative {
   }
   /**
    * @method set
-   * @param {string} key Storage key name
-   * @param {any} value Any value
-   * @return {void}
+   * @param  key Storage key name
+   * @param  value Any value
+   * @return
    * @description
    * The setter will return any type of data persisted in localStorage.
    **/
@@ -38,8 +38,8 @@ export class StorageNative {
   }
   /**
    * @method remove
-   * @param {string} key Storage key name
-   * @return {void}
+   * @param  key Storage key name
+   * @return
    * @description
    * This method will remove a localStorage item from the client.
    **/
@@ -52,17 +52,17 @@ export class StorageNative {
   }
   /**
    * @method parse
-   * @param {any} value Input data expected to be JSON
-   * @return {void}
+   * @param  value Input data expected to be JSON
+   * @return
    * @description
    * This method will parse the string as JSON if possible, otherwise will
    * return the value itself.
    **/
   private parse(value: any) {
     try {
-        return JSON.parse(value);
+      return JSON.parse(value);
     } catch (e) {
-        return value;
+      return value;
     }
   }
 }

@@ -1,30 +1,30 @@
 /* tslint:disable */
 declare var Object: any;
-import { Injectable, Inject } from '@angular/core';
-import { InternalStorage } from '../../storage/storage.swaps';
+import { Inject, Injectable } from '@angular/core';
 import { SDKToken } from '../../models/BaseModels';
+import { InternalStorage } from '../../storage/storage.swaps';
 /**
-* @author Jonathan Casarrubias <twitter:@johncasarrubias> <github:@mean-expert-official>
-* @module SocketConnection
-* @license MIT
-* @description
-* This module handle socket connections and return singleton instances for each
-* connection, it will use the SDK Socket Driver Available currently supporting
-* Angular 2 for web, NativeScript 2 and Angular Universal.
-**/
+ * @author Jonathan Casarrubias <twitter:@johncasarrubias> <github:@mean-expert-official>
+ * @module SocketConnection
+ * @license MIT
+ * @description
+ * This module handle socket connections and return singleton instances for each
+ * connection, it will use the SDK Socket Driver Available currently supporting
+ * Angular 2 for web, NativeScript 2 and Angular Universal.
+ **/
 @Injectable()
 export class LoopBackAuth {
   /**
-   * @type {SDKToken}
+   *
    **/
   private token: SDKToken = new SDKToken();
   /**
-   * @type {string}
+   *
    **/
   protected prefix: string = '$LoopBackSDK$';
   /**
    * @method constructor
-   * @param {InternalStorage} storage Internal Storage Driver
+   * @param  storage Internal Storage Driver
    * @description
    * The constructor will initialize the token loading data from storage
    **/
@@ -38,8 +38,8 @@ export class LoopBackAuth {
   }
   /**
    * @method setRememberMe
-   * @param {boolean} value Flag to remember credentials
-   * @return {void}
+   * @param  value Flag to remember credentials
+   * @return
    * @description
    * This method will set a flag in order to remember the current credentials
    **/
@@ -48,8 +48,8 @@ export class LoopBackAuth {
   }
   /**
    * @method setUser
-   * @param {any} user Any type of user model
-   * @return {void}
+   * @param  user Any type of user model
+   * @return
    * @description
    * This method will update the user information and persist it if the
    * rememberMe flag is set.
@@ -60,8 +60,8 @@ export class LoopBackAuth {
   }
   /**
    * @method setToken
-   * @param {SDKToken} token SDKToken or casted AccessToken instance
-   * @return {void}
+   * @param  token SDKToken or casted AccessToken instance
+   * @return
    * @description
    * This method will set a flag in order to remember the current credentials
    **/
@@ -71,7 +71,7 @@ export class LoopBackAuth {
   }
   /**
    * @method getToken
-   * @return {void}
+   * @return
    * @description
    * This method will set a flag in order to remember the current credentials.
    **/
@@ -80,7 +80,7 @@ export class LoopBackAuth {
   }
   /**
    * @method getAccessTokenId
-   * @return {string}
+   * @return
    * @description
    * This method will return the actual token string, not the object instance.
    **/
@@ -89,7 +89,7 @@ export class LoopBackAuth {
   }
   /**
    * @method getCurrentUserId
-   * @return {any}
+   * @return
    * @description
    * This method will return the current user id, it can be number or string.
    **/
@@ -98,35 +98,37 @@ export class LoopBackAuth {
   }
   /**
    * @method getCurrentUserData
-   * @return {any}
+   * @return
    * @description
    * This method will return the current user instance.
    **/
   public getCurrentUserData(): any {
-    return (typeof this.token.user === 'string') ? JSON.parse(this.token.user) : this.token.user;
+    return typeof this.token.user === 'string'
+      ? JSON.parse(this.token.user)
+      : this.token.user;
   }
   /**
    * @method save
-   * @return {boolean} Whether or not the information was saved
+   * @return  Whether or not the information was saved
    * @description
    * This method will save in either local storage or cookies the current credentials.
    * But only if rememberMe is enabled.
    **/
   public save(): boolean {
-      let today = new Date();
-      let expires = new Date(today.getTime() + (this.token.ttl * 1000));
-      this.persist('id', this.token.id, expires);
-      this.persist('user', this.token.user, expires);
-      this.persist('userId', this.token.userId, expires);
-      this.persist('created', this.token.created, expires);
-      this.persist('ttl', this.token.ttl, expires);
-      this.persist('rememberMe', this.token.rememberMe, expires);
-      return true;
-  };
+    let today = new Date();
+    let expires = new Date(today.getTime() + this.token.ttl * 1000);
+    this.persist('id', this.token.id, expires);
+    this.persist('user', this.token.user, expires);
+    this.persist('userId', this.token.userId, expires);
+    this.persist('created', this.token.created, expires);
+    this.persist('ttl', this.token.ttl, expires);
+    this.persist('rememberMe', this.token.rememberMe, expires);
+    return true;
+  }
   /**
    * @method load
-   * @param {string} prop Property name
-   * @return {any} Any information persisted in storage
+   * @param  prop Property name
+   * @return  Any information persisted in storage
    * @description
    * This method will load either from local storage or cookies the provided property.
    **/
@@ -135,17 +137,19 @@ export class LoopBackAuth {
   }
   /**
    * @method clear
-   * @return {void}
+   * @return
    * @description
    * This method will clear cookies or the local storage.
    **/
   public clear(): void {
-    Object.keys(this.token).forEach((prop: string) => this.storage.remove(`${this.prefix}${prop}`));
+    Object.keys(this.token).forEach((prop: string) =>
+      this.storage.remove(`${this.prefix}${prop}`)
+    );
     this.token = new SDKToken();
   }
   /**
    * @method persist
-   * @return {void}
+   * @return
    * @description
    * This method saves values to storage
    **/
@@ -153,11 +157,10 @@ export class LoopBackAuth {
     try {
       this.storage.set(
         `${this.prefix}${prop}`,
-        (typeof value === 'object') ? JSON.stringify(value) : value,
-        this.token.rememberMe?expires:null
+        typeof value === 'object' ? JSON.stringify(value) : value,
+        this.token.rememberMe ? expires : null
       );
-    }
-    catch (err) {
+    } catch (err) {
       console.error('Cannot access local/session storage:', err);
     }
   }
