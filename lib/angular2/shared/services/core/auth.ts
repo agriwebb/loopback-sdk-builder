@@ -15,11 +15,11 @@ import { InternalStorage } from '../../storage/storage.swaps';
 @Injectable()
 export class LoopBackAuth {
   /**
-   * @type {SDKToken}
+   * @type
    **/
   private token: SDKToken = new SDKToken();
   /**
-   * @type {string}
+   * @type
    **/
   protected prefix: string = '$LoopBackSDK$';
   /**

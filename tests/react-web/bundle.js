@@ -1260,7 +1260,7 @@
 
 	  /**
 	   * @internal
-	   * @type {ReactComponent}
+	   * @type
 	   */
 	  current: null
 
@@ -2080,7 +2080,7 @@
 	  /**
 	   * An array of Mixin objects to include when defining your component.
 	   *
-	   * @type {array}
+	   * @type
 	   * @optional
 	   */
 	  mixins: SpecPolicy.DEFINE_MANY,
@@ -2089,7 +2089,7 @@
 	   * An object containing properties and methods that should be defined on
 	   * the component's constructor instead of its prototype (static methods).
 	   *
-	   * @type {object}
+	   * @type
 	   * @optional
 	   */
 	  statics: SpecPolicy.DEFINE_MANY,
@@ -2097,7 +2097,7 @@
 	  /**
 	   * Definition of prop types for this component.
 	   *
-	   * @type {object}
+	   * @type
 	   * @optional
 	   */
 	  propTypes: SpecPolicy.DEFINE_MANY,
@@ -2105,7 +2105,7 @@
 	  /**
 	   * Definition of context types for this component.
 	   *
-	   * @type {object}
+	   * @type
 	   * @optional
 	   */
 	  contextTypes: SpecPolicy.DEFINE_MANY,
@@ -2113,7 +2113,7 @@
 	  /**
 	   * Definition of context types this component sets for its children.
 	   *
-	   * @type {object}
+	   * @type
 	   * @optional
 	   */
 	  childContextTypes: SpecPolicy.DEFINE_MANY,
@@ -4753,7 +4753,7 @@
 	  /**
 	   * Mapping from lowercase property names to the properly cased version, used
 	   * to warn in the case of missing properties. Available only in __DEV__.
-	   * @type {Object}
+	   * @type
 	   */
 	  getPossibleStandardName: process.env.NODE_ENV !== 'production' ? {} : null,
 
@@ -5930,7 +5930,7 @@
 	   * Mapping from lowercase registration names to the properly cased version,
 	   * used to warn in the case of missing event handlers. Available
 	   * only in __DEV__.
-	   * @type {Object}
+	   * @type
 	   */
 	  possibleRegistrationNames: process.env.NODE_ENV !== 'production' ? {} : null,
 
@@ -23459,7 +23459,7 @@
 	  **/
 
 		/**
-	  * @type {SDKToken}
+	  * @type
 	  **/
 		function LoopBackAuth() {
 			_classCallCheck(this, LoopBackAuth);
@@ -23485,7 +23485,7 @@
 	  **/
 
 		/**
-	  * @type {string}
+	  * @type
 	  **/
 
 
@@ -24428,7 +24428,7 @@
 	    function Subscription(unsubscribe) {
 	        /**
 	         * A flag to indicate whether this Subscription has already been unsubscribed.
-	         * @type {boolean}
+	         * @type
 	         */
 	        this.closed = false;
 	        this._parent = null;
@@ -32587,14 +32587,14 @@
 	        /**
 	         * A flag to indicate whether the Scheduler is currently executing a batch of
 	         * queued actions.
-	         * @type {boolean}
+	         * @type
 	         */
 	        this.active = false;
 	        /**
 	         * An internal ID used to track the latest asynchronous task such as those
 	         * coming from `setTimeout`, `setInterval`, `requestAnimationFrame`, and
 	         * others.
-	         * @type {any}
+	         * @type
 	         */
 	        this.scheduled = undefined;
 	    }
@@ -54027,7 +54027,7 @@
 	  }
 
 	  /**
-	   * @type {CookieInterface}
+	   * @type
 	   **/
 
 
